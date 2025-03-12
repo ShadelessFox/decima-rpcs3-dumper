@@ -18,7 +18,7 @@ public final class Process implements AutoCloseable {
         if (pid.isEmpty()) {
             return Optional.empty();
         }
-        var handle = (MemorySegment) Kernel32.openProcess.invoke(Kernel32.PROCESS_VM_READ | Kernel32.PROCESS_QUERY_INFORMATION, 0, pid.getAsInt());
+        var handle = (MemorySegment) Kernel32.openProcess.invoke(Kernel32.PROCESS_VM_READ, 0, pid.getAsInt());
         if (handle.equals(MemorySegment.NULL)) {
             throw new IllegalStateException("Failed to open process");
         }

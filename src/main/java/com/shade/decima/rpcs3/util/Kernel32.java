@@ -13,6 +13,10 @@ final class Kernel32 {
     static final ValueLayout BOOL = ValueLayout.JAVA_INT.withName("BOOL");
     static final ValueLayout WCHAR = ValueLayout.JAVA_CHAR.withName("WCHAR");
 
+    static final int TH32CS_SNAPPROCESS = 0x2;
+    static final int PROCESS_VM_READ = 0x10;
+    static final int PATH_MAX = 260;
+
     static final MemoryLayout PROCESSENTRY32W = MemoryLayout.structLayout(
         DWORD.withName("dwSize"),
         DWORD.withName("cntUsage"),
@@ -24,7 +28,7 @@ final class Kernel32 {
         DWORD.withName("th32ParentProcessID"),
         LONG.withName("pcPriClassBase"),
         DWORD.withName("dwFlags"),
-        MemoryLayout.sequenceLayout(260, WCHAR).withName("szExeFile"),
+        MemoryLayout.sequenceLayout(PATH_MAX, WCHAR).withName("szExeFile"),
         MemoryLayout.paddingLayout(4)
     ).withName("PROCESSENTRY32W");
 
@@ -32,14 +36,9 @@ final class Kernel32 {
     static final VarHandle PROCESSENTRY32W_th32ProcessID;
     static final MethodHandle PROCESSENTRY32W_szExeFile;
 
-    static final int TH32CS_SNAPPROCESS = 0x2;
-    static final int PROCESS_VM_READ = 0x10;
-    static final int PROCESS_QUERY_INFORMATION = 0x400;
-
     static final MethodHandle createToolhelp32Snapshot;
     static final MethodHandle process32FirstW;
     static final MethodHandle process32NextW;
-
     static final MethodHandle openProcess;
     static final MethodHandle closeHandle;
     static final MethodHandle readProcessMemory;
