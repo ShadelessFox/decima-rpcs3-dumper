@@ -85,7 +85,7 @@ public final class JsonExporter implements Exporter {
 
                         writer.beginCompactObject();
                         writer.name("name").value(attr.name());
-                        writer.name("type").value(RTTI.read(attr.type()).getTypeName());
+                        writer.name("type").value(RTTI.read(attr.type()).getFullName());
                         writer.name("offset").value(attr.offset());
                         writer.name("flags").value(attr.flags());
                         if (attr.getter().address() != 0) {

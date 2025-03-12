@@ -58,4 +58,9 @@ public final class RTTIContainer extends RTTI {
     public String getTypeName() {
         return containerType.typeName;
     }
+
+    @Override
+    public String getFullName() {
+        return "%s<%s>".formatted(getTypeName(), RTTI.read(itemType).getFullName());
+    }
 }

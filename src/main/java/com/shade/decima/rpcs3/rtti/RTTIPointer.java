@@ -46,4 +46,9 @@ public final class RTTIPointer extends RTTI {
     public String getTypeName() {
         return pointerType.typeName;
     }
+
+    @Override
+    public String getFullName() {
+        return "%s<%s>".formatted(getTypeName(), RTTI.read(itemType).getFullName());
+    }
 }

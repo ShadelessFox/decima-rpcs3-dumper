@@ -26,6 +26,10 @@ public sealed abstract class RTTI
 
     public abstract String getTypeName();
 
+    public String getFullName() {
+        return getTypeName();
+    }
+
     public int getId() {
         return id;
     }
