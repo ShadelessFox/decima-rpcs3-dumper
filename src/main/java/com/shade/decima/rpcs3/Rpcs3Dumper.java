@@ -20,8 +20,8 @@ public class Rpcs3Dumper {
 
     public static void main(String[] args) throws Throwable {
         try (Process process = Process.open("rpcs3.exe").orElseThrow(() -> new IllegalStateException("No RPCS3 process found"))) {
-            var memory = process.memory();
-            var factory = memory.add(UNTIL_DAWN_FACTORY_BASE).deref();
+            var base = process.memory(0x300000000L); // RPCS3's g_base_addr
+            var factory = base.add(UNTIL_DAWN_FACTORY_BASE).deref();
             var types = new TreeSet<>(RTTI_COMPARATOR);
 
             scan(factory, types);

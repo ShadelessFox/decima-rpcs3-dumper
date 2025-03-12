@@ -14,7 +14,7 @@ public final class Process implements AutoCloseable {
     }
 
     public static Optional<Process> open(String name) throws Throwable {
-        var pid = find("rpcs3.exe");
+        var pid = find(name);
         if (pid.isEmpty()) {
             return Optional.empty();
         }
@@ -25,12 +25,12 @@ public final class Process implements AutoCloseable {
         return Optional.of(new Process(handle));
     }
 
-    public Pointer memory() {
+    public Pointer memory(long base) {
         var reader = (Pointer.Reader) (address, buffer, size) -> {
             try {
                 int result = (int) Kernel32.readProcessMemory.invoke(
                     handle,
-                    MemorySegment.ofAddress(0x300000000L + address),
+                    MemorySegment.ofAddress(base + address),
                     buffer,
                     size,
                     MemorySegment.NULL
