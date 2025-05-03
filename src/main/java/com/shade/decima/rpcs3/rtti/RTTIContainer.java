@@ -1,5 +1,6 @@
 package com.shade.decima.rpcs3.rtti;
 
+import com.shade.decima.rpcs3.TypedPointer;
 import com.shade.decima.rpcs3.util.Pointer;
 
 public final class RTTIContainer extends RTTI {
@@ -45,22 +46,17 @@ public final class RTTIContainer extends RTTI {
         }
     }
 
-    private final Pointer itemType;
+    private final TypedPointer<RTTI> itemType;
     private final Data containerType;
 
     RTTIContainer(Pointer pointer) {
         super(pointer);
-        this.itemType = pointer.add(8).deref();
+        this.itemType = RTTI.TYPE.pointer(pointer.add(8).deref());
         this.containerType = Data.read(pointer.add(12).deref());
     }
 
     @Override
-    public String getTypeName() {
-        return containerType.typeName;
-    }
-
-    @Override
-    public String getFullName() {
-        return "%s<%s>".formatted(getTypeName(), RTTI.read(itemType).getFullName());
+    public TypeName getName() {
+        return TypeName.of(containerType.typeName, itemType.read().getName());
     }
 }

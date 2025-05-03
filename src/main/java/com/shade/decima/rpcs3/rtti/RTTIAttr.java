@@ -1,17 +1,21 @@
 package com.shade.decima.rpcs3.rtti;
 
+import com.shade.decima.rpcs3.Typed;
+import com.shade.decima.rpcs3.TypedPointer;
 import com.shade.decima.rpcs3.util.Pointer;
 
 public record RTTIAttr(
-    Pointer type,
+    TypedPointer<RTTI> type,
     short offset,
     short flags,
     String name,
     Pointer getter,
     Pointer setter
 ) {
+    public static final Typed<RTTIAttr> TYPE = Typed.of(RTTIAttr::read, 28);
+
     public static RTTIAttr read(Pointer pointer) {
-        var type = pointer.deref();
+        var type = RTTI.TYPE.pointer(pointer.deref());
         var offset = pointer.add(4).readShort();
         var flags = pointer.add(6).readShort();
         var name = pointer.add(8).deref().readCString();

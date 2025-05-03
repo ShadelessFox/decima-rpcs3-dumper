@@ -1,9 +1,12 @@
 package com.shade.decima.rpcs3.rtti;
 
+import com.shade.decima.rpcs3.Typed;
 import com.shade.decima.rpcs3.util.Pointer;
 
 public sealed abstract class RTTI
     permits RTTIAtom, RTTICompound, RTTIContainer, RTTIEnum, RTTIPointer {
+
+    public static Typed<RTTI> TYPE = Typed.of(RTTI::read, 0);
 
     private final int id;
     private final RTTIKind kind;
@@ -24,11 +27,7 @@ public sealed abstract class RTTI
         };
     }
 
-    public abstract String getTypeName();
-
-    public String getFullName() {
-        return getTypeName();
-    }
+    public abstract TypeName getName();
 
     public int getId() {
         return id;
@@ -40,6 +39,6 @@ public sealed abstract class RTTI
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + " " + getTypeName();
+        return getClass().getSimpleName() + " " + getName();
     }
 }

@@ -42,11 +42,13 @@ final class Kernel32 {
     static final MethodHandle openProcess;
     static final MethodHandle closeHandle;
     static final MethodHandle readProcessMemory;
+    static final MethodHandle getLastError;
 
     static {
-        var arena = Arena.ofAuto();
+        System.loadLibrary("Kernel32");
+
+        var lookup = java.lang.foreign.SymbolLookup.loaderLookup();
         var linker = Linker.nativeLinker();
-        var lookup = SymbolLookup.libraryLookup("kernel32", arena);
 
         createToolhelp32Snapshot = linker.downcallHandle(lookup.findOrThrow("CreateToolhelp32Snapshot"), FunctionDescriptor.of(HANDLE, DWORD, DWORD));
         process32FirstW = linker.downcallHandle(lookup.findOrThrow("Process32FirstW"), FunctionDescriptor.of(BOOL, HANDLE, LPVOID));
@@ -54,9 +56,26 @@ final class Kernel32 {
         openProcess = linker.downcallHandle(lookup.findOrThrow("OpenProcess"), FunctionDescriptor.of(HANDLE, DWORD, BOOL, DWORD));
         closeHandle = linker.downcallHandle(lookup.findOrThrow("CloseHandle"), FunctionDescriptor.of(BOOL, HANDLE));
         readProcessMemory = linker.downcallHandle(lookup.findOrThrow("ReadProcessMemory"), FunctionDescriptor.of(BOOL, HANDLE, LPVOID, LPVOID, DWORD, LPVOID));
+        getLastError = linker.downcallHandle(lookup.findOrThrow("GetLastError"), FunctionDescriptor.of(DWORD));
 
         PROCESSENTRY32W_dwSize = PROCESSENTRY32W.varHandle(MemoryLayout.PathElement.groupElement("dwSize"));
         PROCESSENTRY32W_th32ProcessID = PROCESSENTRY32W.varHandle(MemoryLayout.PathElement.groupElement("th32ProcessID"));
         PROCESSENTRY32W_szExeFile = PROCESSENTRY32W.sliceHandle(MemoryLayout.PathElement.groupElement("szExeFile"));
+    }
+
+    static boolean readProcessMemory(MemorySegment process, MemorySegment address, MemorySegment buffer, int size, MemorySegment numberOfBytesRead) {
+        try {
+            return (int) readProcessMemory.invokeExact(process, address, buffer, size, numberOfBytesRead) == 1;
+        } catch (Throwable e) {
+            throw new AssertionError("should not reach here", e);
+        }
+    }
+
+    static int getLastError() {
+        try {
+            return (int) getLastError.invokeExact();
+        } catch (Throwable e) {
+            throw new AssertionError("should not reach here", e);
+        }
     }
 }

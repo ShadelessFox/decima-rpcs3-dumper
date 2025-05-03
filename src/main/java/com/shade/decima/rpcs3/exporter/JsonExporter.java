@@ -1,39 +1,44 @@
 package com.shade.decima.rpcs3.exporter;
 
-import com.shade.decima.rpcs3.rtti.*;
+import com.shade.decima.rpcs3.rtti.RTTI;
+import com.shade.decima.rpcs3.rtti.RTTIAtom;
+import com.shade.decima.rpcs3.rtti.RTTICompound;
+import com.shade.decima.rpcs3.rtti.RTTIEnum;
+import com.shade.decima.rpcs3.util.Pointer;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashSet;
-import java.util.Set;
 
 public final class JsonExporter implements Exporter {
     private final JsonWriter writer;
 
-    private final Set<String> containersSeen = new HashSet<>();
-    private final Set<String> pointersSeen = new HashSet<>();
-
-    public JsonExporter(Path path) throws IOException {
+    private JsonExporter(Path path) throws IOException {
         writer = new JsonWriter(Files.newBufferedWriter(path));
         writer.beginObject();
     }
 
+    public static Provider provider() {
+        return new Provider() {
+            @Override
+            public Exporter create(Path path) throws IOException {
+                return new JsonExporter(path);
+            }
+
+            @Override
+            public String extension() {
+                return "json";
+            }
+        };
+    }
+
     @Override
-    public void export(RTTI rtti) throws IOException {
-        if (rtti instanceof RTTIContainer container && !containersSeen.add(container.getTypeName())) {
-            return;
-        }
-
-        if (rtti instanceof RTTIPointer pointer && !pointersSeen.add(pointer.getTypeName())) {
-            return;
-        }
-
-        writer.name(rtti.getTypeName()).beginObject();
+    public void export(Pointer pointer, RTTI rtti) throws IOException {
+        writer.name(rtti.getName().displayName()).beginObject();
         writer.name("kind").value(switch (rtti.getKind()) {
             case COMPOUND -> "class";
             case ENUM -> "enum";
-            case ATOM -> "atom";
+            case ATOM -> "primitive";
             case POINTER -> "pointer";
             case CONTAINER -> "container";
         });
@@ -46,10 +51,8 @@ public final class JsonExporter implements Exporter {
                 if (compound.getNumMessageHandlers() > 0) {
                     writer.name("messages").beginArray();
 
-                    var handlers = compound.getMessageHandlers();
-                    for (int i = 0; i < compound.getNumMessageHandlers(); i++) {
-                        var handler = RTTIMessageHandler.read(handlers.add(i * 12));
-                        writer.value(RTTI.read(handler.message()).getTypeName());
+                    for (var handler : compound.getMessageHandlers()) {
+                        writer.value(RTTI.read(handler.message()).getName().displayName());
                     }
 
                     writer.endArray();
@@ -58,11 +61,9 @@ public final class JsonExporter implements Exporter {
                 if (compound.getNumBases() > 0) {
                     writer.name("bases").beginArray();
 
-                    var bases = compound.getBases();
-                    for (int i = 0; i < compound.getNumBases(); i++) {
-                        var base = RTTIBase.read(bases.add(i * 8));
+                    for (var base : compound.getBases()) {
                         writer.beginCompactObject();
-                        writer.name("name").value(RTTI.read(base.type()).getTypeName());
+                        writer.name("name").value(base.type().read().getName().displayName());
                         writer.name("offset").value(base.offset());
                         writer.endCompactObject();
                     }
@@ -71,12 +72,10 @@ public final class JsonExporter implements Exporter {
                 }
 
                 if (compound.getNumAttrs() > 0) {
-                    writer.name("attributes").beginArray();
+                    writer.name("attrs").beginArray();
 
-                    var attrs = compound.getAttrs();
-                    for (int i = 0; i < compound.getNumAttrs(); i++) {
-                        var attr = RTTIAttr.read(attrs.add(i * 28));
-                        if (attr.type().address() == 0) {
+                    for (var attr : compound.getAttrs()) {
+                        if (attr.type().pointer().address() == 0) {
                             writer.beginCompactObject();
                             writer.name("category").value(attr.name());
                             writer.endCompactObject();
@@ -85,7 +84,7 @@ public final class JsonExporter implements Exporter {
 
                         writer.beginCompactObject();
                         writer.name("name").value(attr.name());
-                        writer.name("type").value(RTTI.read(attr.type()).getFullName());
+                        writer.name("type").value(attr.type().read().getName().displayName());
                         writer.name("offset").value(attr.offset());
                         writer.name("flags").value(attr.flags());
                         if (attr.getter().address() != 0) {
@@ -101,8 +100,7 @@ public final class JsonExporter implements Exporter {
                 writer.name("size").value(enumeration.getSize());
                 writer.name("values").beginArray();
 
-                for (int i = 0; i < enumeration.getNumValues(); i++) {
-                    var value = RTTIValue.read(enumeration.getValues().add(i * 8));
+                for (var value : enumeration.getValues()) {
                     writer.beginCompactObject();
                     writer.name("value").value(value.value());
                     writer.name("name").value(value.name());
@@ -116,7 +114,7 @@ public final class JsonExporter implements Exporter {
                 if (atom.isSimple()) {
                     writer.name("simple").value(true);
                 }
-                writer.name("base_type").value(RTTI.read(atom.getBaseType()).getTypeName());
+                writer.name("base_type").value(atom.getBaseType().read().getName().displayName());
             }
             default -> {
                 // nothing to do

@@ -1,12 +1,13 @@
 package com.shade.decima.rpcs3.rtti;
 
+import com.shade.decima.rpcs3.TypedPointer;
 import com.shade.decima.rpcs3.util.Pointer;
 
 public final class RTTIAtom extends RTTI {
     private final byte size;
     private final boolean simple;
     private final String typeName;
-    private final Pointer baseType;
+    private final TypedPointer<RTTI> baseType;
     private final Pointer fromString;
     private final Pointer toString;
     private final Pointer copyFunc;
@@ -22,7 +23,7 @@ public final class RTTIAtom extends RTTI {
         this.size = pointer.add(5).readByte();
         this.simple = pointer.add(6).readByte() == 1;
         this.typeName = pointer.add(8).deref().readCString();
-        this.baseType = pointer.add(12).deref();
+        this.baseType = RTTI.TYPE.pointer(pointer.add(12).deref());
         this.fromString = pointer.add(16).deref();
         this.toString = pointer.add(20).deref();
         this.copyFunc = pointer.add(24).deref();
@@ -35,8 +36,8 @@ public final class RTTIAtom extends RTTI {
     }
 
     @Override
-    public String getTypeName() {
-        return typeName;
+    public TypeName getName() {
+        return TypeName.of(typeName);
     }
 
     public byte getSize() {
@@ -47,7 +48,7 @@ public final class RTTIAtom extends RTTI {
         return simple;
     }
 
-    public Pointer getBaseType() {
+    public TypedPointer<RTTI> getBaseType() {
         return baseType;
     }
 

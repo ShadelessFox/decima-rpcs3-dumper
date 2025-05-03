@@ -27,19 +27,14 @@ public final class Process implements AutoCloseable {
 
     public Pointer memory(long base) {
         var reader = (Pointer.Reader) (address, buffer, size) -> {
-            try {
-                int result = (int) Kernel32.readProcessMemory.invoke(
-                    handle,
-                    MemorySegment.ofAddress(base + address),
-                    buffer,
-                    size,
-                    MemorySegment.NULL
-                );
-                if (result == 0) {
-                    throw new IllegalStateException("Failed to read memory");
-                }
-            } catch (Throwable e) {
-                throw new IllegalStateException("Failed to read memory", e);
+            boolean result = Kernel32.readProcessMemory(handle,
+                MemorySegment.ofAddress(base + address),
+                buffer,
+                size,
+                MemorySegment.NULL
+            );
+            if (!result) {
+                throw new IllegalStateException("Failed to read memory: %08x".formatted(Kernel32.getLastError()));
             }
         };
 

@@ -1,5 +1,6 @@
 package com.shade.decima.rpcs3.rtti;
 
+import com.shade.decima.rpcs3.TypedSlice;
 import com.shade.decima.rpcs3.util.Pointer;
 
 public final class RTTICompound extends RTTI {
@@ -20,10 +21,10 @@ public final class RTTICompound extends RTTI {
     private final String typeName;
     private final int typeNameCrc;
     private final Pointer unk3C;
-    private final Pointer bases;
-    private final Pointer attrs;
-    private final Pointer functions;
-    private final Pointer messageHandlers;
+    private final TypedSlice<RTTIBase> bases;
+    private final TypedSlice<RTTIAttr> attrs;
+    private final TypedSlice<RTTIFunction> functions;
+    private final TypedSlice<RTTIMessageHandler> messageHandlers;
     private final Pointer messageOrderEntries;
 
     RTTICompound(Pointer pointer) {
@@ -45,10 +46,10 @@ public final class RTTICompound extends RTTI {
         this.typeName = pointer.add(48).deref().readCString();
         this.typeNameCrc = pointer.add(52).readInt();
         this.unk3C = pointer.add(60).deref();
-        this.bases = pointer.add(64).deref();
-        this.attrs = pointer.add(68).deref();
-        this.functions = pointer.add(72).deref();
-        this.messageHandlers = pointer.add(76).deref();
+        this.bases = RTTIBase.TYPE.slice(pointer.add(64).deref(), numBases);
+        this.attrs = RTTIAttr.TYPE.slice(pointer.add(68).deref(), numAttrs);
+        this.functions = RTTIFunction.TYPE.slice(pointer.add(72).deref(), numFunctions);
+        this.messageHandlers = RTTIMessageHandler.TYPE.slice(pointer.add(76).deref(), numMessageHandlers);
         this.messageOrderEntries = pointer.add(80).deref();
     }
 
@@ -116,19 +117,19 @@ public final class RTTICompound extends RTTI {
         return unk3C;
     }
 
-    public Pointer getBases() {
+    public TypedSlice<RTTIBase> getBases() {
         return bases;
     }
 
-    public Pointer getAttrs() {
+    public TypedSlice<RTTIAttr> getAttrs() {
         return attrs;
     }
 
-    public Pointer getFunctions() {
+    public TypedSlice<RTTIFunction> getFunctions() {
         return functions;
     }
 
-    public Pointer getMessageHandlers() {
+    public TypedSlice<RTTIMessageHandler> getMessageHandlers() {
         return messageHandlers;
     }
 
@@ -137,7 +138,7 @@ public final class RTTICompound extends RTTI {
     }
 
     @Override
-    public String getTypeName() {
-        return typeName;
+    public TypeName getName() {
+        return TypeName.of(typeName);
     }
 }
