@@ -74,12 +74,12 @@ public final class IdaExporter implements Exporter {
             writer.write("\tapply_type(%#08x, \"%s[%d]\");".formatted(address, memberType, slice.count()));
 
             writer.newLine();
-            writer.write("\tset_name(%#08x, \"%s::%s\");".formatted(address, idaTypeName(rtti), memberName));
+            writer.write("\tset_name(%#08x, \"%s::%s\");".formatted(address, rtti.getName().internalName(), memberName));
         }
     }
 
     private static String idaTypeName(RTTI rtti) {
-        return rtti.getName().internalName();
+        return "RTTI_%s".formatted(rtti.getName().internalName());
     }
 
     private static String idaTypeKind(RTTI rtti) {
