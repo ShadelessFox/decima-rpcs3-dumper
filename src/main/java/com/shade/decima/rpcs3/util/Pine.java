@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.lang.foreign.MemorySegment;
 import java.net.InetSocketAddress;
+import java.net.ProtocolFamily;
 import java.net.SocketAddress;
+import java.net.StandardProtocolFamily;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.SocketChannel;
@@ -50,15 +52,15 @@ public final class Pine implements Memory, Closeable {
 
     private final SocketChannel channel;
 
-    public static Pine connect(SocketAddress address) throws IOException {
-        var channel = SocketChannel.open();
+    public static Pine connect(ProtocolFamily family, SocketAddress address) throws IOException {
+        var channel = SocketChannel.open(family);
         channel.configureBlocking(true);
         channel.connect(address);
         return new Pine(channel);
     }
 
     public static Pine connect(String host, int port) throws IOException {
-        return connect(new InetSocketAddress(host, port));
+        return connect(StandardProtocolFamily.INET, new InetSocketAddress(host, port));
     }
 
     private Pine(SocketChannel channel) {
