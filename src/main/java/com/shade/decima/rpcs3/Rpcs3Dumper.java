@@ -21,7 +21,7 @@ public class Rpcs3Dumper {
     public static void main(String[] args) throws Throwable {
         try (Process process = Process.open("rpcs3.exe").orElseThrow(() -> new IllegalStateException("No RPCS3 process found"))) {
             var base = process.memory(0x300000000L); // RPCS3's g_base_addr
-            var factory = base.add(UNTIL_DAWN_FACTORY_BASE).deref();
+            var factory = base.add(UNTIL_DAWN_FACTORY_BASE).deref32();
             var types = new TreeMap<RTTI, Pointer>(RTTI_COMPARATOR);
 
             scan(factory, types);
@@ -41,14 +41,14 @@ public class Rpcs3Dumper {
     private static void scan(Pointer factory, Map<RTTI, Pointer> types) {
         // mAllTypes; HashSet<pRTTI>
         var count = factory.add(4).readInt();
-        var entries = factory.add(8).deref();
+        var entries = factory.add(8).deref32();
         var capacity = factory.add(16).readInt() + 1; // hashMask = capacity - 1
 
         for (int i = 0; i < capacity; i++) {
             var assoc = entries.add(i * 8L);
             var hash = assoc.add(0).readInt();
             if (hash != 0) {
-                var addr = assoc.add(4).deref();
+                var addr = assoc.add(4).deref32();
                 var type = RTTI.read(addr);
                 System.out.printf("%#08x - %s %s%n", hash, addr, type);
                 types.put(type, addr);

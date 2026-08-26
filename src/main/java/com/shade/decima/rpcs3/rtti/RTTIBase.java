@@ -8,7 +8,7 @@ public record RTTIBase(TypedPointer<RTTI> type, int offset) {
     public static final Typed<RTTIBase> TYPE = Typed.of(RTTIBase::read, 8);
 
     public static RTTIBase read(Pointer pointer) {
-        var type = RTTI.TYPE.pointer(pointer.deref());
+        var type = RTTI.TYPE.pointer(pointer.deref32());
         var offset = pointer.add(4).readInt();
 
         return new RTTIBase(type, offset);

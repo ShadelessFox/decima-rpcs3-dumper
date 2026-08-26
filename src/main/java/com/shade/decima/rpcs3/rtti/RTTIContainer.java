@@ -18,17 +18,17 @@ public final class RTTIContainer extends RTTI {
         Pointer clear
     ) {
         static Data read(Pointer pointer) {
-            var typeName = pointer.deref().readCString();
+            var typeName = pointer.deref32().readCString();
             var size = pointer.add(4).readShort();
             var isSimple = pointer.add(6).readByte() == 1;
-            var constructor = pointer.add(8).deref();
-            var destructor = pointer.add(12).deref();
-            var resize = pointer.add(16).deref();
-            var remove = pointer.add(20).deref();
-            var getNumItems = pointer.add(24).deref();
-            var getItem = pointer.add(28).deref();
-            var predictAllocationForResize = pointer.add(32).deref();
-            var clear = pointer.add(36).deref();
+            var constructor = pointer.add(8).deref32();
+            var destructor = pointer.add(12).deref32();
+            var resize = pointer.add(16).deref32();
+            var remove = pointer.add(20).deref32();
+            var getNumItems = pointer.add(24).deref32();
+            var getItem = pointer.add(28).deref32();
+            var predictAllocationForResize = pointer.add(32).deref32();
+            var clear = pointer.add(36).deref32();
 
             return new Data(
                 typeName,
@@ -51,8 +51,8 @@ public final class RTTIContainer extends RTTI {
 
     RTTIContainer(Pointer pointer) {
         super(pointer);
-        this.itemType = RTTI.TYPE.pointer(pointer.add(8).deref());
-        this.containerType = Data.read(pointer.add(12).deref());
+        this.itemType = RTTI.TYPE.pointer(pointer.add(8).deref32());
+        this.containerType = Data.read(pointer.add(12).deref32());
     }
 
     @Override

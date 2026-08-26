@@ -14,13 +14,13 @@ public final class RTTIPointer extends RTTI {
         Pointer copyFunc
     ) {
         static Data read(Pointer pointer) {
-            var typeName = pointer.deref().readCString();
+            var typeName = pointer.deref32().readCString();
             var size = pointer.add(4).readShort();
-            var constructor = pointer.add(8).deref();
-            var destructor = pointer.add(12).deref();
-            var getter = pointer.add(16).deref();
-            var setter = pointer.add(20).deref();
-            var copyFunc = pointer.add(24).deref();
+            var constructor = pointer.add(8).deref32();
+            var destructor = pointer.add(12).deref32();
+            var getter = pointer.add(16).deref32();
+            var setter = pointer.add(20).deref32();
+            var copyFunc = pointer.add(24).deref32();
 
             return new Data(
                 typeName,
@@ -39,8 +39,8 @@ public final class RTTIPointer extends RTTI {
 
     RTTIPointer(Pointer pointer) {
         super(pointer);
-        this.itemType = RTTI.TYPE.pointer(pointer.add(8).deref());
-        this.pointerType = Data.read(pointer.add(12).deref());
+        this.itemType = RTTI.TYPE.pointer(pointer.add(8).deref32());
+        this.pointerType = Data.read(pointer.add(12).deref32());
     }
 
     @Override

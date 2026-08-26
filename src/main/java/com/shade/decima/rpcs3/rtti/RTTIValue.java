@@ -8,7 +8,7 @@ public record RTTIValue(int value, String name) {
 
     public static RTTIValue read(Pointer pointer) {
         var value = pointer.readInt();
-        var name = pointer.add(4).deref().readCString();
+        var name = pointer.add(4).deref32().readCString();
 
         return new RTTIValue(value, name);
     }

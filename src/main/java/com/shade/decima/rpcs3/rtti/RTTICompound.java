@@ -36,21 +36,21 @@ public final class RTTICompound extends RTTI {
         this.numMessageOrderEntries = pointer.add(9).readByte();
         this.version = pointer.add(10).readShort();
         this.size = pointer.add(15).readByte();
-        this.constructor = pointer.add(16).deref();
-        this.destructor = pointer.add(20).deref();
-        this.unk18 = pointer.add(24).deref();
-        this.unk1C = pointer.add(28).deref();
-        this.unk20 = pointer.add(32).deref();
-        this.unk24 = pointer.add(36).deref();
-        this.unk2C = pointer.add(44).deref();
-        this.typeName = pointer.add(48).deref().readCString();
+        this.constructor = pointer.add(16).deref32();
+        this.destructor = pointer.add(20).deref32();
+        this.unk18 = pointer.add(24).deref32();
+        this.unk1C = pointer.add(28).deref32();
+        this.unk20 = pointer.add(32).deref32();
+        this.unk24 = pointer.add(36).deref32();
+        this.unk2C = pointer.add(44).deref32();
+        this.typeName = pointer.add(48).deref32().readCString();
         this.typeNameCrc = pointer.add(52).readInt();
-        this.unk3C = pointer.add(60).deref();
-        this.bases = RTTIBase.TYPE.slice(pointer.add(64).deref(), numBases);
-        this.attrs = RTTIAttr.TYPE.slice(pointer.add(68).deref(), numAttrs);
-        this.functions = RTTIFunction.TYPE.slice(pointer.add(72).deref(), numFunctions);
-        this.messageHandlers = RTTIMessageHandler.TYPE.slice(pointer.add(76).deref(), numMessageHandlers);
-        this.messageOrderEntries = pointer.add(80).deref();
+        this.unk3C = pointer.add(60).deref32();
+        this.bases = RTTIBase.TYPE.slice(pointer.add(64).deref32(), numBases);
+        this.attrs = RTTIAttr.TYPE.slice(pointer.add(68).deref32(), numAttrs);
+        this.functions = RTTIFunction.TYPE.slice(pointer.add(72).deref32(), numFunctions);
+        this.messageHandlers = RTTIMessageHandler.TYPE.slice(pointer.add(76).deref32(), numMessageHandlers);
+        this.messageOrderEntries = pointer.add(80).deref32();
     }
 
     public byte getNumBases() {

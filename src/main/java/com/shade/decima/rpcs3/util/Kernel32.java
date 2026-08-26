@@ -17,24 +17,48 @@ final class Kernel32 {
     static final int PROCESS_VM_READ = 0x10;
     static final int PATH_MAX = 260;
 
-    static final MemoryLayout PROCESSENTRY32W = MemoryLayout.structLayout(
-        DWORD.withName("dwSize"),
-        DWORD.withName("cntUsage"),
-        DWORD.withName("th32ProcessID"),
-        MemoryLayout.paddingLayout(4),
-        ULONG_PTR.withName("th32DefaultHeapID"),
-        DWORD.withName("th32ModuleID"),
-        DWORD.withName("cntThreads"),
-        DWORD.withName("th32ParentProcessID"),
-        LONG.withName("pcPriClassBase"),
-        DWORD.withName("dwFlags"),
-        MemoryLayout.sequenceLayout(PATH_MAX, WCHAR).withName("szExeFile"),
-        MemoryLayout.paddingLayout(4)
-    ).withName("PROCESSENTRY32W");
+    record PROCESSENTRY32W(MemorySegment segment) {
+        static final MemoryLayout LAYOUT = MemoryLayout.structLayout(
+            DWORD.withName("dwSize"),
+            DWORD.withName("cntUsage"),
+            DWORD.withName("th32ProcessID"),
+            MemoryLayout.paddingLayout(4),
+            ULONG_PTR.withName("th32DefaultHeapID"),
+            DWORD.withName("th32ModuleID"),
+            DWORD.withName("cntThreads"),
+            DWORD.withName("th32ParentProcessID"),
+            LONG.withName("pcPriClassBase"),
+            DWORD.withName("dwFlags"),
+            MemoryLayout.sequenceLayout(PATH_MAX, WCHAR).withName("szExeFile"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("PROCESSENTRY32W");
 
-    static final VarHandle PROCESSENTRY32W_dwSize;
-    static final VarHandle PROCESSENTRY32W_th32ProcessID;
-    static final MethodHandle PROCESSENTRY32W_szExeFile;
+        private static final VarHandle dwSize;
+        private static final VarHandle th32ProcessID;
+        private static final MethodHandle szExeFile;
+
+        static {
+            dwSize = LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dwSize"));
+            th32ProcessID = LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("th32ProcessID"));
+            szExeFile = LAYOUT.sliceHandle(MemoryLayout.PathElement.groupElement("szExeFile"));
+        }
+
+        static void dwSize(MemorySegment segment, int value) {
+            dwSize.set(segment, 0L, value);
+        }
+
+        static int th32ProcessID(MemorySegment segment) {
+            return (int) th32ProcessID.get(segment, 0L);
+        }
+
+        static MemorySegment szExeFile(MemorySegment segment) {
+            try {
+                return (MemorySegment) szExeFile.invokeExact(segment, 0L);
+            } catch (Throwable e) {
+                throw new AssertionError(e);
+            }
+        }
+    }
 
     static final MethodHandle createToolhelp32Snapshot;
     static final MethodHandle process32FirstW;
@@ -57,17 +81,53 @@ final class Kernel32 {
         closeHandle = linker.downcallHandle(lookup.findOrThrow("CloseHandle"), FunctionDescriptor.of(BOOL, HANDLE));
         readProcessMemory = linker.downcallHandle(lookup.findOrThrow("ReadProcessMemory"), FunctionDescriptor.of(BOOL, HANDLE, LPVOID, LPVOID, DWORD, LPVOID));
         getLastError = linker.downcallHandle(lookup.findOrThrow("GetLastError"), FunctionDescriptor.of(DWORD));
+    }
 
-        PROCESSENTRY32W_dwSize = PROCESSENTRY32W.varHandle(MemoryLayout.PathElement.groupElement("dwSize"));
-        PROCESSENTRY32W_th32ProcessID = PROCESSENTRY32W.varHandle(MemoryLayout.PathElement.groupElement("th32ProcessID"));
-        PROCESSENTRY32W_szExeFile = PROCESSENTRY32W.sliceHandle(MemoryLayout.PathElement.groupElement("szExeFile"));
+    static MemorySegment createToolhelp32Snapshot(int flags, int processId) {
+        try {
+            return (MemorySegment) createToolhelp32Snapshot.invokeExact(flags, processId);
+        } catch (Throwable e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    static boolean process32FirstW(MemorySegment snapshot, MemorySegment entry) {
+        try {
+            return (int) process32FirstW.invokeExact(snapshot, entry) != 0;
+        } catch (Throwable e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    static boolean process32NextW(MemorySegment snapshot, MemorySegment entry) {
+        try {
+            return (int) process32NextW.invokeExact(snapshot, entry) != 0;
+        } catch (Throwable e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    static MemorySegment openProcess(int desiredAccess, boolean inheritHandle, int processId) {
+        try {
+            return (MemorySegment) openProcess.invokeExact(desiredAccess, inheritHandle ? 1 : 0, processId);
+        } catch (Throwable e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    static boolean closeHandle(MemorySegment handle) {
+        try {
+            return (int) closeHandle.invokeExact(handle) != 0;
+        } catch (Throwable e) {
+            throw new AssertionError(e);
+        }
     }
 
     static boolean readProcessMemory(MemorySegment process, MemorySegment address, MemorySegment buffer, int size, MemorySegment numberOfBytesRead) {
         try {
-            return (int) readProcessMemory.invokeExact(process, address, buffer, size, numberOfBytesRead) == 1;
+            return (int) readProcessMemory.invokeExact(process, address, buffer, size, numberOfBytesRead) != 0;
         } catch (Throwable e) {
-            throw new AssertionError("should not reach here", e);
+            throw new AssertionError(e);
         }
     }
 
@@ -75,7 +135,7 @@ final class Kernel32 {
         try {
             return (int) getLastError.invokeExact();
         } catch (Throwable e) {
-            throw new AssertionError("should not reach here", e);
+            throw new AssertionError(e);
         }
     }
 }

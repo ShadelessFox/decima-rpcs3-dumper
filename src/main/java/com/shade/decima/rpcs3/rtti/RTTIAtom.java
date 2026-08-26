@@ -22,17 +22,17 @@ public final class RTTIAtom extends RTTI {
         super(pointer);
         this.size = pointer.add(5).readByte();
         this.simple = pointer.add(6).readByte() == 1;
-        this.typeName = pointer.add(8).deref().readCString();
-        this.baseType = RTTI.TYPE.pointer(pointer.add(12).deref());
-        this.fromString = pointer.add(16).deref();
-        this.toString = pointer.add(20).deref();
-        this.copyFunc = pointer.add(24).deref();
-        this.constructor = pointer.add(28).deref();
-        this.destructor = pointer.add(32).deref();
-        this.serialize = pointer.add(36).deref();
-        this.deserialize = pointer.add(40).deref();
-        this.getSerializeSize = pointer.add(44).deref();
-        this.getMemorySize = pointer.add(48).deref();
+        this.typeName = pointer.add(8).deref32().readCString();
+        this.baseType = RTTI.TYPE.pointer(pointer.add(12).deref32());
+        this.fromString = pointer.add(16).deref32();
+        this.toString = pointer.add(20).deref32();
+        this.copyFunc = pointer.add(24).deref32();
+        this.constructor = pointer.add(28).deref32();
+        this.destructor = pointer.add(32).deref32();
+        this.serialize = pointer.add(36).deref32();
+        this.deserialize = pointer.add(40).deref32();
+        this.getSerializeSize = pointer.add(44).deref32();
+        this.getMemorySize = pointer.add(48).deref32();
     }
 
     @Override

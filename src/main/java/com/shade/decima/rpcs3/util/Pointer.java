@@ -7,20 +7,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-public final class Pointer {
-    private final Reader reader;
-    private final long address;
-
-    Pointer(Reader reader, long address) {
-        this.reader = reader;
-        this.address = address;
-    }
-
-    @FunctionalInterface
-    public interface Reader {
-        void read(long address, MemorySegment buffer, int size);
-    }
-
+public record Pointer(Memory memory, long address) {
     public byte[] read(int size) {
         try (Arena arena = Arena.ofConfined()) {
             var buffer = arena.allocate(size);
@@ -95,11 +82,15 @@ public final class Pointer {
     }
 
     private void read(long address, MemorySegment buffer, int size) {
-        reader.read(address, buffer, size);
+        memory.read(address, buffer, size);
     }
 
-    public Pointer deref() {
-        return new Pointer(reader, Integer.toUnsignedLong(readInt()));
+    public Pointer deref32() {
+        return new Pointer(memory, Integer.toUnsignedLong(readInt()));
+    }
+
+    public Pointer deref64() {
+        return new Pointer(memory, readLong());
     }
 
     public Pointer add(long displacement) {
@@ -107,11 +98,7 @@ public final class Pointer {
             return this;
         }
         Objects.checkIndex(displacement, Long.MAX_VALUE);
-        return new Pointer(reader, address + displacement);
-    }
-
-    public long address() {
-        return address;
+        return new Pointer(memory, address + displacement);
     }
 
     @Override

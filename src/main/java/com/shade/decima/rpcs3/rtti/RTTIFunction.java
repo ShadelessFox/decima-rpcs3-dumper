@@ -14,12 +14,12 @@ public record RTTIFunction(
     public static final Typed<RTTIFunction> TYPE = Typed.of(RTTIFunction::read, 24);
 
     public static RTTIFunction read(Pointer pointer) {
-        var function = pointer.deref();
-        var unk04 = pointer.add(4).deref();
+        var function = pointer.deref32();
+        var unk04 = pointer.add(4).deref32();
         var returnType = (char) pointer.add(8).readByte();
-        var name = pointer.add(12).deref().readCString();
-        var arguments = pointer.add(16).deref().readCString();
-        var unk14 = pointer.add(20).deref();
+        var name = pointer.add(12).deref32().readCString();
+        var arguments = pointer.add(16).deref32().readCString();
+        var unk14 = pointer.add(20).deref32();
 
         return new RTTIFunction(function, unk04, returnType, name, arguments, unk14);
     }

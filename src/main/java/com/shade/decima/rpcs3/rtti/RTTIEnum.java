@@ -13,8 +13,8 @@ public final class RTTIEnum extends RTTI {
         super(pointer);
         this.size = pointer.add(5).readByte();
         this.numValues = pointer.add(6).readShort();
-        this.typeName = pointer.add(8).deref().readCString();
-        this.values = RTTIValue.TYPE.slice(pointer.add(12).deref(), numValues);
+        this.typeName = pointer.add(8).deref32().readCString();
+        this.values = RTTIValue.TYPE.slice(pointer.add(12).deref32(), numValues);
     }
 
     public byte getSize() {
