@@ -1,9 +1,6 @@
 package com.shade.decima.rpcs3.exporter;
 
-import com.shade.decima.rpcs3.rtti.RTTI;
-import com.shade.decima.rpcs3.rtti.RTTIAtom;
-import com.shade.decima.rpcs3.rtti.RTTICompound;
-import com.shade.decima.rpcs3.rtti.RTTIEnum;
+import com.shade.decima.rpcs3.rtti.*;
 import com.shade.decima.rpcs3.util.Pointer;
 
 import java.io.IOException;
@@ -34,11 +31,11 @@ public final class JsonExporter implements Exporter {
 
     @Override
     public void export(Pointer pointer, RTTI rtti) throws IOException {
-        writer.name(rtti.getName().displayName()).beginObject();
+        writer.name(rtti.getName().fullName()).beginObject();
         writer.name("kind").value(switch (rtti.getKind()) {
-            case COMPOUND -> "class";
+            case COMPOUND -> "compound";
             case ENUM -> "enum";
-            case ATOM -> "primitive";
+            case ATOM -> "atom";
             case POINTER -> "pointer";
             case CONTAINER -> "container";
         });
@@ -52,7 +49,7 @@ public final class JsonExporter implements Exporter {
                     writer.name("messages").beginArray();
 
                     for (var handler : compound.getMessageHandlers()) {
-                        writer.value(RTTI.read(handler.message()).getName().displayName());
+                        writer.value(handler.message().read().getName().fullName());
                     }
 
                     writer.endArray();
@@ -63,7 +60,7 @@ public final class JsonExporter implements Exporter {
 
                     for (var base : compound.getBases()) {
                         writer.beginCompactObject();
-                        writer.name("name").value(base.type().read().getName().displayName());
+                        writer.name("type").value(base.type().read().getName().fullName());
                         writer.name("offset").value(base.offset());
                         writer.endCompactObject();
                     }
@@ -84,7 +81,7 @@ public final class JsonExporter implements Exporter {
 
                         writer.beginCompactObject();
                         writer.name("name").value(attr.name());
-                        writer.name("type").value(attr.type().read().getName().displayName());
+                        writer.name("type").value(attr.type().read().getName().fullName());
                         writer.name("offset").value(attr.offset());
                         writer.name("flags").value(attr.flags());
                         if (attr.getter().address() != 0) {
@@ -114,7 +111,17 @@ public final class JsonExporter implements Exporter {
                 if (atom.isSimple()) {
                     writer.name("simple").value(true);
                 }
-                writer.name("base_type").value(atom.getBaseType().read().getName().displayName());
+                writer.name("base_type").value(atom.getBaseType().read().getName().fullName());
+            }
+            case RTTIPointer pointer1 -> {
+                var name = pointer1.getName();
+                writer.name("type").value(name.name());
+                writer.name("item_type").value(name.argument().fullName());
+            }
+            case RTTIContainer pointer1 -> {
+                var name = pointer1.getName();
+                writer.name("type").value(name.name());
+                writer.name("item_type").value(name.argument().fullName());
             }
             default -> {
                 // nothing to do

@@ -39,7 +39,7 @@ public final class IdaExporter implements Exporter {
     @Override
     public void export(Pointer pointer, RTTI rtti) throws IOException {
         writer.newLine();
-        writer.write("\t// %s".formatted(rtti.getName().displayName()));
+        writer.write("\t// %s".formatted(rtti.getName().fullName()));
 
         writer.newLine();
         writer.write("\tset_name(%#08x, \"%s\");".formatted(pointer.address(), idaTypeName(rtti)));
@@ -74,12 +74,12 @@ public final class IdaExporter implements Exporter {
             writer.write("\tapply_type(%#08x, \"%s[%d]\");".formatted(address, memberType, slice.count()));
 
             writer.newLine();
-            writer.write("\tset_name(%#08x, \"%s::%s\");".formatted(address, rtti.getName().internalName(), memberName));
+            writer.write("\tset_name(%#08x, \"%s::%s\");".formatted(address, rtti.getName().fullName(), memberName));
         }
     }
 
     private static String idaTypeName(RTTI rtti) {
-        return "RTTI_%s".formatted(rtti.getName().internalName());
+        return "RTTI_%s".formatted(rtti.getName().fullName());
     }
 
     private static String idaTypeKind(RTTI rtti) {

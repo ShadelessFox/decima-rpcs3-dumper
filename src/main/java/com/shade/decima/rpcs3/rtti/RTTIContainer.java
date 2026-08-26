@@ -56,7 +56,7 @@ public final class RTTIContainer extends RTTI {
     }
 
     @Override
-    public TypeName getName() {
+    public TypeName.Parameterized getName() {
         return TypeName.of(containerType.typeName, itemType.read().getName());
     }
 }

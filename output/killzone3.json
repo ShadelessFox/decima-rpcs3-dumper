@@ -1,0 +1,1393 @@
+{
+	"AIATACTurretWeaponInterface": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIWeaponInterfaceGame", "offset": 0}
+		]
+	},
+	"AIAgent": {
+		"kind": "class",
+		"version": 3,
+		"bases": [
+			{"name": "CoreObject", "offset": 0},
+			{"name": "StateObject", "offset": 8}
+		]
+	},
+	"AIArea": {
+		"kind": "class",
+		"version": 7,
+		"bases": [
+			{"name": "CoreObject", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Name", "type": "String", "offset": 8, "flags": 0},
+			{"name": "NameIsIdentifier", "type": "bool", "offset": 0, "flags": 0, "property": true},
+			{"name": "AreaPortals", "type": "Array<AIAreaPortal>", "offset": 56, "flags": 0},
+			{"name": "DebugColor", "type": "RGBAColor", "offset": 68, "flags": 0},
+			{"category": "Containment"},
+			{"name": "Waypoints", "type": "Array<uint16>", "offset": 40, "flags": 0},
+			{"category": "MetaData"},
+			{"name": "LocationName", "type": "String", "offset": 52, "flags": 0}
+		]
+	},
+	"AIAreaFilter": {
+		"kind": "class",
+		"version": 0,
+		"attrs": [
+			{"name": "CenterPosition", "type": "SPoint3", "offset": 0, "flags": 0},
+			{"name": "SquaredRadius", "type": "SScalar", "offset": 16, "flags": 0}
+		]
+	},
+	"AIAreaGraph": {
+		"kind": "class",
+		"version": 4,
+		"bases": [
+			{"name": "CoreObject", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Areas", "type": "Array<Ref<AIArea>>", "offset": 8, "flags": 0},
+			{"name": "WaypointMap", "type": "Array<uint8>", "offset": 20, "flags": 4}
+		]
+	},
+	"AIAreaPortal": {
+		"kind": "class",
+		"version": 5,
+		"attrs": [
+			{"name": "InsideWaypoint", "type": "uint16", "offset": 0, "flags": 0},
+			{"name": "OutsideWaypoint", "type": "uint16", "offset": 2, "flags": 0}
+		]
+	},
+	"AIAreaRestrictions": {
+		"kind": "class",
+		"version": 0,
+		"attrs": [
+			{"name": "Areas1", "type": "uint64", "offset": 0, "flags": 0},
+			{"name": "Areas2", "type": "uint64", "offset": 8, "flags": 0},
+			{"name": "Areas3", "type": "uint64", "offset": 16, "flags": 0},
+			{"name": "Areas4", "type": "uint64", "offset": 24, "flags": 0}
+		]
+	},
+	"AIAtmosphereBox": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "WorldNode", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "VisibilityDistance", "type": "float", "offset": 0, "flags": 0, "property": true}
+		]
+	},
+	"AIAtmosphereBoxResource": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "CenterOffset", "type": "FVector3", "offset": 12, "flags": 0},
+			{"name": "Width", "type": "float", "offset": 24, "flags": 0},
+			{"name": "Depth", "type": "float", "offset": 28, "flags": 0},
+			{"name": "Height", "type": "float", "offset": 32, "flags": 0},
+			{"name": "VisibilityDistance", "type": "float", "offset": 36, "flags": 0}
+		]
+	},
+	"AIAttackPositionPickerResource": {
+		"kind": "class",
+		"version": 3,
+		"bases": [
+			{"name": "AIPositionPickerResource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"}
+		]
+	},
+	"AIAvoidanceComponent": {
+		"kind": "class",
+		"version": 1,
+		"bases": [
+			{"name": "EntityComponent", "offset": 0}
+		]
+	},
+	"AIAvoidanceComponentResource": {
+		"kind": "class",
+		"version": 1,
+		"bases": [
+			{"name": "EntityComponentResource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "ShapeSpheres", "type": "Array<BoundingSphere>", "offset": 20, "flags": 0},
+			{"name": "LookaheadTime", "type": "float", "offset": 16, "flags": 0}
+		]
+	},
+	"AIBodyAirVehicle": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyControlledVehicle": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyExoSkeleton": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyExplosiveLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyGoal": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "CoreObject", "offset": 0}
+		]
+	},
+	"AIBodyGoalAimAt": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalTarget", "offset": 0}
+		]
+	},
+	"AIBodyGoalAttack": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalTarget", "offset": 0}
+		]
+	},
+	"AIBodyGoalCarry": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalCarryBG": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalCarry", "offset": 0}
+		]
+	},
+	"AIBodyGoalCloseCombat": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalCollectObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalCustomAction": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalDrive": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalMove", "offset": 0}
+		]
+	},
+	"AIBodyGoalFaceTowards": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalTarget", "offset": 0}
+		]
+	},
+	"AIBodyGoalFacialExpression": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalFloat": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalMove", "offset": 0}
+		]
+	},
+	"AIBodyGoalGesture": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalGlance": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalLookAt", "offset": 0}
+		]
+	},
+	"AIBodyGoalLapaAction": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalListen": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalLookAt", "offset": 0}
+		]
+	},
+	"AIBodyGoalLookAt": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalTarget", "offset": 0}
+		]
+	},
+	"AIBodyGoalMountObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalMove": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalPosture": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalSelectWeapon": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalShieldSelf": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoalTarget", "offset": 0}
+		]
+	},
+	"AIBodyGoalSpecialMove": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalTalk": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalTarget": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalUnmountObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalUseIdleObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalUseInventoryItem": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalUseOrderedObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyGoalWeaponLoad": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyGoal", "offset": 0}
+		]
+	},
+	"AIBodyHumanoid": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyInterface": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "CoreObject", "offset": 0}
+		]
+	},
+	"AIBodyInterfaceGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterface", "offset": 0}
+		]
+	},
+	"AIBodyLadder": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyLandVehicle": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyMountedGun": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodyPlayAnimationObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AIBodySoldier": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyHumanoid", "offset": 0}
+		]
+	},
+	"AIBodyTroopCarrier": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyControlledVehicle", "offset": 0}
+		]
+	},
+	"AIBodyTurret": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIBodyInterfaceGame", "offset": 0}
+		]
+	},
+	"AICapsule": {
+		"kind": "class",
+		"version": 0,
+		"attrs": [
+			{"name": "Position", "type": "SPoint3", "offset": 0, "flags": 0},
+			{"name": "Radius", "type": "float", "offset": 16, "flags": 0},
+			{"name": "OuterPosition", "type": "SPoint3", "offset": 32, "flags": 0},
+			{"name": "OuterRadius", "type": "float", "offset": 48, "flags": 0}
+		]
+	},
+	"AICloseCombatWeaponInterface": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIInventoryWeaponInterface", "offset": 0}
+		]
+	},
+	"AICollectableObject": {
+		"kind": "class",
+		"version": 0
+	},
+	"AIConditional": {
+		"kind": "class",
+		"version": 0,
+		"attrs": [
+			{"name": "Statements", "type": "Array<AIStatement>", "offset": 0, "flags": 0}
+		]
+	},
+	"AIContextResource": {
+		"kind": "class",
+		"version": 23,
+		"messages": [
+			"MsgInit"
+		],
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "Movement"},
+			{"name": "Path", "type": "EMovePathChoice", "offset": 20, "flags": 0},
+			{"name": "PathFindingContext", "type": "LinkTypeMask", "offset": 24, "flags": 0},
+			{"name": "ObstacleAvoidanceCosts", "type": "AIObstacleAvoidanceCostsLookup", "offset": 28, "flags": 0},
+			{"name": "Scan", "type": "EMoveScanChoice", "offset": 76, "flags": 0},
+			{"name": "Posture", "type": "EMovePostureChoice", "offset": 80, "flags": 0},
+			{"name": "Reload", "type": "EMoveReloadChoice", "offset": 88, "flags": 0},
+			{"name": "Attack", "type": "EMoveAttackChoice", "offset": 92, "flags": 0},
+			{"name": "SkillContext", "type": "ESkillContext", "offset": 84, "flags": 0},
+			{"name": "GlanceAtPathDelay", "type": "FRange", "offset": 96, "flags": 0},
+			{"name": "GlanceAtPathDuration", "type": "FRange", "offset": 104, "flags": 0},
+			{"name": "ForwardSpeedModifier", "type": "float", "offset": 112, "flags": 0},
+			{"name": "BackwardSpeedModifier", "type": "float", "offset": 116, "flags": 0},
+			{"name": "SidewaysSpeedModifier", "type": "float", "offset": 120, "flags": 0},
+			{"name": "GettingHitSpeedModifier", "type": "float", "offset": 124, "flags": 0},
+			{"name": "MaxAcceleration", "type": "float", "offset": 128, "flags": 0},
+			{"name": "MaxDeceleration", "type": "float", "offset": 132, "flags": 0},
+			{"name": "MoveForward", "type": "bool", "offset": 136, "flags": 0},
+			{"name": "MoveBackward", "type": "bool", "offset": 137, "flags": 0},
+			{"name": "MoveSideways", "type": "bool", "offset": 138, "flags": 0},
+			{"name": "MinimumDuration", "type": "float", "offset": 140, "flags": 0},
+			{"name": "AllowCollissionAvoidance", "type": "bool", "offset": 144, "flags": 0},
+			{"name": "IsOutOfControl", "type": "bool", "offset": 145, "flags": 0},
+			{"name": "AISkillDriveResource", "type": "Ref<AISkillDriveResource>", "offset": 172, "flags": 0},
+			{"category": "LineOfFireAvoidance"},
+			{"name": "SoftBlockingLOFCost", "type": "uint32", "offset": 32, "flags": 0},
+			{"name": "FriendlyLOFBlockMode", "type": "EPathLOFBlockMode", "offset": 36, "flags": 0},
+			{"name": "FriendlyCloseCombatBlockMode", "type": "EPathLOFBlockMode", "offset": 40, "flags": 0},
+			{"name": "FriendlyPlayerLOFBlockMode", "type": "EPathLOFBlockMode", "offset": 44, "flags": 0},
+			{"name": "FriendlyPlayerCloseCombatBlockMode", "type": "EPathLOFBlockMode", "offset": 48, "flags": 0},
+			{"name": "EnemyLOFBlockMode", "type": "EPathLOFBlockMode", "offset": 52, "flags": 0},
+			{"name": "EnemyCloseCombatBlockMode", "type": "EPathLOFBlockMode", "offset": 56, "flags": 0},
+			{"name": "EnemyPlayerLOFBlockMode", "type": "EPathLOFBlockMode", "offset": 60, "flags": 0},
+			{"name": "EnemyPlayerCloseCombatBlockMode", "type": "EPathLOFBlockMode", "offset": 64, "flags": 0},
+			{"name": "PathDetectLOFDistance", "type": "float", "offset": 68, "flags": 0},
+			{"category": "DangerAreaAvoidance"},
+			{"name": "PathDangerAreaCost", "type": "int32", "offset": 72, "flags": 0},
+			{"category": "Aiming"},
+			{"name": "GlanceMaxAimHeadingOffset", "type": "float", "offset": 148, "flags": 0},
+			{"name": "GlanceMaxAimPitchOffset", "type": "float", "offset": 152, "flags": 0},
+			{"name": "MinScanAimTime", "type": "float", "offset": 156, "flags": 0},
+			{"name": "MaxScanAimTime", "type": "float", "offset": 160, "flags": 0},
+			{"name": "ScanResource", "type": "Ref<AIScanContextResource>", "offset": 164, "flags": 0},
+			{"name": "AttackScanResource", "type": "Ref<AIScanContextResource>", "offset": 168, "flags": 0},
+			{"category": "Carry"},
+			{"name": "LowerGunTime", "type": "float", "offset": 176, "flags": 0},
+			{"name": "SwitchToTacticalTime", "type": "float", "offset": 180, "flags": 0},
+			{"name": "SwitchToIdleTime", "type": "float", "offset": 184, "flags": 0}
+		]
+	},
+	"AICoverManager": {
+		"kind": "class",
+		"version": 3,
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "StaticCoverMaps", "type": "Array<Ref<AIStaticCoverMap>>", "offset": 12, "flags": 0}
+		]
+	},
+	"AICoverPositionPickerResource": {
+		"kind": "class",
+		"version": 2,
+		"bases": [
+			{"name": "AIPositionPickerResource", "offset": 0}
+		]
+	},
+	"AIDangerArea": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "CoreObject", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Name", "type": "String", "offset": 8, "flags": 0},
+			{"name": "NameIsIdentifier", "type": "bool", "offset": 0, "flags": 0, "property": true},
+			{"name": "ExpiryTime", "type": "float", "offset": 20, "flags": 0}
+		]
+	},
+	"AIDangerAreaCapsule": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIDangerArea", "offset": 0},
+			{"name": "AICapsule", "offset": 48}
+		]
+	},
+	"AIDangerAreaOrientedBoudingBox": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIDangerArea", "offset": 0}
+		]
+	},
+	"AIDangerAreaSphere": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIDangerArea", "offset": 0},
+			{"name": "AISphere", "offset": 48}
+		]
+	},
+	"AIDarkBox": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "WorldNode", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "LightIntensity", "type": "float", "offset": 80, "flags": 0}
+		]
+	},
+	"AIDirectableAgent": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIAgent", "offset": 0}
+		]
+	},
+	"AIDynamicWaypointGrid": {
+		"kind": "class",
+		"version": 0,
+		"messages": [
+			"MsgReadBinary"
+		],
+		"bases": [
+			{"name": "AIStaticWaypointGrid", "offset": 0}
+		],
+		"attrs": [
+			{"name": "HasVehicleWaypoints", "type": "bool", "offset": 104, "flags": 1}
+		]
+	},
+	"AIEmplacedWeaponObject": {
+		"kind": "class",
+		"version": 0
+	},
+	"AIEscortPositionPickerResource": {
+		"kind": "class",
+		"version": 2,
+		"bases": [
+			{"name": "AIPositionPickerResource", "offset": 0}
+		]
+	},
+	"AIFaction": {
+		"kind": "class",
+		"version": 9,
+		"messages": [
+			"MsgInit"
+		],
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Index", "type": "int", "offset": 16, "flags": 0},
+			{"name": "ShortName", "type": "String", "offset": 20, "flags": 0},
+			{"name": "Color", "type": "RGBAColor", "offset": 24, "flags": 0},
+			{"name": "Enemies", "type": "Array<cptr<AIFaction>>", "offset": 28, "flags": 0},
+			{"name": "ClaimGroup", "type": "int", "offset": 40, "flags": 0}
+		]
+	},
+	"AIFleeDangerAreaPositionPickerResource": {
+		"kind": "class",
+		"version": 2,
+		"bases": [
+			{"name": "AIPositionPickerResource", "offset": 0}
+		]
+	},
+	"AIFormation": {
+		"kind": "class",
+		"version": 3,
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Positions", "type": "Array<AIFormationPosition>", "offset": 12, "flags": 0},
+			{"name": "AOOSize", "type": "float", "offset": 24, "flags": 0}
+		]
+	},
+	"AIFormationPosition": {
+		"kind": "class",
+		"version": 0,
+		"attrs": [
+			{"name": "Position", "type": "FVector3", "offset": 0, "flags": 0},
+			{"name": "Sectors", "type": "AISectors16", "offset": 12, "flags": 0},
+			{"name": "Group", "type": "int", "offset": 16, "flags": 0}
+		]
+	},
+	"AIGroup": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "CoreObject", "offset": 0},
+			{"name": "StateObject", "offset": 8}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "Name", "type": "String", "offset": 12, "flags": 0},
+			{"name": "NameIsIdentifier", "type": "bool", "offset": 0, "flags": 0, "property": true}
+		]
+	},
+	"AIGroupGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIGroup", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemon": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "RTTIObject", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonAirStrafe": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonAlertLevel": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonBodyState": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonCallForReinforcements": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonCaptureTrooper": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonDestructibles": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindAttackLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindCoverLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindGrenadeTarget": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindLapaIdle": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocationShared", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindLocationShared": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindPlayerDeathCamLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFindSearchLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFleeDangerAreaLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonFriendlies": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonGameInfo": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonIndividual": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemon", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonInventory": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonLeanAndPeekAreas": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonMiniDrone": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonMountedGuns": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonFindLocation", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonMultiplayerMissionInfo": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonMultiplayerTerrainInfo": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonObjectStates": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonSquad", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonPathFinder": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonPlayerInfo": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonSpecialMoves": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonSquad": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemon", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonSquadState": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonSquad", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonSquadStrategy": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonSquad", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonTeamMember": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonTerrainInfo": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonThreatReappearanceLocation": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonTroopCarrier": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonUseLocations": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerDaemonVisibility": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPlannerDaemonIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPlannerResource": {
+		"kind": "class",
+		"version": 33,
+		"bases": [
+			{"name": "Resource", "offset": 0}
+		],
+		"attrs": [
+			{"category": "General"},
+			{"name": "DaemonNames", "type": "Array<String>", "offset": 12, "flags": 0},
+			{"name": "PrimitiveTaskNames", "type": "Array<String>", "offset": 24, "flags": 1},
+			{"name": "DomainFileName", "type": "String", "offset": 36, "flags": 0}
+		]
+	},
+	"AIHTNPrimitiveTask": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "RTTIObject", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskAgent": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTask", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskAimAtEntity": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskAimInHeading": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskAirStrafe": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskHoverSegment", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskAssumePosture": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskBroadcast": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskClaimWaypoint": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskClearAreaRestrictions": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskClearOrder": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskConfirmThreatLost": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskCoverMountedGun": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDelayDeathCamFade": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDismountObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDoCustomAction": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDodgeGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskWalk", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDraw": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDriveSegment": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskMove", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskDriveToCloseCombat": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskDriveSegment", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskEndCommandSequence": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskError": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFaceEntityGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFail": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFireBurstAtEntity": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFireBurstAtEntityAndMiss": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFireBurstAtWaypoint": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskFireBurstInDirection": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskForget": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskGlanceAtEntity": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskHoverSegment": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskMove", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskIndividual": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTask", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaAimInHeading": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaDoAction": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaLeanAim": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaLeanFire": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaPeekAtEntity": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaPeekInHeading": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaStayInCover": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaSuppressWaypointList": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskSuppressWaypointList", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLapaToCover": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLog": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLookAtEntityGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLookAtMarker": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLookAtThreat": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLookInHeading": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskLowCrouchGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMessage": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMiniDroneAttack": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskMiniDroneFly", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMiniDroneFly": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskHoverSegment", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMiniDroneScan": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskMiniDroneFly", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMountObject": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskMove": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskNotifyRevivingPlayer": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskNotifyStrategyGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskPauseGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskAgent", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskPlaceHolder": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskPlayAnimGame": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskReloadWeapon": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskRemember": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskRememberOnFail": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskRequestHealing": {
+		"kind": "class",
+		"version": 0,
+		"bases": [
+			{"name": "AIHTNPrimitiveTaskIndividual", "offset": 0}
+		]
+	},
+	"AIHTNPrimitiveTaskScanWaypointList": {
+		"kind": "class"

@@ -44,7 +44,7 @@ public final class RTTIPointer extends RTTI {
     }
 
     @Override
-    public TypeName getName() {
+    public TypeName.Parameterized getName() {
         return TypeName.of(pointerType.typeName, itemType.read().getName());
     }
 }

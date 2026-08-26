@@ -23960,2823 +23960,2823 @@ static main() {
 	set_name(0x14b9160, "RTTI_wchar");
 	apply_type(0x14b9160, "RTTIAtom");
 
-	// Ref<AIAnimationBehaviour>
+	// Ref_AIAnimationBehaviour
 	set_name(0x1544588, "RTTI_Ref_AIAnimationBehaviour");
 	apply_type(0x1544588, "RTTIPointer");
 
-	// Ref<AIArea>
+	// Ref_AIArea
 	set_name(0x14d6354, "RTTI_Ref_AIArea");
 	apply_type(0x14d6354, "RTTIPointer");
 
-	// Ref<AIAreaGraph>
+	// Ref_AIAreaGraph
 	set_name(0x14d642c, "RTTI_Ref_AIAreaGraph");
 	apply_type(0x14d642c, "RTTIPointer");
 
-	// Ref<AIAtmosphereBoxResource>
+	// Ref_AIAtmosphereBoxResource
 	set_name(0x14ceb84, "RTTI_Ref_AIAtmosphereBoxResource");
 	apply_type(0x14ceb84, "RTTIPointer");
 
-	// Ref<AIBehaviour>
+	// Ref_AIBehaviour
 	set_name(0x154445c, "RTTI_Ref_AIBehaviour");
 	apply_type(0x154445c, "RTTIPointer");
 
-	// Ref<AIBrainDataResource>
+	// Ref_AIBrainDataResource
 	set_name(0x15442dc, "RTTI_Ref_AIBrainDataResource");
 	apply_type(0x15442dc, "RTTIPointer");
 
-	// Ref<AIBrainFragmentResource>
+	// Ref_AIBrainFragmentResource
 	set_name(0x1544394, "RTTI_Ref_AIBrainFragmentResource");
 	apply_type(0x1544394, "RTTIPointer");
 
-	// Ref<AICommunicationBehaviour>
+	// Ref_AICommunicationBehaviour
 	set_name(0x15446b4, "RTTI_Ref_AICommunicationBehaviour");
 	apply_type(0x15446b4, "RTTIPointer");
 
-	// Ref<AIContextResource>
+	// Ref_AIContextResource
 	set_name(0x14cfae0, "RTTI_Ref_AIContextResource");
 	apply_type(0x14cfae0, "RTTIPointer");
 
-	// Ref<AICoverManager>
+	// Ref_AICoverManager
 	set_name(0x14d7230, "RTTI_Ref_AICoverManager");
 	apply_type(0x14d7230, "RTTIPointer");
 
-	// Ref<AIFaction>
+	// Ref_AIFaction
 	set_name(0x14cf088, "RTTI_Ref_AIFaction");
 	apply_type(0x14cf088, "RTTIPointer");
 
-	// Ref<AIFleeDangerAreaPositionPickerResource>
+	// Ref_AIFleeDangerAreaPositionPickerResource
 	set_name(0x14d6c28, "RTTI_Ref_AIFleeDangerAreaPositionPickerResource");
 	apply_type(0x14d6c28, "RTTIPointer");
 
-	// Ref<AIHTNPlannerResource>
+	// Ref_AIHTNPlannerResource
 	set_name(0x14d3f14, "RTTI_Ref_AIHTNPlannerResource");
 	apply_type(0x14d3f14, "RTTIPointer");
 
-	// Ref<AIIdleBehaviour>
+	// Ref_AIIdleBehaviour
 	set_name(0x1544650, "RTTI_Ref_AIIdleBehaviour");
 	apply_type(0x1544650, "RTTIPointer");
 
-	// Ref<AIIndividualConfig>
+	// Ref_AIIndividualConfig
 	set_name(0x14cfc08, "RTTI_Ref_AIIndividualConfig");
 	apply_type(0x14cfc08, "RTTIPointer");
 
-	// Ref<AIIndividualHookResource>
+	// Ref_AIIndividualHookResource
 	set_name(0x14cfcc0, "RTTI_Ref_AIIndividualHookResource");
 	apply_type(0x14cfcc0, "RTTIPointer");
 
-	// Ref<AILeadEscortBehaviour>
+	// Ref_AILeadEscortBehaviour
 	set_name(0x1544718, "RTTI_Ref_AILeadEscortBehaviour");
 	apply_type(0x1544718, "RTTIPointer");
 
-	// Ref<AILookBehaviour>
+	// Ref_AILookBehaviour
 	set_name(0x15445ec, "RTTI_Ref_AILookBehaviour");
 	apply_type(0x15445ec, "RTTIPointer");
 
-	// Ref<AILookContext>
+	// Ref_AILookContext
 	set_name(0x154477c, "RTTI_Ref_AILookContext");
 	apply_type(0x154477c, "RTTIPointer");
 
-	// Ref<AILookContextGroup>
+	// Ref_AILookContextGroup
 	set_name(0x15447f0, "RTTI_Ref_AILookContextGroup");
 	apply_type(0x15447f0, "RTTIPointer");
 
-	// Ref<AIMarkerLocatorResource>
+	// Ref_AIMarkerLocatorResource
 	set_name(0x151fc9c, "RTTI_Ref_AIMarkerLocatorResource");
 	apply_type(0x151fc9c, "RTTIPointer");
 
-	// Ref<AIMovementBehaviour>
+	// Ref_AIMovementBehaviour
 	set_name(0x1544524, "RTTI_Ref_AIMovementBehaviour");
 	apply_type(0x1544524, "RTTIPointer");
 
-	// Ref<AIMovementContext>
+	// Ref_AIMovementContext
 	set_name(0x1544854, "RTTI_Ref_AIMovementContext");
 	apply_type(0x1544854, "RTTIPointer");
 
-	// Ref<AINearestWaypoint>
+	// Ref_AINearestWaypoint
 	set_name(0x14d6a00, "RTTI_Ref_AINearestWaypoint");
 	apply_type(0x14d6a00, "RTTIPointer");
 
-	// Ref<AIPerception>
+	// Ref_AIPerception
 	set_name(0x14cf5f8, "RTTI_Ref_AIPerception");
 	apply_type(0x14cf5f8, "RTTIPointer");
 
-	// Ref<AIPositionPickerResource>
+	// Ref_AIPositionPickerResource
 	set_name(0x14d6ab8, "RTTI_Ref_AIPositionPickerResource");
 	apply_type(0x14d6ab8, "RTTIPointer");
 
-	// Ref<AIScanContextResource>
+	// Ref_AIScanContextResource
 	set_name(0x14cfd78, "RTTI_Ref_AIScanContextResource");
 	apply_type(0x14cfd78, "RTTIPointer");
 
-	// Ref<AISkillDriveResource>
+	// Ref_AISkillDriveResource
 	set_name(0x14d2e34, "RTTI_Ref_AISkillDriveResource");
 	apply_type(0x14d2e34, "RTTIPointer");
 
-	// Ref<AISkillResource>
+	// Ref_AISkillResource
 	set_name(0x14cfddc, "RTTI_Ref_AISkillResource");
 	apply_type(0x14cfddc, "RTTIPointer");
 
-	// Ref<AISquadHookResource>
+	// Ref_AISquadHookResource
 	set_name(0x14d3df4, "RTTI_Ref_AISquadHookResource");
 	apply_type(0x14d3df4, "RTTIPointer");
 
-	// Ref<AISquadResource>
+	// Ref_AISquadResource
 	set_name(0x14d3e58, "RTTI_Ref_AISquadResource");
 	apply_type(0x14d3e58, "RTTIPointer");
 
-	// Ref<AIStaticCoverMap>
+	// Ref_AIStaticCoverMap
 	set_name(0x14d73f4, "RTTI_Ref_AIStaticCoverMap");
 	apply_type(0x14d73f4, "RTTIPointer");
 
-	// Ref<AIStrategyResource>
+	// Ref_AIStrategyResource
 	set_name(0x14f80c8, "RTTI_Ref_AIStrategyResource");
 	apply_type(0x14f80c8, "RTTIPointer");
 
-	// Ref<AIWaypointAreaRadiusTable>
+	// Ref_AIWaypointAreaRadiusTable
 	set_name(0x14d6f10, "RTTI_Ref_AIWaypointAreaRadiusTable");
 	apply_type(0x14d6f10, "RTTIPointer");
 
-	// Ref<AIWaypointGrid>
+	// Ref_AIWaypointGrid
 	set_name(0x14d701c, "RTTI_Ref_AIWaypointGrid");
 	apply_type(0x14d701c, "RTTIPointer");
 
-	// Ref<AIWaypointNeighbors>
+	// Ref_AIWaypointNeighbors
 	set_name(0x14d7148, "RTTI_Ref_AIWaypointNeighbors");
 	apply_type(0x14d7148, "RTTIPointer");
 
-	// Ref<AIWeaponOperationResource>
+	// Ref_AIWeaponOperationResource
 	set_name(0x14ce9d0, "RTTI_Ref_AIWeaponOperationResource");
 	apply_type(0x14ce9d0, "RTTIPointer");
 
-	// Ref<AIWeaponPreference>
+	// Ref_AIWeaponPreference
 	set_name(0x14d2450, "RTTI_Ref_AIWeaponPreference");
 	apply_type(0x14d2450, "RTTIPointer");
 
-	// Ref<AIWeaponPreferenceSettings>
+	// Ref_AIWeaponPreferenceSettings
 	set_name(0x14d24c4, "RTTI_Ref_AIWeaponPreferenceSettings");
 	apply_type(0x14d24c4, "RTTIPointer");
 
-	// Ref<AOEUseLocationActions>
+	// Ref_AOEUseLocationActions
 	set_name(0x154fe78, "RTTI_Ref_AOEUseLocationActions");
 	apply_type(0x154fe78, "RTTIPointer");
 
-	// Ref<AOEUseLocationInfo>
+	// Ref_AOEUseLocationInfo
 	set_name(0x154fe14, "RTTI_Ref_AOEUseLocationInfo");
 	apply_type(0x154fe14, "RTTIPointer");
 
-	// Ref<AOEUseLocationInfoActionPair>
+	// Ref_AOEUseLocationInfoActionPair
 	set_name(0x154fedc, "RTTI_Ref_AOEUseLocationInfoActionPair");
 	apply_type(0x154fedc, "RTTIPointer");
 
-	// Ref<AbilityAnimatedByParentResource>
+	// Ref_AbilityAnimatedByParentResource
 	set_name(0x14e3218, "RTTI_Ref_AbilityAnimatedByParentResource");
 	apply_type(0x14e3218, "RTTIPointer");
 
-	// Ref<AbilityAnimationResource>
+	// Ref_AbilityAnimationResource
 	set_name(0x14e32d0, "RTTI_Ref_AbilityAnimationResource");
 	apply_type(0x14e32d0, "RTTIPointer");
 
-	// Ref<AbilityFootPlacementResource>
+	// Ref_AbilityFootPlacementResource
 	set_name(0x14e3450, "RTTI_Ref_AbilityFootPlacementResource");
 	apply_type(0x14e3450, "RTTIPointer");
 
-	// Ref<AbilityHeldItemOverideResource>
+	// Ref_AbilityHeldItemOverideResource
 	set_name(0x14e3e90, "RTTI_Ref_AbilityHeldItemOverideResource");
 	apply_type(0x14e3e90, "RTTIPointer");
 
-	// Ref<AbilityPhonemeAnimationResource>
+	// Ref_AbilityPhonemeAnimationResource
 	set_name(0x14e3740, "RTTI_Ref_AbilityPhonemeAnimationResource");
 	apply_type(0x14e3740, "RTTIPointer");
 
-	// Ref<AbilityRagdollResource>
+	// Ref_AbilityRagdollResource
 	set_name(0x14e3924, "RTTI_Ref_AbilityRagdollResource");
 	apply_type(0x14e3924, "RTTIPointer");
 
-	// Ref<AbilityResource>
+	// Ref_AbilityResource
 	set_name(0x14e3988, "RTTI_Ref_AbilityResource");
 	apply_type(0x14e3988, "RTTIPointer");
 
-	// Ref<AbilityShaderAnimationResource>
+	// Ref_AbilityShaderAnimationResource
 	set_name(0x14e3c78, "RTTI_Ref_AbilityShaderAnimationResource");
 	apply_type(0x14e3c78, "RTTIPointer");
 
-	// Ref<AbilitySimpleAnimationResource>
+	// Ref_AbilitySimpleAnimationResource
 	set_name(0x14e3398, "RTTI_Ref_AbilitySimpleAnimationResource");
 	apply_type(0x14e3398, "RTTIPointer");
 
-	// Ref<AbilityTwoBoneIKResource>
+	// Ref_AbilityTwoBoneIKResource
 	set_name(0x14e3b5c, "RTTI_Ref_AbilityTwoBoneIKResource");
 	apply_type(0x14e3b5c, "RTTIPointer");
 
-	// Ref<AbilityWindAnimationResource>
+	// Ref_AbilityWindAnimationResource
 	set_name(0x14e3d30, "RTTI_Ref_AbilityWindAnimationResource");
 	apply_type(0x14e3d30, "RTTIPointer");
 
-	// Ref<AccuracySettings>
+	// Ref_AccuracySettings
 	set_name(0x15221d0, "RTTI_Ref_AccuracySettings");
 	apply_type(0x15221d0, "RTTIPointer");
 
-	// Ref<ActionModeResource>
+	// Ref_ActionModeResource
 	set_name(0x15483c0, "RTTI_Ref_ActionModeResource");
 	apply_type(0x15483c0, "RTTIPointer");
 
-	// Ref<ActorResource>
+	// Ref_ActorResource
 	set_name(0x151fd54, "RTTI_Ref_ActorResource");
 	apply_type(0x151fd54, "RTTIPointer");
 
-	// Ref<AimDeviationResource>
+	// Ref_AimDeviationResource
 	set_name(0x1522298, "RTTI_Ref_AimDeviationResource");
 	apply_type(0x1522298, "RTTIPointer");
 
-	// Ref<AimLagSettings>
+	// Ref_AimLagSettings
 	set_name(0x1512cac, "RTTI_Ref_AimLagSettings");
 	apply_type(0x1512cac, "RTTIPointer");
 
-	// Ref<AirVehiclePendulumResource>
+	// Ref_AirVehiclePendulumResource
 	set_name(0x1507aa0, "RTTI_Ref_AirVehiclePendulumResource");
 	apply_type(0x1507aa0, "RTTIPointer");
 
-	// Ref<AmmoEjectorResource>
+	// Ref_AmmoEjectorResource
 	set_name(0x15223f8, "RTTI_Ref_AmmoEjectorResource");
 	apply_type(0x15223f8, "RTTIPointer");
 
-	// Ref<AmmoResource>
+	// Ref_AmmoResource
 	set_name(0x1522524, "RTTI_Ref_AmmoResource");
 	apply_type(0x1522524, "RTTIPointer");
 
-	// Ref<AngularBoneSpeedTrackerResource>
+	// Ref_AngularBoneSpeedTrackerResource
 	set_name(0x1541b88, "RTTI_Ref_AngularBoneSpeedTrackerResource");
 	apply_type(0x1541b88, "RTTIPointer");
 
-	// Ref<AnimatedEntityActorResource>
+	// Ref_AnimatedEntityActorResource
 	set_name(0x151fe1c, "RTTI_Ref_AnimatedEntityActorResource");
 	apply_type(0x151fe1c, "RTTIPointer");
 
-	// Ref<AnimatedScreenEffectResource>
+	// Ref_AnimatedScreenEffectResource
 	set_name(0x14fab08, "RTTI_Ref_AnimatedScreenEffectResource");
 	apply_type(0x14fab08, "RTTIPointer");
 
-	// Ref<AnimationDiagramState>
+	// Ref_AnimationDiagramState
 	set_name(0x154206c, "RTTI_Ref_AnimationDiagramState");
 	apply_type(0x154206c, "RTTIPointer");
 
-	// Ref<AnimationDiagramStateAnimationArray>
+	// Ref_AnimationDiagramStateAnimationArray
 	set_name(0x1541ff8, "RTTI_Ref_AnimationDiagramStateAnimationArray");
 	apply_type(0x1541ff8, "RTTIPointer");
 
-	// Ref<AnimationDiagramStateAnimationInfo>
+	// Ref_AnimationDiagramStateAnimationInfo
 	set_name(0x1541f84, "RTTI_Ref_AnimationDiagramStateAnimationInfo");
 	apply_type(0x1541f84, "RTTIPointer");
 
-	// Ref<AnimationEventResource>
+	// Ref_AnimationEventResource
 	set_name(0x14b970c, "RTTI_Ref_AnimationEventResource");
 	apply_type(0x14b970c, "RTTIPointer");
 
-	// Ref<AnimationMotionBase>
+	// Ref_AnimationMotionBase
 	set_name(0x1540850, "RTTI_Ref_AnimationMotionBase");
 	apply_type(0x1540850, "RTTIPointer");
 
-	// Ref<AnimationOverrideActivationResource>
+	// Ref_AnimationOverrideActivationResource
 	set_name(0x154ff50, "RTTI_Ref_AnimationOverrideActivationResource");
 	apply_type(0x154ff50, "RTTIPointer");
 
-	// Ref<AnimationPoseMatchingConfigData>
+	// Ref_AnimationPoseMatchingConfigData
 	set_name(0x14e8d0c, "RTTI_Ref_AnimationPoseMatchingConfigData");
 	apply_type(0x14e8d0c, "RTTIPointer");
 
-	// Ref<AnimationPoseMatchingDataBase>
+	// Ref_AnimationPoseMatchingDataBase
 	set_name(0x14e8de4, "RTTI_Ref_AnimationPoseMatchingDataBase");
 	apply_type(0x14e8de4, "RTTIPointer");
 
-	// Ref<AnimationPoseMatchingHelperResource>
+	// Ref_AnimationPoseMatchingHelperResource
 	set_name(0x14e8ebc, "RTTI_Ref_AnimationPoseMatchingHelperResource");
 	apply_type(0x14e8ebc, "RTTIPointer");
 
-	// Ref<AnimationResource>
+	// Ref_AnimationResource
 	set_name(0x14b9770, "RTTI_Ref_AnimationResource");
 	apply_type(0x14b9770, "RTTIPointer");
 
-	// Ref<AnimationState>
+	// Ref_AnimationState
 	set_name(0x14b9a4c, "RTTI_Ref_AnimationState");
 	apply_type(0x14b9a4c, "RTTIPointer");
 
-	// Ref<AnimationStateEvents>
+	// Ref_AnimationStateEvents
 	set_name(0x14b99c8, "RTTI_Ref_AnimationStateEvents");
 	apply_type(0x14b99c8, "RTTIPointer");
 
-	// Ref<AnimationStateManager>
+	// Ref_AnimationStateManager
 	set_name(0x14b9c50, "RTTI_Ref_AnimationStateManager");
 	apply_type(0x14b9c50, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearBool>
+	// Ref_AnimationTrackLinearBool
 	set_name(0x14ba188, "RTTI_Ref_AnimationTrackLinearBool");
 	apply_type(0x14ba188, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearFQuat>
+	// Ref_AnimationTrackLinearFQuat
 	set_name(0x14ba1ec, "RTTI_Ref_AnimationTrackLinearFQuat");
 	apply_type(0x14ba1ec, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearFVector3>
+	// Ref_AnimationTrackLinearFVector3
 	set_name(0x14ba0c0, "RTTI_Ref_AnimationTrackLinearFVector3");
 	apply_type(0x14ba0c0, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearFVector4>
+	// Ref_AnimationTrackLinearFVector4
 	set_name(0x14ba124, "RTTI_Ref_AnimationTrackLinearFVector4");
 	apply_type(0x14ba124, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearFloat>
+	// Ref_AnimationTrackLinearFloat
 	set_name(0x14ba05c, "RTTI_Ref_AnimationTrackLinearFloat");
 	apply_type(0x14ba05c, "RTTIPointer");
 
-	// Ref<AnimationTrackLinearRGBAColor>
+	// Ref_AnimationTrackLinearRGBAColor
 	set_name(0x14ba250, "RTTI_Ref_AnimationTrackLinearRGBAColor");
 	apply_type(0x14ba250, "RTTIPointer");
 
-	// Ref<Asset>
+	// Ref_Asset
 	set_name(0x14bc120, "RTTI_Ref_Asset");
 	apply_type(0x14bc120, "RTTIPointer");
 
-	// Ref<AttachableExplosiveResource>
+	// Ref_AttachableExplosiveResource
 	set_name(0x15225dc, "RTTI_Ref_AttachableExplosiveResource");
 	apply_type(0x15225dc, "RTTIPointer");
 
-	// Ref<AutoAimHull>
+	// Ref_AutoAimHull
 	set_name(0x153a7ac, "RTTI_Ref_AutoAimHull");
 	apply_type(0x153a7ac, "RTTIPointer");
 
-	// Ref<AutoSelectSkeletonAnimationResource>
+	// Ref_AutoSelectSkeletonAnimationResource
 	set_name(0x14d9778, "RTTI_Ref_AutoSelectSkeletonAnimationResource");
 	apply_type(0x14d9778, "RTTIPointer");
 
-	// Ref<BaseConcreteAsset>
+	// Ref_BaseConcreteAsset
 	set_name(0x14bc194, "RTTI_Ref_BaseConcreteAsset");
 	apply_type(0x14bc194, "RTTIPointer");
 
-	// Ref<BeyondCameraResource>
+	// Ref_BeyondCameraResource
 	set_name(0x154aff4, "RTTI_Ref_BeyondCameraResource");
 	apply_type(0x154aff4, "RTTIPointer");
 
-	// Ref<BlendExpression>
+	// Ref_BlendExpression
 	set_name(0x14ba348, "RTTI_Ref_BlendExpression");
 	apply_type(0x14ba348, "RTTIPointer");
 
-	// Ref<BlendSkeletonAnimationResource>
+	// Ref_BlendSkeletonAnimationResource
 	set_name(0x14d965c, "RTTI_Ref_BlendSkeletonAnimationResource");
 	apply_type(0x14d965c, "RTTIPointer");
 
-	// Ref<BlendedMeshResource>
+	// Ref_BlendedMeshResource
 	set_name(0x14bf030, "RTTI_Ref_BlendedMeshResource");
 	apply_type(0x14bf030, "RTTIPointer");
 
-	// Ref<BloodPuddleSettings>
+	// Ref_BloodPuddleSettings
 	set_name(0x14fb2c4, "RTTI_Ref_BloodPuddleSettings");
 	apply_type(0x14fb2c4, "RTTIPointer");
 
-	// Ref<BloomSettingsResource>
+	// Ref_BloomSettingsResource
 	set_name(0x14cb9f4, "RTTI_Ref_BloomSettingsResource");
 	apply_type(0x14cb9f4, "RTTIPointer");
 
-	// Ref<BlurSettingsResource>
+	// Ref_BlurSettingsResource
 	set_name(0x14cba5c, "RTTI_Ref_BlurSettingsResource");
 	apply_type(0x14cba5c, "RTTIPointer");
 
-	// Ref<BoneAttachedParticleSystemResource>
+	// Ref_BoneAttachedParticleSystemResource
 	set_name(0x14e77fc, "RTTI_Ref_BoneAttachedParticleSystemResource");
 	apply_type(0x14e77fc, "RTTIPointer");
 
-	// Ref<ButtonIconCollection>
+	// Ref_ButtonIconCollection
 	set_name(0x15309b8, "RTTI_Ref_ButtonIconCollection");
 	apply_type(0x15309b8, "RTTIPointer");
 
-	// Ref<CameraEntityResource>
+	// Ref_CameraEntityResource
 	set_name(0x14e2600, "RTTI_Ref_CameraEntityResource");
 	apply_type(0x14e2600, "RTTIPointer");
 
-	// Ref<CaptureAndHoldAreaFactionSettings>
+	// Ref_CaptureAndHoldAreaFactionSettings
 	set_name(0x1521da0, "RTTI_Ref_CaptureAndHoldAreaFactionSettings");
 	apply_type(0x1521da0, "RTTIPointer");
 
-	// Ref<Career>
+	// Ref_Career
 	set_name(0x153e8f8, "RTTI_Ref_Career");
 	apply_type(0x153e8f8, "RTTIPointer");
 
-	// Ref<CareerAbilityResource>
+	// Ref_CareerAbilityResource
 	set_name(0x14eee04, "RTTI_Ref_CareerAbilityResource");
 	apply_type(0x14eee04, "RTTIPointer");
 
-	// Ref<CareerUnlock>
+	// Ref_CareerUnlock
 	set_name(0x153e884, "RTTI_Ref_CareerUnlock");
 	apply_type(0x153e884, "RTTIPointer");
 
-	// Ref<CharacterEyeAnimatorResource>
+	// Ref_CharacterEyeAnimatorResource
 	set_name(0x1547eb4, "RTTI_Ref_CharacterEyeAnimatorResource");
 	apply_type(0x1547eb4, "RTTIPointer");
 
-	// Ref<CharacterFacialExpressionAnimation>
+	// Ref_CharacterFacialExpressionAnimation
 	set_name(0x1547d78, "RTTI_Ref_CharacterFacialExpressionAnimation");
 	apply_type(0x1547d78, "RTTIPointer");
 
-	// Ref<CharacterHeadResource>
+	// Ref_CharacterHeadResource
 	set_name(0x1547e50, "RTTI_Ref_CharacterHeadResource");
 	apply_type(0x1547e50, "RTTIPointer");
 
-	// Ref<CharacterPhysicsMoverResource>
+	// Ref_CharacterPhysicsMoverResource
 	set_name(0x15410d8, "RTTI_Ref_CharacterPhysicsMoverResource");
 	apply_type(0x15410d8, "RTTIPointer");
 
-	// Ref<CircleSettingsResource>
+	// Ref_CircleSettingsResource
 	set_name(0x14cbcbc, "RTTI_Ref_CircleSettingsResource");
 	apply_type(0x14cbcbc, "RTTIPointer");
 
-	// Ref<ClueLineResource>
+	// Ref_ClueLineResource
 	set_name(0x15423a0, "RTTI_Ref_ClueLineResource");
 	apply_type(0x15423a0, "RTTIPointer");
 
-	// Ref<CluePageResource>
+	// Ref_CluePageResource
 	set_name(0x1542478, "RTTI_Ref_CluePageResource");
 	apply_type(0x1542478, "RTTIPointer");
 
-	// Ref<ClueResource>
+	// Ref_ClueResource
 	set_name(0x1542550, "RTTI_Ref_ClueResource");
 	apply_type(0x1542550, "RTTIPointer");
 
-	// Ref<ClueRevelationResource>
+	// Ref_ClueRevelationResource
 	set_name(0x1542628, "RTTI_Ref_ClueRevelationResource");
 	apply_type(0x1542628, "RTTIPointer");
 
-	// Ref<ClusterGrenadeFragmentResource>
+	// Ref_ClusterGrenadeFragmentResource
 	set_name(0x1525d8c, "RTTI_Ref_ClusterGrenadeFragmentResource");
 	apply_type(0x1525d8c, "RTTIPointer");
 
-	// Ref<CollisionHullToRagdollMappingResource>
+	// Ref_CollisionHullToRagdollMappingResource
 	set_name(0x14e38c0, "RTTI_Ref_CollisionHullToRagdollMappingResource");
 	apply_type(0x14e38c0, "RTTIPointer");
 
-	// Ref<ColorizeSettingsResource>
+	// Ref_ColorizeSettingsResource
 	set_name(0x14cbbec, "RTTI_Ref_ColorizeSettingsResource");
 	apply_type(0x14cbbec, "RTTIPointer");
 
-	// Ref<CommunicationMessageEvent>
+	// Ref_CommunicationMessageEvent
 	set_name(0x1547328, "RTTI_Ref_CommunicationMessageEvent");
 	apply_type(0x1547328, "RTTIPointer");
 
-	// Ref<ConcreteAsset>
+	// Ref_ConcreteAsset
 	set_name(0x14bc208, "RTTI_Ref_ConcreteAsset");
 	apply_type(0x14bc208, "RTTIPointer");
 
-	// Ref<ControlledEntityActorResource>
+	// Ref_ControlledEntityActorResource
 	set_name(0x1520024, "RTTI_Ref_ControlledEntityActorResource");
 	apply_type(0x1520024, "RTTIPointer");
 
-	// Ref<CoreObject>
+	// Ref_CoreObject
 	set_name(0x14bc6c4, "RTTI_Ref_CoreObject");
 	apply_type(0x14bc6c4, "RTTIPointer");
 
-	// Ref<CoronaResource>
+	// Ref_CoronaResource
 	set_name(0x14bce10, "RTTI_Ref_CoronaResource");
 	apply_type(0x14bce10, "RTTIPointer");
 
-	// Ref<CrashMoverResource>
+	// Ref_CrashMoverResource
 	set_name(0x14fbc34, "RTTI_Ref_CrashMoverResource");
 	apply_type(0x14fbc34, "RTTIPointer");
 
-	// Ref<CurveResource>
+	// Ref_CurveResource
 	set_name(0x14e0e04, "RTTI_Ref_CurveResource");
 	apply_type(0x14e0e04, "RTTIPointer");
 
-	// Ref<DLCResource>
+	// Ref_DLCResource
 	set_name(0x14efa50, "RTTI_Ref_DLCResource");
 	apply_type(0x14efa50, "RTTIPointer");
 
-	// Ref<DamageAreaResource>
+	// Ref_DamageAreaResource
 	set_name(0x14f9c48, "RTTI_Ref_DamageAreaResource");
 	apply_type(0x14f9c48, "RTTIPointer");
 
-	// Ref<DamageModelResource>
+	// Ref_DamageModelResource
 	set_name(0x14f9d74, "RTTI_Ref_DamageModelResource");
 	apply_type(0x14f9d74, "RTTIPointer");
 
-	// Ref<DamageTypeGroup>
+	// Ref_DamageTypeGroup
 	set_name(0x14faf0c, "RTTI_Ref_DamageTypeGroup");
 	apply_type(0x14faf0c, "RTTIPointer");
 
-	// Ref<DamageTypeResource>
+	// Ref_DamageTypeResource
 	set_name(0x14e1e8c, "RTTI_Ref_DamageTypeResource");
 	apply_type(0x14e1e8c, "RTTIPointer");
 
-	// Ref<DecalResource>
+	// Ref_DecalResource
 	set_name(0x14bcf4c, "RTTI_Ref_DecalResource");
 	apply_type(0x14bcf4c, "RTTIPointer");
 
-	// Ref<DepthOfFieldSettingsResource>
+	// Ref_DepthOfFieldSettingsResource
 	set_name(0x14cb928, "RTTI_Ref_DepthOfFieldSettingsResource");
 	apply_type(0x14cb928, "RTTIPointer");
 
-	// Ref<Destructibility>
+	// Ref_Destructibility
 	set_name(0x14e2808, "RTTI_Ref_Destructibility");
 	apply_type(0x14e2808, "RTTIPointer");
 
-	// Ref<DestructibilityConstraintState>
+	// Ref_DestructibilityConstraintState
 	set_name(0x14e2c44, "RTTI_Ref_DestructibilityConstraintState");
 	apply_type(0x14e2c44, "RTTIPointer");
 
-	// Ref<DestructibilityPartState>
+	// Ref_DestructibilityPartState
 	set_name(0x14e2bd0, "RTTI_Ref_DestructibilityPartState");
 	apply_type(0x14e2bd0, "RTTIPointer");
 
-	// Ref<DestructibilityPartStateResource>
+	// Ref_DestructibilityPartStateResource
 	set_name(0x14e28d0, "RTTI_Ref_DestructibilityPartStateResource");
 	apply_type(0x14e28d0, "RTTIPointer");
 
-	// Ref<DestructibilityResource>
+	// Ref_DestructibilityResource
 	set_name(0x14e2b18, "RTTI_Ref_DestructibilityResource");
 	apply_type(0x14e2b18, "RTTIPointer");
 
-	// Ref<DestructibilityState>
+	// Ref_DestructibilityState
 	set_name(0x14e2cb8, "RTTI_Ref_DestructibilityState");
 	apply_type(0x14e2cb8, "RTTIPointer");
 
-	// Ref<DestructionLogicAction>
+	// Ref_DestructionLogicAction
 	set_name(0x14e2e04, "RTTI_Ref_DestructionLogicAction");
 	apply_type(0x14e2e04, "RTTIPointer");
 
-	// Ref<DifficultyFloatResource>
+	// Ref_DifficultyFloatResource
 	set_name(0x14ea7f0, "RTTI_Ref_DifficultyFloatResource");
 	apply_type(0x14ea7f0, "RTTIPointer");
 
-	// Ref<DifficultyRangeResource>
+	// Ref_DifficultyRangeResource
 	set_name(0x14ea854, "RTTI_Ref_DifficultyRangeResource");
 	apply_type(0x14ea854, "RTTIPointer");
 
-	// Ref<EffectComponentResource>
+	// Ref_EffectComponentResource
 	set_name(0x150f854, "RTTI_Ref_EffectComponentResource");
 	apply_type(0x150f854, "RTTIPointer");
 
-	// Ref<EffectEntityResource>
+	// Ref_EffectEntityResource
 	set_name(0x1500ca4, "RTTI_Ref_EffectEntityResource");
 	apply_type(0x1500ca4, "RTTIPointer");
 
-	// Ref<ElectricityDrawSettings>
+	// Ref_ElectricityDrawSettings
 	set_name(0x153c908, "RTTI_Ref_ElectricityDrawSettings");
 	apply_type(0x153c908, "RTTIPointer");
 
-	// Ref<ElectricityDrawSettingsModifierResource>
+	// Ref_ElectricityDrawSettingsModifierResource
 	set_name(0x153be28, "RTTI_Ref_ElectricityDrawSettingsModifierResource");
 	apply_type(0x153be28, "RTTIPointer");
 
-	// Ref<ElectricityEmitNodeResource>
+	// Ref_ElectricityEmitNodeResource
 	set_name(0x153c094, "RTTI_Ref_ElectricityEmitNodeResource");
 	apply_type(0x153c094, "RTTIPointer");
 
-	// Ref<ElectricityEmitSettings>
+	// Ref_ElectricityEmitSettings
 	set_name(0x153c97c, "RTTI_Ref_ElectricityEmitSettings");
 	apply_type(0x153c97c, "RTTIPointer");
 
-	// Ref<ElectricityGridNodeResource>
+	// Ref_ElectricityGridNodeResource
 	set_name(0x153c14c, "RTTI_Ref_ElectricityGridNodeResource");
 	apply_type(0x153c14c, "RTTIPointer");
 
-	// Ref<ElectricityNodeResource>
+	// Ref_ElectricityNodeResource
 	set_name(0x153be8c, "RTTI_Ref_ElectricityNodeResource");
 	apply_type(0x153be8c, "RTTIPointer");
 
-	// Ref<ElectricitySpawnEntityResource>
+	// Ref_ElectricitySpawnEntityResource
 	set_name(0x153ca34, "RTTI_Ref_ElectricitySpawnEntityResource");
 	apply_type(0x153ca34, "RTTIPointer");
 
-	// Ref<EnergyProjectileResource>
+	// Ref_EnergyProjectileResource
 	set_name(0x153c7a8, "RTTI_Ref_EnergyProjectileResource");
 	apply_type(0x153c7a8, "RTTIPointer");
 
-	// Ref<EntityActorResource>
+	// Ref_EntityActorResource
 	set_name(0x152022c, "RTTI_Ref_EntityActorResource");
 	apply_type(0x152022c, "RTTIPointer");
 
-	// Ref<EntityComponentResource>
+	// Ref_EntityComponentResource
 	set_name(0x14e24e4, "RTTI_Ref_EntityComponentResource");
 	apply_type(0x14e24e4, "RTTIPointer");
 
-	// Ref<EntityResource>
+	// Ref_EntityResource
 	set_name(0x14e23c8, "RTTI_Ref_EntityResource");
 	apply_type(0x14e23c8, "RTTIPointer");
 
-	// Ref<EntityStickerResource>
+	// Ref_EntityStickerResource
 	set_name(0x1500d5c, "RTTI_Ref_EntityStickerResource");
 	apply_type(0x1500d5c, "RTTIPointer");
 
-	// Ref<EventResource>
+	// Ref_EventResource
 	set_name(0x1519be0, "RTTI_Ref_EventResource");
 	apply_type(0x1519be0, "RTTIPointer");
 
-	// Ref<ExplosionResource>
+	// Ref_ExplosionResource
 	set_name(0x1524628, "RTTI_Ref_ExplosionResource");
 	apply_type(0x1524628, "RTTIPointer");
 
-	// Ref<ExposureSettingsResource>
+	// Ref_ExposureSettingsResource
 	set_name(0x14cbd8c, "RTTI_Ref_ExposureSettingsResource");
 	apply_type(0x14cbd8c, "RTTIPointer");
 
-	// Ref<FacialAnimationResource>
+	// Ref_FacialAnimationResource
 	set_name(0x153a9a0, "RTTI_Ref_FacialAnimationResource");
 	apply_type(0x153a9a0, "RTTIPointer");
 
-	// Ref<FacialExpressionAnimatorResource>
+	// Ref_FacialExpressionAnimatorResource
 	set_name(0x153aa04, "RTTI_Ref_FacialExpressionAnimatorResource");
 	apply_type(0x153aa04, "RTTIPointer");
 
-	// Ref<FirearmResource>
+	// Ref_FirearmResource
 	set_name(0x154a914, "RTTI_Ref_FirearmResource");
 	apply_type(0x154a914, "RTTIPointer");
 
-	// Ref<FirstPersonAnimatedOverlayResource>
+	// Ref_FirstPersonAnimatedOverlayResource
 	set_name(0x153a8c8, "RTTI_Ref_FirstPersonAnimatedOverlayResource");
 	apply_type(0x153a8c8, "RTTIPointer");
 
-	// Ref<FirstPersonAnimationResource>
+	// Ref_FirstPersonAnimationResource
 	set_name(0x153a864, "RTTI_Ref_FirstPersonAnimationResource");
 	apply_type(0x153a864, "RTTIPointer");
 
-	// Ref<FirstPersonHitEffectsResource>
+	// Ref_FirstPersonHitEffectsResource
 	set_name(0x14faf70, "RTTI_Ref_FirstPersonHitEffectsResource");
 	apply_type(0x14faf70, "RTTIPointer");
 
-	// Ref<FontResource>
+	// Ref_FontResource
 	set_name(0x14c881c, "RTTI_Ref_FontResource");
 	apply_type(0x14c881c, "RTTIPointer");
 
-	// Ref<GameInputJoystickResource>
+	// Ref_GameInputJoystickResource
 	set_name(0x14eaa34, "RTTI_Ref_GameInputJoystickResource");
 	apply_type(0x14eaa34, "RTTIPointer");
 
-	// Ref<GameInputMotionControllerResource>
+	// Ref_GameInputMotionControllerResource
 	set_name(0x14eaafc, "RTTI_Ref_GameInputMotionControllerResource");
 	apply_type(0x14eaafc, "RTTIPointer");
 
-	// Ref<GestureCollectionResource>
+	// Ref_GestureCollectionResource
 	set_name(0x1520d80, "RTTI_Ref_GestureCollectionResource");
 	apply_type(0x1520d80, "RTTIPointer");
 
-	// Ref<GlobalDamageModifier>
+	// Ref_GlobalDamageModifier
 	set_name(0x14ef688, "RTTI_Ref_GlobalDamageModifier");
 	apply_type(0x14ef688, "RTTIPointer");
 
-	// Ref<Gradient>
+	// Ref_Gradient
 	set_name(0x14e0f84, "RTTI_Ref_Gradient");
 	apply_type(0x14e0f84, "RTTIPointer");
 
-	// Ref<GrainSettingsResource>
+	// Ref_GrainSettingsResource
 	set_name(0x14cb990, "RTTI_Ref_GrainSettingsResource");
 	apply_type(0x14cb990, "RTTIPointer");
 
-	// Ref<GrenadeEjectorResource>
+	// Ref_GrenadeEjectorResource
 	set_name(0x1525c80, "RTTI_Ref_GrenadeEjectorResource");
 	apply_type(0x1525c80, "RTTIPointer");
 
-	// Ref<HUDCrosshairParts>
+	// Ref_HUDCrosshairParts
 	set_name(0x15310e8, "RTTI_Ref_HUDCrosshairParts");
 	apply_type(0x15310e8, "RTTIPointer");
 
-	// Ref<HUDCrosshairSettings>
+	// Ref_HUDCrosshairSettings
 	set_name(0x153114c, "RTTI_Ref_HUDCrosshairSettings");
 	apply_type(0x153114c, "RTTIPointer");
 
-	// Ref<HUDElementResource>
+	// Ref_HUDElementResource
 	set_name(0x1530a90, "RTTI_Ref_HUDElementResource");
 	apply_type(0x1530a90, "RTTIPointer");
 
-	// Ref<HUDInventoryEntitySettings>
+	// Ref_HUDInventoryEntitySettings
 	set_name(0x15341fc, "RTTI_Ref_HUDInventoryEntitySettings");
 	apply_type(0x15341fc, "RTTIPointer");
 
-	// Ref<HUDResource>
+	// Ref_HUDResource
 	set_name(0x1530b04, "RTTI_Ref_HUDResource");
 	apply_type(0x1530b04, "RTTIPointer");
 
-	// Ref<HUDScoreEventActivateAnimation>
+	// Ref_HUDScoreEventActivateAnimation
 	set_name(0x15375b4, "RTTI_Ref_HUDScoreEventActivateAnimation");
 	apply_type(0x15375b4, "RTTIPointer");
 
-	// Ref<HUDScoreEventAnimation>
+	// Ref_HUDScoreEventAnimation
 	set_name(0x1537550, "RTTI_Ref_HUDScoreEventAnimation");
 	apply_type(0x1537550, "RTTIPointer");
 
-	// Ref<HUDTimerSettings>
+	// Ref_HUDTimerSettings
 	set_name(0x1530f68, "RTTI_Ref_HUDTimerSettings");
 	apply_type(0x1530f68, "RTTIPointer");
 
-	// Ref<HelghastGogglesComponentResource>
+	// Ref_HelghastGogglesComponentResource
 	set_name(0x150f4fc, "RTTI_Ref_HelghastGogglesComponentResource");
 	apply_type(0x150f4fc, "RTTIPointer");
 
-	// Ref<HitResponseAttachedParticlesResource>
+	// Ref_HitResponseAttachedParticlesResource
 	set_name(0x14fafd4, "RTTI_Ref_HitResponseAttachedParticlesResource");
 	apply_type(0x14fafd4, "RTTIPointer");
 
-	// Ref<HumanoidCinematicDeathSystemResource>
+	// Ref_HumanoidCinematicDeathSystemResource
 	set_name(0x150e86c, "RTTI_Ref_HumanoidCinematicDeathSystemResource");
 	apply_type(0x150e86c, "RTTIPointer");
 
-	// Ref<HumanoidDeadStateResource>
+	// Ref_HumanoidDeadStateResource
 	set_name(0x150e360, "RTTI_Ref_HumanoidDeadStateResource");
 	apply_type(0x150e360, "RTTIPointer");
 
-	// Ref<HumanoidDirectionalStaggerStateResource>
+	// Ref_HumanoidDirectionalStaggerStateResource
 	set_name(0x150e418, "RTTI_Ref_HumanoidDirectionalStaggerStateResource");
 	apply_type(0x150e418, "RTTIPointer");
 
-	// Ref<HumanoidHitResponseBehaviour>
+	// Ref_HumanoidHitResponseBehaviour
 	set_name(0x14fb0f0, "RTTI_Ref_HumanoidHitResponseBehaviour");
 	apply_type(0x14fb0f0, "RTTIPointer");
 
-	// Ref<HumanoidHitResponseBehaviourOutput>
+	// Ref_HumanoidHitResponseBehaviourOutput
 	set_name(0x14fb08c, "RTTI_Ref_HumanoidHitResponseBehaviourOutput");
 	apply_type(0x14fb08c, "RTTIPointer");
 
-	// Ref<HumanoidSubStateUsingInteractiveEntityResource>
+	// Ref_HumanoidSubStateUsingInteractiveEntityResource
 	set_name(0x150ea20, "RTTI_Ref_HumanoidSubStateUsingInteractiveEntityResource");
 	apply_type(0x150ea20, "RTTIPointer");
 
-	// Ref<ImageMap>
+	// Ref_ImageMap
 	set_name(0x14c95ac, "RTTI_Ref_ImageMap");
 	apply_type(0x14c95ac, "RTTIPointer");
 
-	// Ref<IndexArrayResource>
+	// Ref_IndexArrayResource
 	set_name(0x14c8e60, "RTTI_Ref_IndexArrayResource");
 	apply_type(0x14c8e60, "RTTIPointer");
 
-	// Ref<InventoryCaptureSpawnAbilityResource>
+	// Ref_InventoryCaptureSpawnAbilityResource
 	set_name(0x1517b90, "RTTI_Ref_InventoryCaptureSpawnAbilityResource");
 	apply_type(0x1517b90, "RTTIPointer");
 
-	// Ref<InventoryReviveAbilityResource>
+	// Ref_InventoryReviveAbilityResource
 	set_name(0x1513c7c, "RTTI_Ref_InventoryReviveAbilityResource");
 	apply_type(0x1513c7c, "RTTIPointer");
 
-	// Ref<InventoryWeaponPickUpResource>
+	// Ref_InventoryWeaponPickUpResource
 	set_name(0x1517cac, "RTTI_Ref_InventoryWeaponPickUpResource");
 	apply_type(0x1517cac, "RTTIPointer");
 
-	// Ref<JoystickInputModifierResource>
+	// Ref_JoystickInputModifierResource
 	set_name(0x153acc0, "RTTI_Ref_JoystickInputModifierResource");
 	apply_type(0x153acc0, "RTTIPointer");
 
-	// Ref<LaserBeamResource>
+	// Ref_LaserBeamResource
 	set_name(0x14fa670, "RTTI_Ref_LaserBeamResource");
 	apply_type(0x14fa670, "RTTIPointer");
 
-	// Ref<LeanAndPeekAction>
+	// Ref_LeanAndPeekAction
 	set_name(0x15051b8, "RTTI_Ref_LeanAndPeekAction");
 	apply_type(0x15051b8, "RTTIPointer");
 
-	// Ref<LeanAndPeekPosition>
+	// Ref_LeanAndPeekPosition
 	set_name(0x150523c, "RTTI_Ref_LeanAndPeekPosition");
 	apply_type(0x150523c, "RTTIPointer");
 
-	// Ref<LevelListResource>
+	// Ref_LevelListResource
 	set_name(0x14ef924, "RTTI_Ref_LevelListResource");
 	apply_type(0x14ef924, "RTTIPointer");
 
-	// Ref<LevelSection>
+	// Ref_LevelSection
 	set_name(0x14e0ad4, "RTTI_Ref_LevelSection");
 	apply_type(0x14e0ad4, "RTTIPointer");
 
-	// Ref<LightAttachedCorona>
+	// Ref_LightAttachedCorona
 	set_name(0x14bce74, "RTTI_Ref_LightAttachedCorona");
 	apply_type(0x14bce74, "RTTIPointer");
 
-	// Ref<LightResource>
+	// Ref_LightResource
 	set_name(0x14c8b80, "RTTI_Ref_LightResource");
 	apply_type(0x14c8b80, "RTTIPointer");
 
-	// Ref<LinearBoneSpeedTrackerResource>
+	// Ref_LinearBoneSpeedTrackerResource
 	set_name(0x1541b14, "RTTI_Ref_LinearBoneSpeedTrackerResource");
 	apply_type(0x1541b14, "RTTIPointer");
 
-	// Ref<LocatorResource>
+	// Ref_LocatorResource
 	set_name(0x15204dc, "RTTI_Ref_LocatorResource");
 	apply_type(0x15204dc, "RTTIPointer");
 
-	// Ref<LuaScriptResource>
+	// Ref_LuaScriptResource
 	set_name(0x15420e0, "RTTI_Ref_LuaScriptResource");
 	apply_type(0x15420e0, "RTTIPointer");
 
-	// Ref<LumpOptimizationSettings>
+	// Ref_LumpOptimizationSettings
 	set_name(0x14e10f4, "RTTI_Ref_LumpOptimizationSettings");
 	apply_type(0x14e10f4, "RTTIPointer");
 
-	// Ref<MapIconsResource>
+	// Ref_MapIconsResource
 	set_name(0x153070c, "RTTI_Ref_MapIconsResource");
 	apply_type(0x153070c, "RTTIPointer");
 
-	// Ref<MapResource>
+	// Ref_MapResource
 	set_name(0x15308e0, "RTTI_Ref_MapResource");
 	apply_type(0x15308e0, "RTTIPointer");
 
-	// Ref<MeshResourceBase>
+	// Ref_MeshResourceBase
 	set_name(0x14bec78, "RTTI_Ref_MeshResourceBase");
 	apply_type(0x14bec78, "RTTIPointer");
 
-	// Ref<MissionResource>
+	// Ref_MissionResource
 	set_name(0x1528cec, "RTTI_Ref_MissionResource");
 	apply_type(0x1528cec, "RTTIPointer");
 
-	// Ref<Model>
+	// Ref_Model
 	set_name(0x14e78c8, "RTTI_Ref_Model");
 	apply_type(0x14e78c8, "RTTIPointer");
 
-	// Ref<ModelPartMeshReplacementResource>
+	// Ref_ModelPartMeshReplacementResource
 	set_name(0x14e7cf4, "RTTI_Ref_ModelPartMeshReplacementResource");
 	apply_type(0x14e7cf4, "RTTIPointer");
 
-	// Ref<ModelPartResource>
+	// Ref_ModelPartResource
 	set_name(0x14e7c80, "RTTI_Ref_ModelPartResource");
 	apply_type(0x14e7c80, "RTTIPointer");
 
-	// Ref<ModelResource>
+	// Ref_ModelResource
 	set_name(0x14e792c, "RTTI_Ref_ModelResource");
 	apply_type(0x14e792c, "RTTIPointer");
 
-	// Ref<MotionControllerDeadzone>
+	// Ref_MotionControllerDeadzone
 	set_name(0x153ae10, "RTTI_Ref_MotionControllerDeadzone");
 	apply_type(0x153ae10, "RTTIPointer");
 
-	// Ref<MountedGunWeaponSettings>
+	// Ref_MountedGunWeaponSettings
 	set_name(0x15056c0, "RTTI_Ref_MountedGunWeaponSettings");
 	apply_type(0x15056c0, "RTTIPointer");
 
-	// Ref<MovementIKResource>
+	// Ref_MovementIKResource
 	set_name(0x1542990, "RTTI_Ref_MovementIKResource");
 	apply_type(0x1542990, "RTTIPointer");
 
-	// Ref<Mover>
+	// Ref_Mover
 	set_name(0x14e7d68, "RTTI_Ref_Mover");
 	apply_type(0x14e7d68, "RTTIPointer");
 
-	// Ref<MoverResource>
+	// Ref_MoverResource
 	set_name(0x14e7dcc, "RTTI_Ref_MoverResource");
 	apply_type(0x14e7dcc, "RTTIPointer");
 
-	// Ref<MovieResource>
+	// Ref_MovieResource
 	set_name(0x14efc00, "RTTI_Ref_MovieResource");
 	apply_type(0x14efc00, "RTTIPointer");
 
-	// Ref<MultiBlendedMeshResource>
+	// Ref_MultiBlendedMeshResource
 	set_name(0x14bf14c, "RTTI_Ref_MultiBlendedMeshResource");
 	apply_type(0x14bf14c, "RTTIPointer");
 
-	// Ref<OSDEventParserResource>
+	// Ref_OSDEventParserResource
 	set_name(0x1501548, "RTTI_Ref_OSDEventParserResource");
 	apply_type(0x1501548, "RTTIPointer");
 
-	// Ref<ObjectAttributeAnimatorInstance>
+	// Ref_ObjectAttributeAnimatorInstance
 	set_name(0x14bae00, "RTTI_Ref_ObjectAttributeAnimatorInstance");
 	apply_type(0x14bae00, "RTTIPointer");
 
-	// Ref<ObjectAttributeAnimatorResource>
+	// Ref_ObjectAttributeAnimatorResource
 	set_name(0x14bae74, "RTTI_Ref_ObjectAttributeAnimatorResource");
 	apply_type(0x14bae74, "RTTIPointer");
 
-	// Ref<ObjectAttributeAnimatorResourceBase>
+	// Ref_ObjectAttributeAnimatorResourceBase
 	set_name(0x14bc640, "RTTI_Ref_ObjectAttributeAnimatorResourceBase");
 	apply_type(0x14bc640, "RTTIPointer");
 
-	// Ref<PBDBodyResource>
+	// Ref_PBDBodyResource
 	set_name(0x14bd3c0, "RTTI_Ref_PBDBodyResource");
 	apply_type(0x14bd3c0, "RTTIPointer");
 
-	// Ref<PanicSystemResource>
+	// Ref_PanicSystemResource
 	set_name(0x15482b4, "RTTI_Ref_PanicSystemResource");
 	apply_type(0x15482b4, "RTTIPointer");
 
-	// Ref<ParTimeLevelInfo>
+	// Ref_ParTimeLevelInfo
 	set_name(0x152b168, "RTTI_Ref_ParTimeLevelInfo");
 	apply_type(0x152b168, "RTTIPointer");
 
-	// Ref<ParticleEmitter>
+	// Ref_ParticleEmitter
 	set_name(0x14c4450, "RTTI_Ref_ParticleEmitter");
 	apply_type(0x14c4450, "RTTIPointer");
 
-	// Ref<ParticleSystemResource>
+	// Ref_ParticleSystemResource
 	set_name(0x14c4724, "RTTI_Ref_ParticleSystemResource");
 	apply_type(0x14c4724, "RTTIPointer");
 
-	// Ref<PathResource>
+	// Ref_PathResource
 	set_name(0x14ba890, "RTTI_Ref_PathResource");
 	apply_type(0x14ba890, "RTTIPointer");
 
-	// Ref<PhonemeBoneAnimatorResource>
+	// Ref_PhonemeBoneAnimatorResource
 	set_name(0x153ac08, "RTTI_Ref_PhonemeBoneAnimatorResource");
 	apply_type(0x153ac08, "RTTIPointer");
 
-	// Ref<PhonemeBoneChannel>
+	// Ref_PhonemeBoneChannel
 	set_name(0x153ab94, "RTTI_Ref_PhonemeBoneChannel");
 	apply_type(0x153ab94, "RTTIPointer");
 
-	// Ref<PhonemeChannel>
+	// Ref_PhonemeChannel
 	set_name(0x14e36cc, "RTTI_Ref_PhonemeChannel");
 	apply_type(0x14e36cc, "RTTIPointer");
 
-	// Ref<PhysicsCharacterMoverResource>
+	// Ref_PhysicsCharacterMoverResource
 	set_name(0x14c67c4, "RTTI_Ref_PhysicsCharacterMoverResource");
 	apply_type(0x14c67c4, "RTTIPointer");
 
-	// Ref<PhysicsCollisionResource>
+	// Ref_PhysicsCollisionResource
 	set_name(0x14c6688, "RTTI_Ref_PhysicsCollisionResource");
 	apply_type(0x14c6688, "RTTIPointer");
 
-	// Ref<PhysicsConstraintResource>
+	// Ref_PhysicsConstraintResource
 	set_name(0x14c7c98, "RTTI_Ref_PhysicsConstraintResource");
 	apply_type(0x14c7c98, "RTTIPointer");
 
-	// Ref<PhysicsRagdollBodyControllerResource>
+	// Ref_PhysicsRagdollBodyControllerResource
 	set_name(0x14c759c, "RTTI_Ref_PhysicsRagdollBodyControllerResource");
 	apply_type(0x14c759c, "RTTIPointer");
 
-	// Ref<PhysicsRagdollMotorsResource>
+	// Ref_PhysicsRagdollMotorsResource
 	set_name(0x14c74d4, "RTTI_Ref_PhysicsRagdollMotorsResource");
 	apply_type(0x14c74d4, "RTTIPointer");
 
-	// Ref<PhysicsRagdollResource>
+	// Ref_PhysicsRagdollResource
 	set_name(0x14c7600, "RTTI_Ref_PhysicsRagdollResource");
 	apply_type(0x14c7600, "RTTIPointer");
 
-	// Ref<PhysicsResource>
+	// Ref_PhysicsResource
 	set_name(0x14c6614, "RTTI_Ref_PhysicsResource");
 	apply_type(0x14c6614, "RTTIPointer");
 
-	// Ref<PhysicsSkeleton>
+	// Ref_PhysicsSkeleton
 	set_name(0x14c7664, "RTTI_Ref_PhysicsSkeleton");
 	apply_type(0x14c7664, "RTTIPointer");
 
-	// Ref<PhysicsVehicleResource>
+	// Ref_PhysicsVehicleResource
 	set_name(0x14c6760, "RTTI_Ref_PhysicsVehicleResource");
 	apply_type(0x14c6760, "RTTIPointer");
 
-	// Ref<PickUpDropSettings>
+	// Ref_PickUpDropSettings
 	set_name(0x1518bd0, "RTTI_Ref_PickUpDropSettings");
 	apply_type(0x1518bd0, "RTTIPointer");
 
-	// Ref<PickUpResource>
+	// Ref_PickUpResource
 	set_name(0x1518c44, "RTTI_Ref_PickUpResource");
 	apply_type(0x1518c44, "RTTIPointer");
 
-	// Ref<PlaceableResource>
+	// Ref_PlaceableResource
 	set_name(0x1526168, "RTTI_Ref_PlaceableResource");
 	apply_type(0x1526168, "RTTIPointer");
 
-	// Ref<PlayAnimationObjectResource>
+	// Ref_PlayAnimationObjectResource
 	set_name(0x15079e8, "RTTI_Ref_PlayAnimationObjectResource");
 	apply_type(0x15079e8, "RTTIPointer");
 
-	// Ref<PlayerActorResource>
+	// Ref_PlayerActorResource
 	set_name(0x152064c, "RTTI_Ref_PlayerActorResource");
 	apply_type(0x152064c, "RTTIPointer");
 
-	// Ref<PortableTurretResource>
+	// Ref_PortableTurretResource
 	set_name(0x15172c8, "RTTI_Ref_PortableTurretResource");
 	apply_type(0x15172c8, "RTTIPointer");
 
-	// Ref<PoseMatchingResource>
+	// Ref_PoseMatchingResource
 	set_name(0x14e7860, "RTTI_Ref_PoseMatchingResource");
 	apply_type(0x14e7860, "RTTIPointer");
 
-	// Ref<PositionEventResource>
+	// Ref_PositionEventResource
 	set_name(0x151d6e4, "RTTI_Ref_PositionEventResource");
 	apply_type(0x151d6e4, "RTTIPointer");
 
-	// Ref<PositionLocatorResource>
+	// Ref_PositionLocatorResource
 	set_name(0x1520704, "RTTI_Ref_PositionLocatorResource");
 	apply_type(0x1520704, "RTTIPointer");
 
-	// Ref<PostProcessEffectorResource>
+	// Ref_PostProcessEffectorResource
 	set_name(0x14cbf54, "RTTI_Ref_PostProcessEffectorResource");
 	apply_type(0x14cbf54, "RTTIPointer");
 
-	// Ref<PostProcessSettingsResource>
+	// Ref_PostProcessSettingsResource
 	set_name(0x14cbe9c, "RTTI_Ref_PostProcessSettingsResource");
 	apply_type(0x14cbe9c, "RTTIPointer");
 
-	// Ref<PrimitiveResource>
+	// Ref_PrimitiveResource
 	set_name(0x14c8f18, "RTTI_Ref_PrimitiveResource");
 	apply_type(0x14c8f18, "RTTIPointer");
 
-	// Ref<RandomFireResource>
+	// Ref_RandomFireResource
 	set_name(0x1512d10, "RTTI_Ref_RandomFireResource");
 	apply_type(0x1512d10, "RTTIPointer");
 
-	// Ref<RandomMatrixResourceBase>
+	// Ref_RandomMatrixResourceBase
 	set_name(0x14e8ad4, "RTTI_Ref_RandomMatrixResourceBase");
 	apply_type(0x14e8ad4, "RTTIPointer");
 
-	// Ref<RandomVectorResource>
+	// Ref_RandomVectorResource
 	set_name(0x14e8be0, "RTTI_Ref_RandomVectorResource");
 	apply_type(0x14e8be0, "RTTIPointer");
 
-	// Ref<RegularSkinnedMeshResourceBase>
+	// Ref_RegularSkinnedMeshResourceBase
 	set_name(0x14d9cb0, "RTTI_Ref_RegularSkinnedMeshResourceBase");
 	apply_type(0x14d9cb0, "RTTIPointer");
 
-	// Ref<RegularSkinnedMeshResourceSkinInfo>
+	// Ref_RegularSkinnedMeshResourceSkinInfo
 	set_name(0x14d9d14, "RTTI_Ref_RegularSkinnedMeshResourceSkinInfo");
 	apply_type(0x14d9d14, "RTTIPointer");
 
-	// Ref<RenderEffectResource>
+	// Ref_RenderEffectResource
 	set_name(0x14c90bc, "RTTI_Ref_RenderEffectResource");
 	apply_type(0x14c90bc, "RTTIPointer");
 
-	// Ref<RenderingPrimitiveResource>
+	// Ref_RenderingPrimitiveResource
 	set_name(0x14c8f90, "RTTI_Ref_RenderingPrimitiveResource");
 	apply_type(0x14c8f90, "RTTIPointer");
 
-	// Ref<Resource>
+	// Ref_Resource
 	set_name(0x14bca80, "RTTI_Ref_Resource");
 	apply_type(0x14bca80, "RTTIPointer");
 
-	// Ref<ReverbPresetResource>
+	// Ref_ReverbPresetResource
 	set_name(0x14dd128, "RTTI_Ref_ReverbPresetResource");
 	apply_type(0x14dd128, "RTTIPointer");
 
-	// Ref<RumbleResource>
+	// Ref_RumbleResource
 	set_name(0x14bd530, "RTTI_Ref_RumbleResource");
 	apply_type(0x14bd530, "RTTIPointer");
 
-	// Ref<SKDTreeResource>
+	// Ref_SKDTreeResource
 	set_name(0x14bef04, "RTTI_Ref_SKDTreeResource");
 	apply_type(0x14bef04, "RTTIPointer");
 
-	// Ref<SMGGesture>
+	// Ref_SMGGesture
 	set_name(0x1541eac, "RTTI_Ref_SMGGesture");
 	apply_type(0x1541eac, "RTTIPointer");
 
-	// Ref<SMGGestureCollection>
+	// Ref_SMGGestureCollection
 	set_name(0x1541f20, "RTTI_Ref_SMGGestureCollection");
 	apply_type(0x1541f20, "RTTIPointer");
 
-	// Ref<SSAOSettingsResource>
+	// Ref_SSAOSettingsResource
 	set_name(0x14cbdf0, "RTTI_Ref_SSAOSettingsResource");
 	apply_type(0x14cbdf0, "RTTIPointer");
 
-	// Ref<SabotageComponentResource>
+	// Ref_SabotageComponentResource
 	set_name(0x1514068, "RTTI_Ref_SabotageComponentResource");
 	apply_type(0x1514068, "RTTIPointer");
 
-	// Ref<ScreenEffectResource>
+	// Ref_ScreenEffectResource
 	set_name(0x14faaa4, "RTTI_Ref_ScreenEffectResource");
 	apply_type(0x14faaa4, "RTTIPointer");
 
-	// Ref<ScriptedWeaponResource>
+	// Ref_ScriptedWeaponResource
 	set_name(0x1526428, "RTTI_Ref_ScriptedWeaponResource");
 	apply_type(0x1526428, "RTTIPointer");
 
-	// Ref<SearchAndRetrieveObjectResource>
+	// Ref_SearchAndRetrieveObjectResource
 	set_name(0x15174e0, "RTTI_Ref_SearchAndRetrieveObjectResource");
 	apply_type(0x15174e0, "RTTIPointer");
 
-	// Ref<SentryBotResource>
+	// Ref_SentryBotResource
 	set_name(0x1507e4c, "RTTI_Ref_SentryBotResource");
 	apply_type(0x1507e4c, "RTTIPointer");
 
-	// Ref<SequenceResource>
+	// Ref_SequenceResource
 	set_name(0x1520a5c, "RTTI_Ref_SequenceResource");
 	apply_type(0x1520a5c, "RTTIPointer");
 
-	// Ref<ShaderAnimatorResourceBase>
+	// Ref_ShaderAnimatorResourceBase
 	set_name(0x14babe8, "RTTI_Ref_ShaderAnimatorResourceBase");
 	apply_type(0x14babe8, "RTTIPointer");
 
-	// Ref<ShaderResource>
+	// Ref_ShaderResource
 	set_name(0x14cb220, "RTTI_Ref_ShaderResource");
 	apply_type(0x14cb220, "RTTIPointer");
 
-	// Ref<ShakeResource>
+	// Ref_ShakeResource
 	set_name(0x14e1168, "RTTI_Ref_ShakeResource");
 	apply_type(0x14e1168, "RTTIPointer");
 
-	// Ref<ShimmyModeResource>
+	// Ref_ShimmyModeResource
 	set_name(0x15484cc, "RTTI_Ref_ShimmyModeResource");
 	apply_type(0x15484cc, "RTTIPointer");
 
-	// Ref<SimpleParticleSystemResource>
+	// Ref_SimpleParticleSystemResource
 	set_name(0x15265dc, "RTTI_Ref_SimpleParticleSystemResource");
 	apply_type(0x15265dc, "RTTIPointer");
 
-	// Ref<SimpleSoundResource>
+	// Ref_SimpleSoundResource
 	set_name(0x14dd89c, "RTTI_Ref_SimpleSoundResource");
 	apply_type(0x14dd89c, "RTTIPointer");
 
-	// Ref<Skeleton>
+	// Ref_Skeleton
 	set_name(0x14da164, "RTTI_Ref_Skeleton");
 	apply_type(0x14da164, "RTTIPointer");
 
-	// Ref<SkeletonAnimationResource>
+	// Ref_SkeletonAnimationResource
 	set_name(0x14da4c8, "RTTI_Ref_SkeletonAnimationResource");
 	apply_type(0x14da4c8, "RTTIPointer");
 
-	// Ref<SkeletonBaseAnimationResource>
+	// Ref_SkeletonBaseAnimationResource
 	set_name(0x14da454, "RTTI_Ref_SkeletonBaseAnimationResource");
 	apply_type(0x14da454, "RTTIPointer");
 
-	// Ref<SkeletonHelpers>
+	// Ref_SkeletonHelpers
 	set_name(0x14da22c, "RTTI_Ref_SkeletonHelpers");
 	apply_type(0x14da22c, "RTTIPointer");
 
-	// Ref<SkeletonTargetTree>
+	// Ref_SkeletonTargetTree
 	set_name(0x14da69c, "RTTI_Ref_SkeletonTargetTree");
 	apply_type(0x14da69c, "RTTIPointer");
 
-	// Ref<SkinnedMeshBoneBindings>
+	// Ref_SkinnedMeshBoneBindings
 	set_name(0x14da7b8, "RTTI_Ref_SkinnedMeshBoneBindings");
 	apply_type(0x14da7b8, "RTTIPointer");
 
-	// Ref<SkinnedMeshBoneBoundingBoxes>
+	// Ref_SkinnedMeshBoneBoundingBoxes
 	set_name(0x14daac8, "RTTI_Ref_SkinnedMeshBoneBoundingBoxes");
 	apply_type(0x14daac8, "RTTIPointer");
 
-	// Ref<SkinnedMeshResource>
+	// Ref_SkinnedMeshResource
 	set_name(0x14da870, "RTTI_Ref_SkinnedMeshResource");
 	apply_type(0x14da870, "RTTIPointer");
 
-	// Ref<SkinnedModelResource>
+	// Ref_SkinnedModelResource
 	set_name(0x14e79e4, "RTTI_Ref_SkinnedModelResource");
 	apply_type(0x14e79e4, "RTTIPointer");
 
-	// Ref<SkinnedPointsResource>
+	// Ref_SkinnedPointsResource
 	set_name(0x14daa64, "RTTI_Ref_SkinnedPointsResource");
 	apply_type(0x14daa64, "RTTIPointer");
 
-	// Ref<SoldierResource>
+	// Ref_SoldierResource
 	set_name(0x150e158, "RTTI_Ref_SoldierResource");
 	apply_type(0x150e158, "RTTIPointer");
 
-	// Ref<SoundMixResource>
+	// Ref_SoundMixResource
 	set_name(0x14dc8b0, "RTTI_Ref_SoundMixResource");
 	apply_type(0x14dc8b0, "RTTIPointer");
 
-	// Ref<SoundResource>
+	// Ref_SoundResource
 	set_name(0x14dd6b0, "RTTI_Ref_SoundResource");
 	apply_type(0x14dd6b0, "RTTIPointer");
 
-	// Ref<SoundStateMachineResource>
+	// Ref_SoundStateMachineResource
 	set_name(0x14fb4a8, "RTTI_Ref_SoundStateMachineResource");
 	apply_type(0x14fb4a8, "RTTIPointer");
 
-	// Ref<SoundZoneResource>
+	// Ref_SoundZoneResource
 	set_name(0x14dc954, "RTTI_Ref_SoundZoneResource");
 	apply_type(0x14dc954, "RTTIPointer");
 
-	// Ref<SpawnAreaResource>
+	// Ref_SpawnAreaResource
 	set_name(0x1521f10, "RTTI_Ref_SpawnAreaResource");
 	apply_type(0x1521f10, "RTTIPointer");
 
-	// Ref<SpotLightResource>
+	// Ref_SpotLightResource
 	set_name(0x14cb590, "RTTI_Ref_SpotLightResource");
 	apply_type(0x14cb590, "RTTIPointer");
 
-	// Ref<SpringResource>
+	// Ref_SpringResource
 	set_name(0x1540a24, "RTTI_Ref_SpringResource");
 	apply_type(0x1540a24, "RTTIPointer");
 
-	// Ref<StaticMeshResource>
+	// Ref_StaticMeshResource
 	set_name(0x14befbc, "RTTI_Ref_StaticMeshResource");
 	apply_type(0x14befbc, "RTTIPointer");
 
-	// Ref<StaticModelResource>
+	// Ref_StaticModelResource
 	set_name(0x14e7b00, "RTTI_Ref_StaticModelResource");
 	apply_type(0x14e7b00, "RTTIPointer");
 
-	// Ref<SubmixPresetResource>
+	// Ref_SubmixPresetResource
 	set_name(0x14dde00, "RTTI_Ref_SubmixPresetResource");
 	apply_type(0x14dde00, "RTTIPointer");
 
-	// Ref<SwitchResource>
+	// Ref_SwitchResource
 	set_name(0x1508314, "RTTI_Ref_SwitchResource");
 	apply_type(0x1508314, "RTTIPointer");
 
-	// Ref<TerrainAimReticuleResource>
+	// Ref_TerrainAimReticuleResource
 	set_name(0x1526640, "RTTI_Ref_TerrainAimReticuleResource");
 	apply_type(0x1526640, "RTTIPointer");
 
-	// Ref<Texture>
+	// Ref_Texture
 	set_name(0x14cb168, "RTTI_Ref_Texture");
 	apply_type(0x14cb168, "RTTIPointer");
 
-	// Ref<TextureLUT>
+	// Ref_TextureLUT
 	set_name(0x14cb104, "RTTI_Ref_TextureLUT");
 	apply_type(0x14cb104, "RTTIPointer");
 
-	// Ref<TextureWidgetResource>
+	// Ref_TextureWidgetResource
 	set_name(0x14c17d0, "RTTI_Ref_TextureWidgetResource");
 	apply_type(0x14c17d0, "RTTIPointer");
 
-	// Ref<ThrowableResource>
+	// Ref_ThrowableResource
 	set_name(0x1528804, "RTTI_Ref_ThrowableResource");
 	apply_type(0x1528804, "RTTIPointer");
 
-	// Ref<TorchResource>
+	// Ref_TorchResource
 	set_name(0x154a664, "RTTI_Ref_TorchResource");
 	apply_type(0x154a664, "RTTIPointer");
 
-	// Ref<Typeface>
+	// Ref_Typeface
 	set_name(0x14c9694, "RTTI_Ref_Typeface");
 	apply_type(0x14c9694, "RTTIPointer");
 
-	// Ref<TypefaceStyle>
+	// Ref_TypefaceStyle
 	set_name(0x14c9620, "RTTI_Ref_TypefaceStyle");
 	apply_type(0x14c9620, "RTTIPointer");
 
-	// Ref<UniqueComponentResource>
+	// Ref_UniqueComponentResource
 	set_name(0x150fb14, "RTTI_Ref_UniqueComponentResource");
 	apply_type(0x150fb14, "RTTIPointer");
 
-	// Ref<UnlockableFeatureResource>
+	// Ref_UnlockableFeatureResource
 	set_name(0x152ae54, "RTTI_Ref_UnlockableFeatureResource");
 	apply_type(0x152ae54, "RTTIPointer");
 
-	// Ref<UseLocation>
+	// Ref_UseLocation
 	set_name(0x14e2080, "RTTI_Ref_UseLocation");
 	apply_type(0x14e2080, "RTTIPointer");
 
-	// Ref<UseLocationResource>
+	// Ref_UseLocationResource
 	set_name(0x14e20f4, "RTTI_Ref_UseLocationResource");
 	apply_type(0x14e20f4, "RTTIPointer");
 
-	// Ref<UseLocationResourceGame>
+	// Ref_UseLocationResourceGame
 	set_name(0x14effb0, "RTTI_Ref_UseLocationResourceGame");
 	apply_type(0x14effb0, "RTTIPointer");
 
-	// Ref<VehicleWeaponResource>
+	// Ref_VehicleWeaponResource
 	set_name(0x152216c, "RTTI_Ref_VehicleWeaponResource");
 	apply_type(0x152216c, "RTTIPointer");
 
-	// Ref<VertexArrayResource>
+	// Ref_VertexArrayResource
 	set_name(0x14c8dfc, "RTTI_Ref_VertexArrayResource");
 	apply_type(0x14c8dfc, "RTTIPointer");
 
-	// Ref<VignetteSettingsResource>
+	// Ref_VignetteSettingsResource
 	set_name(0x14cbd24, "RTTI_Ref_VignetteSettingsResource");
 	apply_type(0x14cbd24, "RTTIPointer");
 
-	// Ref<WWiseSoundBankResource>
+	// Ref_WWiseSoundBankResource
 	set_name(0x14de494, "RTTI_Ref_WWiseSoundBankResource");
 	apply_type(0x14de494, "RTTIPointer");
 
-	// Ref<WWiseSoundZoneResource>
+	// Ref_WWiseSoundZoneResource
 	set_name(0x14de5dc, "RTTI_Ref_WWiseSoundZoneResource");
 	apply_type(0x14de5dc, "RTTIPointer");
 
-	// Ref<WaterResource>
+	// Ref_WaterResource
 	set_name(0x14cda58, "RTTI_Ref_WaterResource");
 	apply_type(0x14cda58, "RTTIPointer");
 
-	// Ref<WaterSystemResource>
+	// Ref_WaterSystemResource
 	set_name(0x14cd9f4, "RTTI_Ref_WaterSystemResource");
 	apply_type(0x14cd9f4, "RTTIPointer");
 
-	// Ref<WeakResourceReference>
+	// Ref_WeakResourceReference
 	set_name(0x1540a88, "RTTI_Ref_WeakResourceReference");
 	apply_type(0x1540a88, "RTTIPointer");
 
-	// Ref<WeaponPickUpResource>
+	// Ref_WeaponPickUpResource
 	set_name(0x1518f58, "RTTI_Ref_WeaponPickUpResource");
 	apply_type(0x1518f58, "RTTIPointer");
 
-	// Ref<WeaponRackItem>
+	// Ref_WeaponRackItem
 	set_name(0x1528694, "RTTI_Ref_WeaponRackItem");
 	apply_type(0x1528694, "RTTIPointer");
 
-	// Ref<WidgetDecorationBracket>
+	// Ref_WidgetDecorationBracket
 	set_name(0x14c1acc, "RTTI_Ref_WidgetDecorationBracket");
 	apply_type(0x14c1acc, "RTTIPointer");
 
-	// Ref<WipeCompletionRegion>
+	// Ref_WipeCompletionRegion
 	set_name(0x154af2c, "RTTI_Ref_WipeCompletionRegion");
 	apply_type(0x154af2c, "RTTIPointer");
 
-	// Ref<Zone>
+	// Ref_Zone
 	set_name(0x14ce004, "RTTI_Ref_Zone");
 	apply_type(0x14ce004, "RTTIPointer");
 
-	// Ref<ZoomSetting>
+	// Ref_ZoomSetting
 	set_name(0x1528868, "RTTI_Ref_ZoomSetting");
 	apply_type(0x1528868, "RTTIPointer");
 
-	// cptr<AIFaction>
+	// cptr_AIFaction
 	set_name(0x14cf068, "RTTI_cptr_AIFaction");
 	apply_type(0x14cf068, "RTTIPointer");
 
-	// cptr<AILinkTypeInfo>
+	// cptr_AILinkTypeInfo
 	set_name(0x14d6880, "RTTI_cptr_AILinkTypeInfo");
 	apply_type(0x14d6880, "RTTIPointer");
 
-	// cptr<AnimationState>
+	// cptr_AnimationState
 	set_name(0x14b9a2c, "RTTI_cptr_AnimationState");
 	apply_type(0x14b9a2c, "RTTIPointer");
 
-	// cptr<CoreObject>
+	// cptr_CoreObject
 	set_name(0x14bc6a4, "RTTI_cptr_CoreObject");
 	apply_type(0x14bc6a4, "RTTIPointer");
 
-	// cptr<CreateEntityAction>
+	// cptr_CreateEntityAction
 	set_name(0x14f8e70, "RTTI_cptr_CreateEntityAction");
 	apply_type(0x14f8e70, "RTTIPointer");
 
-	// cptr<DamageTypeResource>
+	// cptr_DamageTypeResource
 	set_name(0x14e1e7c, "RTTI_cptr_DamageTypeResource");
 	apply_type(0x14e1e7c, "RTTIPointer");
 
-	// cptr<DestructionLogicAction>
+	// cptr_DestructionLogicAction
 	set_name(0x14e2de4, "RTTI_cptr_DestructionLogicAction");
 	apply_type(0x14e2de4, "RTTIPointer");
 
-	// cptr<Entity>
+	// cptr_Entity
 	set_name(0x14e21c0, "RTTI_cptr_Entity");
 	apply_type(0x14e21c0, "RTTIPointer");
 
-	// cptr<EntityRep>
+	// cptr_EntityRep
 	set_name(0x14e22e0, "RTTI_cptr_EntityRep");
 	apply_type(0x14e22e0, "RTTIPointer");
 
-	// cptr<GestureAction>
+	// cptr_GestureAction
 	set_name(0x14eb14c, "RTTI_cptr_GestureAction");
 	apply_type(0x14eb14c, "RTTIPointer");
 
-	// cptr<GestureNode>
+	// cptr_GestureNode
 	set_name(0x14eb0e8, "RTTI_cptr_GestureNode");
 	apply_type(0x14eb0e8, "RTTIPointer");
 
-	// cptr<GestureResource>
+	// cptr_GestureResource
 	set_name(0x14eb074, "RTTI_cptr_GestureResource");
 	apply_type(0x14eb074, "RTTIPointer");
 
-	// cptr<InventoryEntityResource>
+	// cptr_InventoryEntityResource
 	set_name(0x15138ec, "RTTI_cptr_InventoryEntityResource");
 	apply_type(0x15138ec, "RTTIPointer");
 
-	// cptr<InventoryPlaceableResource>
+	// cptr_InventoryPlaceableResource
 	set_name(0x1512f48, "RTTI_cptr_InventoryPlaceableResource");
 	apply_type(0x1512f48, "RTTIPointer");
 
-	// cptr<InventoryWeaponResource>
+	// cptr_InventoryWeaponResource
 	set_name(0x1512e3c, "RTTI_cptr_InventoryWeaponResource");
 	apply_type(0x1512e3c, "RTTIPointer");
 
-	// cptr<LeanAndPeekAction>
+	// cptr_LeanAndPeekAction
 	set_name(0x1505198, "RTTI_cptr_LeanAndPeekAction");
 	apply_type(0x1505198, "RTTIPointer");
 
-	// cptr<LeanAndPeekPosition>
+	// cptr_LeanAndPeekPosition
 	set_name(0x150522c, "RTTI_cptr_LeanAndPeekPosition");
 	apply_type(0x150522c, "RTTIPointer");
 
-	// cptr<Light>
+	// cptr_Light
 	set_name(0x14c88b0, "RTTI_cptr_Light");
 	apply_type(0x14c88b0, "RTTIPointer");
 
-	// cptr<MeshHierachyShaderOverrides>
+	// cptr_MeshHierachyShaderOverrides
 	set_name(0x14cb4d8, "RTTI_cptr_MeshHierachyShaderOverrides");
 	apply_type(0x14cb4d8, "RTTIPointer");
 
-	// cptr<MissileSiloResource>
+	// cptr_MissileSiloResource
 	set_name(0x1525fb4, "RTTI_cptr_MissileSiloResource");
 	apply_type(0x1525fb4, "RTTIPointer");
 
-	// cptr<NetEntity>
+	// cptr_NetEntity
 	set_name(0x14e30b4, "RTTI_cptr_NetEntity");
 	apply_type(0x14e30b4, "RTTIPointer");
 
-	// cptr<PivotFollowCameraEntityResource>
+	// cptr_PivotFollowCameraEntityResource
 	set_name(0x150140c, "RTTI_cptr_PivotFollowCameraEntityResource");
 	apply_type(0x150140c, "RTTIPointer");
 
-	// cptr<RadioMessage>
+	// cptr_RadioMessage
 	set_name(0x14efec0, "RTTI_cptr_RadioMessage");
 	apply_type(0x14efec0, "RTTIPointer");
 
-	// cptr<UseLocationResource>
+	// cptr_UseLocationResource
 	set_name(0x14e20e4, "RTTI_cptr_UseLocationResource");
 	apply_type(0x14e20e4, "RTTIPointer");
 
-	// cptr<Zone>
+	// cptr_Zone
 	set_name(0x14cdfe4, "RTTI_cptr_Zone");
 	apply_type(0x14cdfe4, "RTTIPointer");
 
-	// Array<AIAreaPortal>
+	// Array_AIAreaPortal
 	set_name(0x14d63c8, "RTTI_Array_AIAreaPortal");
 	apply_type(0x14d63c8, "RTTIContainer");
 
-	// Array<AIFormationPosition>
+	// Array_AIFormationPosition
 	set_name(0x14d3330, "RTTI_Array_AIFormationPosition");
 	apply_type(0x14d3330, "RTTIContainer");
 
-	// Array<AIPlayerBehaviorCategory>
+	// Array_AIPlayerBehaviorCategory
 	set_name(0x14d629c, "RTTI_Array_AIPlayerBehaviorCategory");
 	apply_type(0x14d629c, "RTTIContainer");
 
-	// Array<AISequencedAimRow>
+	// Array_AISequencedAimRow
 	set_name(0x14cf704, "RTTI_Array_AISequencedAimRow");
 	apply_type(0x14cf704, "RTTIContainer");
 
-	// Array<AIStatement>
+	// Array_AIStatement
 	set_name(0x14ced00, "RTTI_Array_AIStatement");
 	apply_type(0x14ced00, "RTTIContainer");
 
-	// Array<AIStaticCoverMapObjectMappingEntry>
+	// Array_AIStaticCoverMapObjectMappingEntry
 	set_name(0x14d72e8, "RTTI_Array_AIStaticCoverMapObjectMappingEntry");
 	apply_type(0x14d72e8, "RTTIContainer");
 
-	// Array<AIWaypoint>
+	// Array_AIWaypoint
 	set_name(0x14d6e48, "RTTI_Array_AIWaypoint");
 	apply_type(0x14d6e48, "RTTIContainer");
 
-	// Array<AIWaypointAreaRadius>
+	// Array_AIWaypointAreaRadius
 	set_name(0x14d6eac, "RTTI_Array_AIWaypointAreaRadius");
 	apply_type(0x14d6eac, "RTTIContainer");
 
-	// Array<AIWaypointNeighborIds>
+	// Array_AIWaypointNeighborIds
 	set_name(0x14d7080, "RTTI_Array_AIWaypointNeighborIds");
 	apply_type(0x14d7080, "RTTIContainer");
 
-	// Array<AIWaypointNeighborLinkTypeInfo>
+	// Array_AIWaypointNeighborLinkTypeInfo
 	set_name(0x14d70e4, "RTTI_Array_AIWaypointNeighborLinkTypeInfo");
 	apply_type(0x14d70e4, "RTTIContainer");
 
-	// Array<AIWaypointNeighborTravel>
+	// Array_AIWaypointNeighborTravel
 	set_name(0x14d71ac, "RTTI_Array_AIWaypointNeighborTravel");
 	apply_type(0x14d71ac, "RTTIContainer");
 
-	// Array<AbilityRagdollConstraintMotorData>
+	// Array_AbilityRagdollConstraintMotorData
 	set_name(0x14e37f8, "RTTI_Array_AbilityRagdollConstraintMotorData");
 	apply_type(0x14e37f8, "RTTIContainer");
 
-	// Array<AbilityShaderAnimationResourceLink>
+	// Array_AbilityShaderAnimationResourceLink
 	set_name(0x14e3c14, "RTTI_Array_AbilityShaderAnimationResourceLink");
 	apply_type(0x14e3c14, "RTTIContainer");
 
-	// Array<Achievement>
+	// Array_Achievement
 	set_name(0x14f02c4, "RTTI_Array_Achievement");
 	apply_type(0x14f02c4, "RTTIContainer");
 
-	// Array<ActionPerAnimationEvent>
+	// Array_ActionPerAnimationEvent
 	set_name(0x150ed34, "RTTI_Array_ActionPerAnimationEvent");
 	apply_type(0x150ed34, "RTTIContainer");
 
-	// Array<AlphaPeg>
+	// Array_AlphaPeg
 	set_name(0x14e0f20, "RTTI_Array_AlphaPeg");
 	apply_type(0x14e0f20, "RTTIContainer");
 
-	// Array<AmmoBeltAnimationSettings>
+	// Array_AmmoBeltAnimationSettings
 	set_name(0x1505608, "RTTI_Array_AmmoBeltAnimationSettings");
 	apply_type(0x1505608, "RTTIContainer");
 
-	// Array<AmmoBoxResourceReloadSettings>
+	// Array_AmmoBoxResourceReloadSettings
 	set_name(0x1502ae0, "RTTI_Array_AmmoBoxResourceReloadSettings");
 	apply_type(0x1502ae0, "RTTIContainer");
 
-	// Array<AmmoPickupSetting>
+	// Array_AmmoPickupSetting
 	set_name(0x1518ef4, "RTTI_Array_AmmoPickupSetting");
 	apply_type(0x1518ef4, "RTTIContainer");
 
-	// Array<AnimationEvent>
+	// Array_AnimationEvent
 	set_name(0x14b97d4, "RTTI_Array_AnimationEvent");
 	apply_type(0x14b97d4, "RTTIContainer");
 
-	// Array<AnimationExpressionCouple>
+	// Array_AnimationExpressionCouple
 	set_name(0x153a93c, "RTTI_Array_AnimationExpressionCouple");
 	apply_type(0x153a93c, "RTTIContainer");
 
-	// Array<AnimationPoseMatchingAnimationData>
+	// Array_AnimationPoseMatchingAnimationData
 	set_name(0x14e8d80, "RTTI_Array_AnimationPoseMatchingAnimationData");
 	apply_type(0x14e8d80, "RTTIContainer");
 
-	// Array<AnimationPoseMatchingBoneData>
+	// Array_AnimationPoseMatchingBoneData
 	set_name(0x14e8c44, "RTTI_Array_AnimationPoseMatchingBoneData");
 	apply_type(0x14e8c44, "RTTIContainer");
 
-	// Array<AnimationPoseMatchingPose>
+	// Array_AnimationPoseMatchingPose
 	set_name(0x14e8ca8, "RTTI_Array_AnimationPoseMatchingPose");
 	apply_type(0x14e8ca8, "RTTIContainer");
 
-	// Array<AnimationSoundEvent>
+	// Array_AnimationSoundEvent
 	set_name(0x14b9838, "RTTI_Array_AnimationSoundEvent");
 	apply_type(0x14b9838, "RTTIContainer");
 
-	// Array<AnimationStateGroup>
+	// Array_AnimationStateGroup
 	set_name(0x14b9ac0, "RTTI_Array_AnimationStateGroup");
 	apply_type(0x14b9ac0, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_FQuat>
+	// Array_AnimationTrackKeyFrame_FQuat
 	set_name(0x14b9f40, "RTTI_Array_AnimationTrackKeyFrame_FQuat");
 	apply_type(0x14b9f40, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_FVector3>
+	// Array_AnimationTrackKeyFrame_FVector3
 	set_name(0x14b9e78, "RTTI_Array_AnimationTrackKeyFrame_FVector3");
 	apply_type(0x14b9e78, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_FVector4>
+	// Array_AnimationTrackKeyFrame_FVector4
 	set_name(0x14b9edc, "RTTI_Array_AnimationTrackKeyFrame_FVector4");
 	apply_type(0x14b9edc, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_RGBAColor>
+	// Array_AnimationTrackKeyFrame_RGBAColor
 	set_name(0x14b9fa4, "RTTI_Array_AnimationTrackKeyFrame_RGBAColor");
 	apply_type(0x14b9fa4, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_bool>
+	// Array_AnimationTrackKeyFrame_bool
 	set_name(0x14b9db0, "RTTI_Array_AnimationTrackKeyFrame_bool");
 	apply_type(0x14b9db0, "RTTIContainer");
 
-	// Array<AnimationTrackKeyFrame_float>
+	// Array_AnimationTrackKeyFrame_float
 	set_name(0x14b9e14, "RTTI_Array_AnimationTrackKeyFrame_float");
 	apply_type(0x14b9e14, "RTTIContainer");
 
-	// Array<AnimationWWiseSoundEvent>
+	// Array_AnimationWWiseSoundEvent
 	set_name(0x14b989c, "RTTI_Array_AnimationWWiseSoundEvent");
 	apply_type(0x14b989c, "RTTIContainer");
 
-	// Array<AttachedLightBinding>
+	// Array_AttachedLightBinding
 	set_name(0x150efa0, "RTTI_Array_AttachedLightBinding");
 	apply_type(0x150efa0, "RTTIContainer");
 
-	// Array<AttachmentPConstraint>
+	// Array_AttachmentPConstraint
 	set_name(0x14e88c0, "RTTI_Array_AttachmentPConstraint");
 	apply_type(0x14e88c0, "RTTIContainer");
 
-	// Array<AttackerToVictimDamageModifier>
+	// Array_AttackerToVictimDamageModifier
 	set_name(0x14ef624, "RTTI_Array_AttackerToVictimDamageModifier");
 	apply_type(0x14ef624, "RTTIContainer");
 
-	// Array<AutoSelectNodeEntry>
+	// Array_AutoSelectNodeEntry
 	set_name(0x14e8e58, "RTTI_Array_AutoSelectNodeEntry");
 	apply_type(0x14e8e58, "RTTIContainer");
 
-	// Array<AxisFunctionMapping>
+	// Array_AxisFunctionMapping
 	set_name(0x14eabc4, "RTTI_Array_AxisFunctionMapping");
 	apply_type(0x14eabc4, "RTTIContainer");
 
-	// Array<BadgeIcon>
+	// Array_BadgeIcon
 	set_name(0x1531300, "RTTI_Array_BadgeIcon");
 	apply_type(0x1531300, "RTTIContainer");
 
-	// Array<BaselineTimes>
+	// Array_BaselineTimes
 	set_name(0x152b104, "RTTI_Array_BaselineTimes");
 	apply_type(0x152b104, "RTTIContainer");
 
-	// Array<BeyondUseLocationInfo>
+	// Array_BeyondUseLocationInfo
 	set_name(0x154ea0c, "RTTI_Array_BeyondUseLocationInfo");
 	apply_type(0x154ea0c, "RTTIContainer");
 
-	// Array<BlendExpressionByteCode>
+	// Array_BlendExpressionByteCode
 	set_name(0x14ba2e4, "RTTI_Array_BlendExpressionByteCode");
 	apply_type(0x14ba2e4, "RTTIContainer");
 
-	// Array<BlendTargetDeformation>
+	// Array_BlendTargetDeformation
 	set_name(0x14d9ff4, "RTTI_Array_BlendTargetDeformation");
 	apply_type(0x14d9ff4, "RTTIContainer");
 
-	// Array<BlendedMeshEntry>
+	// Array_BlendedMeshEntry
 	set_name(0x14bf0e8, "RTTI_Array_BlendedMeshEntry");
 	apply_type(0x14bf0e8, "RTTIContainer");
 
-	// Array<BloodSplatterProperties>
+	// Array_BloodSplatterProperties
 	set_name(0x1533fa0, "RTTI_Array_BloodSplatterProperties");
 	apply_type(0x1533fa0, "RTTIContainer");
 
-	// Array<BoneAttachedParticleSystemLink>
+	// Array_BoneAttachedParticleSystemLink
 	set_name(0x14e7798, "RTTI_Array_BoneAttachedParticleSystemLink");
 	apply_type(0x14e7798, "RTTIContainer");
 
-	// Array<BoundingBox3>
+	// Array_BoundingBox3
 	set_name(0x14ada6c, "RTTI_Array_BoundingBox3");
 	apply_type(0x14ada6c, "RTTIContainer");
 
-	// Array<BoundingSphere>
+	// Array_BoundingSphere
 	set_name(0x14adad0, "RTTI_Array_BoundingSphere");
 	apply_type(0x14adad0, "RTTIContainer");
 
-	// Array<BrutalMeleeDeathSoundOverride>
+	// Array_BrutalMeleeDeathSoundOverride
 	set_name(0x150f2d4, "RTTI_Array_BrutalMeleeDeathSoundOverride");
 	apply_type(0x150f2d4, "RTTIContainer");
 
-	// Array<BrutalMeleeRegionSettings>
+	// Array_BrutalMeleeRegionSettings
 	set_name(0x150f39c, "RTTI_Array_BrutalMeleeRegionSettings");
 	apply_type(0x150f39c, "RTTIContainer");
 
-	// Array<ButtonFunctionMapping>
+	// Array_ButtonFunctionMapping
 	set_name(0x14eab60, "RTTI_Array_ButtonFunctionMapping");
 	apply_type(0x14eab60, "RTTIContainer");
 
-	// Array<ButtonIcon>
+	// Array_ButtonIcon
 	set_name(0x1530954, "RTTI_Array_ButtonIcon");
 	apply_type(0x1530954, "RTTIContainer");
 
-	// Array<ButtonPressureDefinition>
+	// Array_ButtonPressureDefinition
 	set_name(0x14ea9d0, "RTTI_Array_ButtonPressureDefinition");
 	apply_type(0x14ea9d0, "RTTIContainer");
 
-	// Array<CaHObjective>
+	// Array_CaHObjective
 	set_name(0x1528b7c, "RTTI_Array_CaHObjective");
 	apply_type(0x1528b7c, "RTTIContainer");
 
-	// Array<CaptureAndHoldMapZone>
+	// Array_CaptureAndHoldMapZone
 	set_name(0x153087c, "RTTI_Array_CaptureAndHoldMapZone");
 	apply_type(0x153087c, "RTTIContainer");
 
-	// Array<CharacterHeadLOD>
+	// Array_CharacterHeadLOD
 	set_name(0x1547dec, "RTTI_Array_CharacterHeadLOD");
 	apply_type(0x1547dec, "RTTIContainer");
 
-	// Array<ChildEntityDescription>
+	// Array_ChildEntityDescription
 	set_name(0x14e2354, "RTTI_Array_ChildEntityDescription");
 	apply_type(0x14e2354, "RTTIContainer");
 
-	// Array<CircleSettings>
+	// Array_CircleSettings
 	set_name(0x14cbc58, "RTTI_Array_CircleSettings");
 	apply_type(0x14cbc58, "RTTIContainer");
 
-	// Array<CloseCombatEffect>
+	// Array_CloseCombatEffect
 	set_name(0x150f270, "RTTI_Array_CloseCombatEffect");
 	apply_type(0x150f270, "RTTIContainer");
 
-	// Array<CloseCombatStrike>
+	// Array_CloseCombatStrike
 	set_name(0x1512d74, "RTTI_Array_CloseCombatStrike");
 	apply_type(0x1512d74, "RTTIContainer");
 
-	// Array<CloseCombatVariation>
+	// Array_CloseCombatVariation
 	set_name(0x1512dd8, "RTTI_Array_CloseCombatVariation");
 	apply_type(0x1512dd8, "RTTIContainer");
 
-	// Array<CollisionHullToRagdollMapping>
+	// Array_CollisionHullToRagdollMapping
 	set_name(0x14e385c, "RTTI_Array_CollisionHullToRagdollMapping");
 	apply_type(0x14e385c, "RTTIContainer");
 
-	// Array<ColorPeg>
+	// Array_ColorPeg
 	set_name(0x14e0ebc, "RTTI_Array_ColorPeg");
 	apply_type(0x14e0ebc, "RTTIContainer");
 
-	// Array<ColorizeSettings>
+	// Array_ColorizeSettings
 	set_name(0x14cbad0, "RTTI_Array_ColorizeSettings");
 	apply_type(0x14cbad0, "RTTIContainer");
 
-	// Array<ComponentPerAnimationEvent>
+	// Array_ComponentPerAnimationEvent
 	set_name(0x150ee40, "RTTI_Array_ComponentPerAnimationEvent");
 	apply_type(0x150ee40, "RTTIContainer");
 
-	// Array<CompositeAnimationInfo>
+	// Array_CompositeAnimationInfo
 	set_name(0x14d99a0, "RTTI_Array_CompositeAnimationInfo");
 	apply_type(0x14d99a0, "RTTIContainer");
 
-	// Array<CompoundStatResource>
+	// Array_CompoundStatResource
 	set_name(0x153e9f0, "RTTI_Array_CompoundStatResource");
 	apply_type(0x153e9f0, "RTTIContainer");
 
-	// Array<CompressedPathElement>
+	// Array_CompressedPathElement
 	set_name(0x14ba82c, "RTTI_Array_CompressedPathElement");
 	apply_type(0x14ba82c, "RTTIContainer");
 
-	// Array<ControllerLegend>
+	// Array_ControllerLegend
 	set_name(0x14eac8c, "RTTI_Array_ControllerLegend");
 	apply_type(0x14eac8c, "RTTIContainer");
 
-	// Array<ConvexHullTriangle>
+	// Array_ConvexHullTriangle
 	set_name(0x14adb38, "RTTI_Array_ConvexHullTriangle");
 	apply_type(0x14adb38, "RTTIContainer");
 
-	// Array<CoverConnection>
+	// Array_CoverConnection
 	set_name(0x14f0134, "RTTI_Array_CoverConnection");
 	apply_type(0x14f0134, "RTTIContainer");
 
-	// Array<CoverWall>
+	// Array_CoverWall
 	set_name(0x14f0198, "RTTI_Array_CoverWall");
 	apply_type(0x14f0198, "RTTIContainer");
 
-	// Array<DamageModifierPerDamageType>
+	// Array_DamageModifierPerDamageType
 	set_name(0x14f9cac, "RTTI_Array_DamageModifierPerDamageType");
 	apply_type(0x14f9cac, "RTTIContainer");
 
-	// Array<DamageModifierResource>
+	// Array_DamageModifierResource
 	set_name(0x14f9d10, "RTTI_Array_DamageModifierResource");
 	apply_type(0x14f9d10, "RTTIContainer");
 
-	// Array<DamagePassOnData>
+	// Array_DamagePassOnData
 	set_name(0x14e2998, "RTTI_Array_DamagePassOnData");
 	apply_type(0x14e2998, "RTTIContainer");
 
-	// Array<DestructibilityConstraint>
+	// Array_DestructibilityConstraint
 	set_name(0x14e2a60, "RTTI_Array_DestructibilityConstraint");
 	apply_type(0x14e2a60, "RTTIContainer");
 
-	// Array<DestructibilityHitReaction>
+	// Array_DestructibilityHitReaction
 	set_name(0x14e286c, "RTTI_Array_DestructibilityHitReaction");
 	apply_type(0x14e286c, "RTTIContainer");
 
-	// Array<DestructibilityPart>
+	// Array_DestructibilityPart
 	set_name(0x14e29fc, "RTTI_Array_DestructibilityPart");
 	apply_type(0x14e29fc, "RTTIContainer");
 
-	// Array<DestructibilityTimeLineKey>
+	// Array_DestructibilityTimeLineKey
 	set_name(0x14e2d2c, "RTTI_Array_DestructibilityTimeLineKey");
 	apply_type(0x14e2d2c, "RTTIContainer");
 
-	// Array<DestructiblePartToHitLocationMapping>
+	// Array_DestructiblePartToHitLocationMapping
 	set_name(0x14fb328, "RTTI_Array_DestructiblePartToHitLocationMapping");
 	apply_type(0x14fb328, "RTTIContainer");
 
-	// Array<DirectionalAnimationInfo>
+	// Array_DirectionalAnimationInfo
 	set_name(0x14d98e8, "RTTI_Array_DirectionalAnimationInfo");
 	apply_type(0x14d98e8, "RTTIContainer");
 
-	// Array<DisabledBrutalMeleeAnimation>
+	// Array_DisabledBrutalMeleeAnimation
 	set_name(0x150f338, "RTTI_Array_DisabledBrutalMeleeAnimation");
 	apply_type(0x150f338, "RTTIContainer");
 
-	// Array<EControlType>
+	// Array_EControlType
 	set_name(0x1502c94, "RTTI_Array_EControlType");
 	apply_type(0x1502c94, "RTTIContainer");
 
-	// Array<EDifficulty>
+	// Array_EDifficulty
 	set_name(0x14ea708, "RTTI_Array_EDifficulty");
 	apply_type(0x14ea708, "RTTIContainer");
 
-	// Array<EFaction>
+	// Array_EFaction
 	set_name(0x14eaf18, "RTTI_Array_EFaction");
 	apply_type(0x14eaf18, "RTTIContainer");
 
-	// Array<EHumanoidHitDirection>
+	// Array_EHumanoidHitDirection
 	set_name(0x14faedc, "RTTI_Array_EHumanoidHitDirection");
 	apply_type(0x14faedc, "RTTIContainer");
 
-	// Array<EHumanoidHitLocation>
+	// Array_EHumanoidHitLocation
 	set_name(0x14faebc, "RTTI_Array_EHumanoidHitLocation");
 	apply_type(0x14faebc, "RTTIContainer");
 
-	// Array<ELegendButton>
+	// Array_ELegendButton
 	set_name(0x14c06c4, "RTTI_Array_ELegendButton");
 	apply_type(0x14c06c4, "RTTIContainer");
 
-	// Array<EOSDEventID>
+	// Array_EOSDEventID
 	set_name(0x15014c4, "RTTI_Array_EOSDEventID");
 	apply_type(0x15014c4, "RTTIContainer");
 
-	// Array<EPlayerScoreStat>
+	// Array_EPlayerScoreStat
 	set_name(0x14f03d8, "RTTI_Array_EPlayerScoreStat");
 	apply_type(0x14f03d8, "RTTIContainer");
 
-	// Array<ERegion>
+	// Array_ERegion
 	set_name(0x14b8fac, "RTTI_Array_ERegion");
 	apply_type(0x14b8fac, "RTTIContainer");
 
-	// Array<ESoundMasterVolumeGroup>
+	// Array_ESoundMasterVolumeGroup
 	set_name(0x14dd46c, "RTTI_Array_ESoundMasterVolumeGroup");
 	apply_type(0x14dd46c, "RTTIContainer");
 
-	// Array<ESoundSubmixBus>
+	// Array_ESoundSubmixBus
 	set_name(0x14ddd0c, "RTTI_Array_ESoundSubmixBus");
 	apply_type(0x14ddd0c, "RTTIContainer");
 
-	// Array<EjectLocation>
+	// Array_EjectLocation
 	set_name(0x15224c0, "RTTI_Array_EjectLocation");
 	apply_type(0x15224c0, "RTTIContainer");
 
-	// Array<EmitterVertex>
+	// Array_EmitterVertex
 	set_name(0x14c4318, "RTTI_Array_EmitterVertex");
 	apply_type(0x14c4318, "RTTIContainer");
 
-	// Array<EntityPlaceHolderAttr>
+	// Array_EntityPlaceHolderAttr
 	set_name(0x14e1fbc, "RTTI_Array_EntityPlaceHolderAttr");
 	apply_type(0x14e1fbc, "RTTIContainer");
 
-	// Array<EntityScoreSettings>
+	// Array_EntityScoreSettings
 	set_name(0x14f0524, "RTTI_Array_EntityScoreSettings");
 	apply_type(0x14f0524, "RTTIContainer");
 
-	// Array<ExplosiveLocationIndicatorLight>
+	// Array_ExplosiveLocationIndicatorLight
 	set_name(0x1508054, "RTTI_Array_ExplosiveLocationIndicatorLight");
 	apply_type(0x1508054, "RTTIContainer");
 
-	// Array<ExternalAnimationEvent>
+	// Array_ExternalAnimationEvent
 	set_name(0x14b9b24, "RTTI_Array_ExternalAnimationEvent");
 	apply_type(0x14b9b24, "RTTIContainer");
 
-	// Array<ExternalAnimationSoundEvent>
+	// Array_ExternalAnimationSoundEvent
 	set_name(0x14b9b88, "RTTI_Array_ExternalAnimationSoundEvent");
 	apply_type(0x14b9b88, "RTTIContainer");
 
-	// Array<ExternalAnimationWWiseSoundEvent>
+	// Array_ExternalAnimationWWiseSoundEvent
 	set_name(0x14b9bec, "RTTI_Array_ExternalAnimationWWiseSoundEvent");
 	apply_type(0x14b9bec, "RTTIContainer");
 
-	// Array<ExtraAmmoSettings>
+	// Array_ExtraAmmoSettings
 	set_name(0x14eee68, "RTTI_Array_ExtraAmmoSettings");
 	apply_type(0x14eee68, "RTTIContainer");
 
-	// Array<ExtraDamageSettings>
+	// Array_ExtraDamageSettings
 	set_name(0x14eef74, "RTTI_Array_ExtraDamageSettings");
 	apply_type(0x14eef74, "RTTIContainer");
 
-	// Array<FPDestructibilityEffect>
+	// Array_FPDestructibilityEffect
 	set_name(0x15268f0, "RTTI_Array_FPDestructibilityEffect");
 	apply_type(0x15268f0, "RTTIContainer");
 
-	// Array<FPMoverSuspension>
+	// Array_FPMoverSuspension
 	set_name(0x14fba70, "RTTI_Array_FPMoverSuspension");
 	apply_type(0x14fba70, "RTTIContainer");
 
-	// Array<FRange>
+	// Array_FRange
 	set_name(0x14ab468, "RTTI_Array_FRange");
 	apply_type(0x14ab468, "RTTIContainer");
 
-	// Array<FVector2>
+	// Array_FVector2
 	set_name(0x14b7bcc, "RTTI_Array_FVector2");
 	apply_type(0x14b7bcc, "RTTIContainer");
 
-	// Array<FVector3>
+	// Array_FVector3
 	set_name(0x14b7c30, "RTTI_Array_FVector3");
 	apply_type(0x14b7c30, "RTTIContainer");
 
-	// Array<FacialExpressionLOD>
+	// Array_FacialExpressionLOD
 	set_name(0x153aa68, "RTTI_Array_FacialExpressionLOD");
 	apply_type(0x153aa68, "RTTIContainer");
 
-	// Array<Filename>
+	// Array_Filename
 	set_name(0x14b9534, "RTTI_Array_Filename");
 	apply_type(0x14b9534, "RTTIContainer");
 
-	// Array<FloatPerDifficulty>
+	// Array_FloatPerDifficulty
 	set_name(0x14ea728, "RTTI_Array_FloatPerDifficulty");
 	apply_type(0x14ea728, "RTTIContainer");
 
-	// Array<FogSettings>
+	// Array_FogSettings
 	set_name(0x14cbb34, "RTTI_Array_FogSettings");
 	apply_type(0x14cbb34, "RTTIContainer");
 
-	// Array<FontCharGlyphInfo>
+	// Array_FontCharGlyphInfo
 	set_name(0x14b4240, "RTTI_Array_FontCharGlyphInfo");
 	apply_type(0x14b4240, "RTTIContainer");
 
-	// Array<FontKerningPair>
+	// Array_FontKerningPair
 	set_name(0x14b42a4, "RTTI_Array_FontKerningPair");
 	apply_type(0x14b42a4, "RTTIContainer");
 
-	// Array<GainTemporaryModifier>
+	// Array_GainTemporaryModifier
 	set_name(0x14c7fac, "RTTI_Array_GainTemporaryModifier");
 	apply_type(0x14c7fac, "RTTIContainer");
 
-	// Array<Gesture>
+	// Array_Gesture
 	set_name(0x1520d1c, "RTTI_Array_Gesture");
 	apply_type(0x1520d1c, "RTTIContainer");
 
-	// Array<GlyphContour>
+	// Array_GlyphContour
 	set_name(0x14b408c, "RTTI_Array_GlyphContour");
 	apply_type(0x14b408c, "RTTIContainer");
 
-	// Array<GlyphContourCmd>
+	// Array_GlyphContourCmd
 	set_name(0x14b4028, "RTTI_Array_GlyphContourCmd");
 	apply_type(0x14b4028, "RTTIContainer");
 
-	// Array<GroupedObjectFilter>
+	// Array_GroupedObjectFilter
 	set_name(0x153ae74, "RTTI_Array_GroupedObjectFilter");
 	apply_type(0x153ae74, "RTTIContainer");
 
-	// Array<HUDAnimatedIconAnimationTracks>
+	// Array_HUDAnimatedIconAnimationTracks
 	set_name(0x1530e5c, "RTTI_Array_HUDAnimatedIconAnimationTracks");
 	apply_type(0x1530e5c, "RTTIContainer");
 
-	// Array<HUDCrosshairPart>
+	// Array_HUDCrosshairPart
 	set_name(0x1531030, "RTTI_Array_HUDCrosshairPart");
 	apply_type(0x1531030, "RTTIContainer");
 
-	// Array<HUDPartIcon>
+	// Array_HUDPartIcon
 	set_name(0x14fac78, "RTTI_Array_HUDPartIcon");
 	apply_type(0x14fac78, "RTTIContainer");
 
-	// Array<HUDPartText>
+	// Array_HUDPartText
 	set_name(0x14fad94, "RTTI_Array_HUDPartText");
 	apply_type(0x14fad94, "RTTIContainer");
 
-	// Array<HeldItemsHolderSlot>
+	// Array_HeldItemsHolderSlot
 	set_name(0x154b384, "RTTI_Array_HeldItemsHolderSlot");
 	apply_type(0x154b384, "RTTIContainer");
 
-	// Array<HumanoidBodyVariant>
+	// Array_HumanoidBodyVariant
 	set_name(0x14fb260, "RTTI_Array_HumanoidBodyVariant");
 	apply_type(0x14fb260, "RTTIContainer");
 
-	// Array<IRect>
+	// Array_IRect
 	set_name(0x14b7d1c, "RTTI_Array_IRect");
 	apply_type(0x14b7d1c, "RTTIContainer");
 
-	// Array<IdleSpeechGroupResourceInfo>
+	// Array_IdleSpeechGroupResourceInfo
 	set_name(0x154fa6c, "RTTI_Array_IdleSpeechGroupResourceInfo");
 	apply_type(0x154fa6c, "RTTIContainer");
 
-	// Array<ImpactEffectParticles>
+	// Array_ImpactEffectParticles
 	set_name(0x14bd058, "RTTI_Array_ImpactEffectParticles");
 	apply_type(0x14bd058, "RTTIContainer");
 
-	// Array<ImpactEffectRegionOverride>
+	// Array_ImpactEffectRegionOverride
 	set_name(0x14bd174, "RTTI_Array_ImpactEffectRegionOverride");
 	apply_type(0x14bd174, "RTTIContainer");
 
-	// Array<ImpactEffectVariation>
+	// Array_ImpactEffectVariation
 	set_name(0x14bd110, "RTTI_Array_ImpactEffectVariation");
 	apply_type(0x14bd110, "RTTIContainer");
 
-	// Array<InitAnimationVariableInfo>
+	// Array_InitAnimationVariableInfo
 	set_name(0x1550804, "RTTI_Array_InitAnimationVariableInfo");
 	apply_type(0x1550804, "RTTIContainer");
 
-	// Array<IntPerDifficulty>
+	// Array_IntPerDifficulty
 	set_name(0x14ea78c, "RTTI_Array_IntPerDifficulty");
 	apply_type(0x14ea78c, "RTTIContainer");
 
-	// Array<InteractionVectorTrack>
+	// Array_InteractionVectorTrack
 	set_name(0x154e7b0, "RTTI_Array_InteractionVectorTrack");
 	apply_type(0x154e7b0, "RTTIContainer");
 
-	// Array<InteractiveEntityIKTargetInfo>
+	// Array_InteractiveEntityIKTargetInfo
 	set_name(0x1504ddc, "RTTI_Array_InteractiveEntityIKTargetInfo");
 	apply_type(0x1504ddc, "RTTIContainer");
 
-	// Array<JetpackThrusterEffectSetupLocation>
+	// Array_JetpackThrusterEffectSetupLocation
 	set_name(0x15131f8, "RTTI_Array_JetpackThrusterEffectSetupLocation");
 	apply_type(0x15131f8, "RTTIContainer");
 
-	// Array<Joint>
+	// Array_Joint
 	set_name(0x14da100, "RTTI_Array_Joint");
 	apply_type(0x14da100, "RTTIContainer");
 
-	// Array<LadderClimbCycleSound>
+	// Array_LadderClimbCycleSound
 	set_name(0x1505038, "RTTI_Array_LadderClimbCycleSound");
 	apply_type(0x1505038, "RTTIContainer");
 
-	// Array<LevelListLevel>
+	// Array_LevelListLevel
 	set_name(0x14ef8c0, "RTTI_Array_LevelListLevel");
 	apply_type(0x14ef8c0, "RTTIContainer");
 
-	// Array<LevelListLevelNode>
+	// Array_LevelListLevelNode
 	set_name(0x14ef85c, "RTTI_Array_LevelListLevelNode");
 	apply_type(0x14ef85c, "RTTIContainer");
 
-	// Array<LevelSectionLump>
+	// Array_LevelSectionLump
 	set_name(0x14e0a70, "RTTI_Array_LevelSectionLump");
 	apply_type(0x14e0a70, "RTTIContainer");
 
-	// Array<LiftWheel>
+	// Array_LiftWheel
 	set_name(0x1500e68, "RTTI_Array_LiftWheel");
 	apply_type(0x1500e68, "RTTIContainer");
 
-	// Array<LightProbe>
+	// Array_LightProbe
 	set_name(0x14c8968, "RTTI_Array_LightProbe");
 	apply_type(0x14c8968, "RTTIContainer");
 
-	// Array<LightProbeKdTreeObject>
+	// Array_LightProbeKdTreeObject
 	set_name(0x14c8ac8, "RTTI_Array_LightProbeKdTreeObject");
 	apply_type(0x14c8ac8, "RTTIContainer");
 
-	// Array<LocalizedTextEntry>
+	// Array_LocalizedTextEntry
 	set_name(0x14e0fe8, "RTTI_Array_LocalizedTextEntry");
 	apply_type(0x14e0fe8, "RTTIContainer");
 
-	// Array<LodMeshResourcePart>
+	// Array_LodMeshResourcePart
 	set_name(0x14bebc0, "RTTI_Array_LodMeshResourcePart");
 	apply_type(0x14bebc0, "RTTIContainer");
 
-	// Array<MapIcon>
+	// Array_MapIcon
 	set_name(0x15306a8, "RTTI_Array_MapIcon");
 	apply_type(0x15306a8, "RTTIContainer");
 
-	// Array<MapZone>
+	// Array_MapZone
 	set_name(0x1530818, "RTTI_Array_MapZone");
 	apply_type(0x1530818, "RTTIContainer");
 
-	// Array<MaterialTypeReplacement>
+	// Array_MaterialTypeReplacement
 	set_name(0x14fa5b8, "RTTI_Array_MaterialTypeReplacement");
 	apply_type(0x14fa5b8, "RTTIContainer");
 
-	// Array<MedalRanksResource>
+	// Array_MedalRanksResource
 	set_name(0x152b230, "RTTI_Array_MedalRanksResource");
 	apply_type(0x152b230, "RTTIContainer");
 
-	// Array<MedalResource>
+	// Array_MedalResource
 	set_name(0x152b294, "RTTI_Array_MedalResource");
 	apply_type(0x152b294, "RTTIContainer");
 
-	// Array<MenuScreenURI>
+	// Array_MenuScreenURI
 	set_name(0x153e180, "RTTI_Array_MenuScreenURI");
 	apply_type(0x153e180, "RTTIContainer");
 
-	// Array<MeshShaderOverrides>
+	// Array_MeshShaderOverrides
 	set_name(0x14cb474, "RTTI_Array_MeshShaderOverrides");
 	apply_type(0x14cb474, "RTTIContainer");
 
-	// Array<MissionEvent>
+	// Array_MissionEvent
 	set_name(0x1528c88, "RTTI_Array_MissionEvent");
 	apply_type(0x1528c88, "RTTIContainer");
 
-	// Array<MissionRadioMessage>
+	// Array_MissionRadioMessage
 	set_name(0x14fab6c, "RTTI_Array_MissionRadioMessage");
 	apply_type(0x14fab6c, "RTTIContainer");
 
-	// Array<MissionSettings>
+	// Array_MissionSettings
 	set_name(0x1528ec0, "RTTI_Array_MissionSettings");
 	apply_type(0x1528ec0, "RTTIContainer");
 
-	// Array<ModelProxyRemapEntry>
+	// Array_ModelProxyRemapEntry
 	set_name(0x14e7bb8, "RTTI_Array_ModelProxyRemapEntry");
 	apply_type(0x14e7bb8, "RTTIContainer");
 
-	// Array<MotionSensorFunctionMapping>
+	// Array_MotionSensorFunctionMapping
 	set_name(0x14eac28, "RTTI_Array_MotionSensorFunctionMapping");
 	apply_type(0x14eac28, "RTTIContainer");
 
-	// Array<MountedGunWeaponSettingsModelPart>
+	// Array_MountedGunWeaponSettingsModelPart
 	set_name(0x1505724, "RTTI_Array_MountedGunWeaponSettingsModelPart");
 	apply_type(0x1505724, "RTTIContainer");
 
-	// Array<MoveThroughSubGoalTarget>
+	// Array_MoveThroughSubGoalTarget
 	set_name(0x151cee4, "RTTI_Array_MoveThroughSubGoalTarget");
 	apply_type(0x151cee4, "RTTIContainer");
 
-	// Array<MovieSkipLocation>
+	// Array_MovieSkipLocation
 	set_name(0x14efb9c, "RTTI_Array_MovieSkipLocation");
 	apply_type(0x14efb9c, "RTTIContainer");
 
-	// Array<MovieSubtitle>
+	// Array_MovieSubtitle
 	set_name(0x153e11c, "RTTI_Array_MovieSubtitle");
 	apply_type(0x153e11c, "RTTIContainer");
 
-	// Array<MultiMeshResourcePart>
+	// Array_MultiMeshResourcePart
 	set_name(0x14becec, "RTTI_Array_MultiMeshResourcePart");
 	apply_type(0x14becec, "RTTIContainer");
 
-	// Array<NamedMoveCurve>
+	// Array_NamedMoveCurve
 	set_name(0x14eaa98, "RTTI_Array_NamedMoveCurve");
 	apply_type(0x14eaa98, "RTTIContainer");
 
-	// Array<NodeSectionMapping>
+	// Array_NodeSectionMapping
 	set_name(0x14ef6ec, "RTTI_Array_NodeSectionMapping");
 	apply_type(0x14ef6ec, "RTTIContainer");
 
-	// Array<OSDEventSettings>
+	// Array_OSDEventSettings
 	set_name(0x15014e4, "RTTI_Array_OSDEventSettings");
 	apply_type(0x15014e4, "RTTIContainer");
 
-	// Array<ObjectiveCount>
+	// Array_ObjectiveCount
 	set_name(0x14fb520, "RTTI_Array_ObjectiveCount");
 	apply_type(0x14fb520, "RTTIContainer");
 
-	// Array<OrientationHelper>
+	// Array_OrientationHelper
 	set_name(0x14da1c8, "RTTI_Array_OrientationHelper");
 	apply_type(0x14da1c8, "RTTIContainer");
 
-	// Array<PBDConstraintDesc>
+	// Array_PBDConstraintDesc
 	set_name(0x14bd2f8, "RTTI_Array_PBDConstraintDesc");
 	apply_type(0x14bd2f8, "RTTIContainer");
 
-	// Array<PBDVertexDesc>
+	// Array_PBDVertexDesc
 	set_name(0x14bd35c, "RTTI_Array_PBDVertexDesc");
 	apply_type(0x14bd35c, "RTTIContainer");
 
-	// Array<ParTimeNodeInfo>
+	// Array_ParTimeNodeInfo
 	set_name(0x152b0a0, "RTTI_Array_ParTimeNodeInfo");
 	apply_type(0x152b0a0, "RTTIContainer");
 
-	// Array<ParticleEventVirtualEmitter>
+	// Array_ParticleEventVirtualEmitter
 	set_name(0x151d140, "RTTI_Array_ParticleEventVirtualEmitter");
 	apply_type(0x151d140, "RTTIContainer");
 
-	// Array<ParticleShaderVariable>
+	// Array_ParticleShaderVariable
 	set_name(0x14c45ec, "RTTI_Array_ParticleShaderVariable");
 	apply_type(0x14c45ec, "RTTIContainer");
 
-	// Array<ParticleVertexAttribute>
+	// Array_ParticleVertexAttribute
 	set_name(0x14c4568, "RTTI_Array_ParticleVertexAttribute");
 	apply_type(0x14c4568, "RTTIContainer");
 
-	// Array<PhonemeBoneTarget>
+	// Array_PhonemeBoneTarget
 	set_name(0x153aacc, "RTTI_Array_PhonemeBoneTarget");
 	apply_type(0x153aacc, "RTTIContainer");
 
-	// Array<PhonemeFloatShaderTarget>
+	// Array_PhonemeFloatShaderTarget
 	set_name(0x153ab30, "RTTI_Array_PhonemeFloatShaderTarget");
 	apply_type(0x153ab30, "RTTIContainer");
 
-	// Array<PhonemeTarget>
+	// Array_PhonemeTarget
 	set_name(0x14e3668, "RTTI_Array_PhonemeTarget");
 	apply_type(0x14e3668, "RTTIContainer");
 
-	// Array<PhysicsDamageImpulseModifier>
+	// Array_PhysicsDamageImpulseModifier
 	set_name(0x14e807c, "RTTI_Array_PhysicsDamageImpulseModifier");
 	apply_type(0x14e807c, "RTTIContainer");
 
-	// Array<PhysicsRagdollBodyControlData>
+	// Array_PhysicsRagdollBodyControlData
 	set_name(0x14c7538, "RTTI_Array_PhysicsRagdollBodyControlData");
 	apply_type(0x14c7538, "RTTIContainer");
 
-	// Array<PhysicsRagdollMotorControlData>
+	// Array_PhysicsRagdollMotorControlData
 	set_name(0x14c7470, "RTTI_Array_PhysicsRagdollMotorControlData");
 	apply_type(0x14c7470, "RTTIContainer");
 
-	// Array<PhysicsVehicleWheelInfo>
+	// Array_PhysicsVehicleWheelInfo
 	set_name(0x14c66fc, "RTTI_Array_PhysicsVehicleWheelInfo");
 	apply_type(0x14c66fc, "RTTIContainer");
 
-	// Array<PickUpDropAmmoPickUp>
+	// Array_PickUpDropAmmoPickUp
 	set_name(0x1518aa4, "RTTI_Array_PickUpDropAmmoPickUp");
 	apply_type(0x1518aa4, "RTTIContainer");
 
-	// Array<PickUpDropRandomPickUp>
+	// Array_PickUpDropRandomPickUp
 	set_name(0x1518b08, "RTTI_Array_PickUpDropRandomPickUp");
 	apply_type(0x1518b08, "RTTIContainer");
 
-	// Array<PickUpDropResourceWithOdds>
+	// Array_PickUpDropResourceWithOdds
 	set_name(0x1518b6c, "RTTI_Array_PickUpDropResourceWithOdds");
 	apply_type(0x1518b6c, "RTTIContainer");
 
-	// Array<PlayerRank>
+	// Array_PlayerRank
 	set_name(0x14f046c, "RTTI_Array_PlayerRank");
 	apply_type(0x14f046c, "RTTIContainer");
 
-	// Array<PrimitiveDeltaDeformation>
+	// Array_PrimitiveDeltaDeformation
 	set_name(0x14d9f90, "RTTI_Array_PrimitiveDeltaDeformation");
 	apply_type(0x14d9f90, "RTTIContainer");
 
-	// Array<PrimitiveSkinInfo>
+	// Array_PrimitiveSkinInfo
 	set_name(0x14d9ec8, "RTTI_Array_PrimitiveSkinInfo");
 	apply_type(0x14d9ec8, "RTTIContainer");
 
-	// Array<ProjMatrix>
+	// Array_ProjMatrix
 	set_name(0x14b7e6c, "RTTI_Array_ProjMatrix");
 	apply_type(0x14b7e6c, "RTTIContainer");
 
-	// Array<RGBAColor>
+	// Array_RGBAColor
 	set_name(0x14ab520, "RTTI_Array_RGBAColor");
 	apply_type(0x14ab520, "RTTIContainer");
 
-	// Array<Ref<AIArea>>
+	// Array_Ref_AIArea
 	set_name(0x14d6364, "RTTI_Array_Ref_AIArea");
 	apply_type(0x14d6364, "RTTIContainer");
 
-	// Array<Ref<AIBehaviour>>
+	// Array_Ref_AIBehaviour
 	set_name(0x154446c, "RTTI_Array_Ref_AIBehaviour");
 	apply_type(0x154446c, "RTTIContainer");
 
-	// Array<Ref<AIBrainFragmentResource>>
+	// Array_Ref_AIBrainFragmentResource
 	set_name(0x15443a4, "RTTI_Array_Ref_AIBrainFragmentResource");
 	apply_type(0x15443a4, "RTTIContainer");
 
-	// Array<Ref<AIContextResource>>
+	// Array_Ref_AIContextResource
 	set_name(0x14cfaf0, "RTTI_Array_Ref_AIContextResource");
 	apply_type(0x14cfaf0, "RTTIContainer");
 
-	// Array<Ref<AIFaction>>
+	// Array_Ref_AIFaction
 	set_name(0x14cf098, "RTTI_Array_Ref_AIFaction");
 	apply_type(0x14cf098, "RTTIContainer");
 
-	// Array<Ref<AILookContext>>
+	// Array_Ref_AILookContext
 	set_name(0x154478c, "RTTI_Array_Ref_AILookContext");
 	apply_type(0x154478c, "RTTIContainer");
 
-	// Array<Ref<AIMovementContext>>
+	// Array_Ref_AIMovementContext
 	set_name(0x1544864, "RTTI_Array_Ref_AIMovementContext");
 	apply_type(0x1544864, "RTTIContainer");
 
-	// Array<Ref<AIPositionPickerResource>>
+	// Array_Ref_AIPositionPickerResource
 	set_name(0x14d6ac8, "RTTI_Array_Ref_AIPositionPickerResource");
 	apply_type(0x14d6ac8, "RTTIContainer");
 
-	// Array<Ref<AIStaticCoverMap>>
+	// Array_Ref_AIStaticCoverMap
 	set_name(0x14d7404, "RTTI_Array_Ref_AIStaticCoverMap");
 	apply_type(0x14d7404, "RTTIContainer");
 
-	// Array<Ref<AIWeaponPreference>>
+	// Array_Ref_AIWeaponPreference
 	set_name(0x14d2460, "RTTI_Array_Ref_AIWeaponPreference");
 	apply_type(0x14d2460, "RTTIContainer");
 
-	// Array<Ref<AIWeaponPreferenceSettings>>
+	// Array_Ref_AIWeaponPreferenceSettings
 	set_name(0x14d24d4, "RTTI_Array_Ref_AIWeaponPreferenceSettings");
 	apply_type(0x14d24d4, "RTTIContainer");
 
-	// Array<Ref<AOEUseLocationInfoActionPair>>
+	// Array_Ref_AOEUseLocationInfoActionPair
 	set_name(0x154feec, "RTTI_Array_Ref_AOEUseLocationInfoActionPair");
 	apply_type(0x154feec, "RTTIContainer");
 
-	// Array<Ref<AbilityAnimationResource>>
+	// Array_Ref_AbilityAnimationResource
 	set_name(0x14e32e0, "RTTI_Array_Ref_AbilityAnimationResource");
 	apply_type(0x14e32e0, "RTTIContainer");
 
-	// Array<Ref<AbilityResource>>
+	// Array_Ref_AbilityResource
 	set_name(0x14e3998, "RTTI_Array_Ref_AbilityResource");
 	apply_type(0x14e3998, "RTTIContainer");
 
-	// Array<Ref<ActorResource>>
+	// Array_Ref_ActorResource
 	set_name(0x151fd64, "RTTI_Array_Ref_ActorResource");
 	apply_type(0x151fd64, "RTTIContainer");
 
-	// Array<Ref<AmmoEjectorResource>>
+	// Array_Ref_AmmoEjectorResource
 	set_name(0x1522408, "RTTI_Array_Ref_AmmoEjectorResource");
 	apply_type(0x1522408, "RTTIContainer");
 
-	// Array<Ref<AngularBoneSpeedTrackerResource>>
+	// Array_Ref_AngularBoneSpeedTrackerResource
 	set_name(0x1541b98, "RTTI_Array_Ref_AngularBoneSpeedTrackerResource");
 	apply_type(0x1541b98, "RTTIContainer");
 
-	// Array<Ref<AnimationDiagramState>>
+	// Array_Ref_AnimationDiagramState
 	set_name(0x154207c, "RTTI_Array_Ref_AnimationDiagramState");
 	apply_type(0x154207c, "RTTIContainer");
 
-	// Array<Ref<AnimationDiagramStateAnimationArray>>
+	// Array_Ref_AnimationDiagramStateAnimationArray
 	set_name(0x1542008, "RTTI_Array_Ref_AnimationDiagramStateAnimationArray");
 	apply_type(0x1542008, "RTTIContainer");
 
-	// Array<Ref<AnimationDiagramStateAnimationInfo>>
+	// Array_Ref_AnimationDiagramStateAnimationInfo
 	set_name(0x1541f94, "RTTI_Array_Ref_AnimationDiagramStateAnimationInfo");
 	apply_type(0x1541f94, "RTTIContainer");
 
-	// Array<Ref<AnimationMotionBase>>
+	// Array_Ref_AnimationMotionBase
 	set_name(0x1540860, "RTTI_Array_Ref_AnimationMotionBase");
 	apply_type(0x1540860, "RTTIContainer");
 
-	// Array<Ref<AnimationState>>
+	// Array_Ref_AnimationState
 	set_name(0x14b9a5c, "RTTI_Array_Ref_AnimationState");
 	apply_type(0x14b9a5c, "RTTIContainer");
 
-	// Array<Ref<Asset>>
+	// Array_Ref_Asset
 	set_name(0x14bc130, "RTTI_Array_Ref_Asset");
 	apply_type(0x14bc130, "RTTIContainer");
 
-	// Array<Ref<BaseConcreteAsset>>
+	// Array_Ref_BaseConcreteAsset
 	set_name(0x14bc1a4, "RTTI_Array_Ref_BaseConcreteAsset");
 	apply_type(0x14bc1a4, "RTTIContainer");
 
-	// Array<Ref<CaptureAndHoldAreaFactionSettings>>
+	// Array_Ref_CaptureAndHoldAreaFactionSettings
 	set_name(0x1521db0, "RTTI_Array_Ref_CaptureAndHoldAreaFactionSettings");
 	apply_type(0x1521db0, "RTTIContainer");
 
-	// Array<Ref<Career>>
+	// Array_Ref_Career
 	set_name(0x153e908, "RTTI_Array_Ref_Career");
 	apply_type(0x153e908, "RTTIContainer");
 
-	// Array<Ref<CareerUnlock>>
+	// Array_Ref_CareerUnlock
 	set_name(0x153e894, "RTTI_Array_Ref_CareerUnlock");
 	apply_type(0x153e894, "RTTIContainer");
 
-	// Array<Ref<CharacterFacialExpressionAnimation>>
+	// Array_Ref_CharacterFacialExpressionAnimation
 	set_name(0x1547d88, "RTTI_Array_Ref_CharacterFacialExpressionAnimation");
 	apply_type(0x1547d88, "RTTIContainer");
 
-	// Array<Ref<ClueLineResource>>
+	// Array_Ref_ClueLineResource
 	set_name(0x15423b0, "RTTI_Array_Ref_ClueLineResource");
 	apply_type(0x15423b0, "RTTIContainer");
 
-	// Array<Ref<CluePageResource>>
+	// Array_Ref_CluePageResource
 	set_name(0x1542488, "RTTI_Array_Ref_CluePageResource");
 	apply_type(0x1542488, "RTTIContainer");
 
-	// Array<Ref<ClueResource>>
+	// Array_Ref_ClueResource
 	set_name(0x1542560, "RTTI_Array_Ref_ClueResource");
 	apply_type(0x1542560, "RTTIContainer");
 
-	// Array<Ref<ClueRevelationResource>>
+	// Array_Ref_ClueRevelationResource
 	set_name(0x1542638, "RTTI_Array_Ref_ClueRevelationResource");
 	apply_type(0x1542638, "RTTIContainer");
 
-	// Array<Ref<ClusterGrenadeFragmentResource>>
+	// Array_Ref_ClusterGrenadeFragmentResource
 	set_name(0x1525d9c, "RTTI_Array_Ref_ClusterGrenadeFragmentResource");
 	apply_type(0x1525d9c, "RTTIContainer");
 
-	// Array<Ref<CommunicationMessageEvent>>
+	// Array_Ref_CommunicationMessageEvent
 	set_name(0x1547338, "RTTI_Array_Ref_CommunicationMessageEvent");
 	apply_type(0x1547338, "RTTIContainer");
 
-	// Array<Ref<ConcreteAsset>>
+	// Array_Ref_ConcreteAsset
 	set_name(0x14bc218, "RTTI_Array_Ref_ConcreteAsset");
 	apply_type(0x14bc218, "RTTIContainer");
 
-	// Array<Ref<CoreObject>>
+	// Array_Ref_CoreObject
 	set_name(0x14bc6d4, "RTTI_Array_Ref_CoreObject");
 	apply_type(0x14bc6d4, "RTTIContainer");
 
-	// Array<Ref<DLCResource>>
+	// Array_Ref_DLCResource
 	set_name(0x14efa60, "RTTI_Array_Ref_DLCResource");
 	apply_type(0x14efa60, "RTTIContainer");
 
-	// Array<Ref<DamageTypeResource>>
+	// Array_Ref_DamageTypeResource
 	set_name(0x14e1e9c, "RTTI_Array_Ref_DamageTypeResource");
 	apply_type(0x14e1e9c, "RTTIContainer");
 
-	// Array<Ref<DestructibilityConstraintState>>
+	// Array_Ref_DestructibilityConstraintState
 	set_name(0x14e2c54, "RTTI_Array_Ref_DestructibilityConstraintState");
 	apply_type(0x14e2c54, "RTTIContainer");
 
-	// Array<Ref<DestructibilityPartState>>
+	// Array_Ref_DestructibilityPartState
 	set_name(0x14e2be0, "RTTI_Array_Ref_DestructibilityPartState");
 	apply_type(0x14e2be0, "RTTIContainer");
 
-	// Array<Ref<DestructibilityPartStateResource>>
+	// Array_Ref_DestructibilityPartStateResource
 	set_name(0x14e28e0, "RTTI_Array_Ref_DestructibilityPartStateResource");
 	apply_type(0x14e28e0, "RTTIContainer");
 
-	// Array<Ref<DestructibilityState>>
+	// Array_Ref_DestructibilityState
 	set_name(0x14e2cc8, "RTTI_Array_Ref_DestructibilityState");
 	apply_type(0x14e2cc8, "RTTIContainer");
 
-	// Array<Ref<DifficultyRangeResource>>
+	// Array_Ref_DifficultyRangeResource
 	set_name(0x14ea864, "RTTI_Array_Ref_DifficultyRangeResource");
 	apply_type(0x14ea864, "RTTIContainer");
 
-	// Array<Ref<EffectComponentResource>>
+	// Array_Ref_EffectComponentResource
 	set_name(0x150f864, "RTTI_Array_Ref_EffectComponentResource");
 	apply_type(0x150f864, "RTTIContainer");
 
-	// Array<Ref<ElectricityDrawSettings>>
+	// Array_Ref_ElectricityDrawSettings
 	set_name(0x153c918, "RTTI_Array_Ref_ElectricityDrawSettings");
 	apply_type(0x153c918, "RTTIContainer");
 
-	// Array<Ref<ElectricityGridNodeResource>>
+	// Array_Ref_ElectricityGridNodeResource
 	set_name(0x153c15c, "RTTI_Array_Ref_ElectricityGridNodeResource");
 	apply_type(0x153c15c, "RTTIContainer");
 
-	// Array<Ref<ElectricitySpawnEntityResource>>
+	// Array_Ref_ElectricitySpawnEntityResource
 	set_name(0x153ca44, "RTTI_Array_Ref_ElectricitySpawnEntityResource");
 	apply_type(0x153ca44, "RTTIContainer");
 
-	// Array<Ref<EntityComponentResource>>
+	// Array_Ref_EntityComponentResource
 	set_name(0x14e24f4, "RTTI_Array_Ref_EntityComponentResource");
 	apply_type(0x14e24f4, "RTTIContainer");
 
-	// Array<Ref<EntityResource>>
+	// Array_Ref_EntityResource
 	set_name(0x14e23d8, "RTTI_Array_Ref_EntityResource");
 	apply_type(0x14e23d8, "RTTIContainer");
 
-	// Array<Ref<EventResource>>
+	// Array_Ref_EventResource
 	set_name(0x1519bf0, "RTTI_Array_Ref_EventResource");
 	apply_type(0x1519bf0, "RTTIContainer");
 
-	// Array<Ref<FirearmResource>>
+	// Array_Ref_FirearmResource
 	set_name(0x154a924, "RTTI_Array_Ref_FirearmResource");
 	apply_type(0x154a924, "RTTIContainer");
 
-	// Array<Ref<HUDElementResource>>
+	// Array_Ref_HUDElementResource
 	set_name(0x1530aa0, "RTTI_Array_Ref_HUDElementResource");
 	apply_type(0x1530aa0, "RTTIContainer");
 
-	// Array<Ref<HumanoidHitResponseBehaviour>>
+	// Array_Ref_HumanoidHitResponseBehaviour
 	set_name(0x14fb100, "RTTI_Array_Ref_HumanoidHitResponseBehaviour");
 	apply_type(0x14fb100, "RTTIContainer");
 
-	// Array<Ref<HumanoidSubStateUsingInteractiveEntityResource>>
+	// Array_Ref_HumanoidSubStateUsingInteractiveEntityResource
 	set_name(0x150ea30, "RTTI_Array_Ref_HumanoidSubStateUsingInteractiveEntityResource");
 	apply_type(0x150ea30, "RTTIContainer");
 
-	// Array<Ref<ImageMap>>
+	// Array_Ref_ImageMap
 	set_name(0x14c95bc, "RTTI_Array_Ref_ImageMap");
 	apply_type(0x14c95bc, "RTTIContainer");
 
-	// Array<Ref<InventoryCaptureSpawnAbilityResource>>
+	// Array_Ref_InventoryCaptureSpawnAbilityResource
 	set_name(0x1517ba0, "RTTI_Array_Ref_InventoryCaptureSpawnAbilityResource");
 	apply_type(0x1517ba0, "RTTIContainer");
 
-	// Array<Ref<LeanAndPeekAction>>
+	// Array_Ref_LeanAndPeekAction
 	set_name(0x15051c8, "RTTI_Array_Ref_LeanAndPeekAction");
 	apply_type(0x15051c8, "RTTIContainer");
 
-	// Array<Ref<LeanAndPeekPosition>>
+	// Array_Ref_LeanAndPeekPosition
 	set_name(0x150524c, "RTTI_Array_Ref_LeanAndPeekPosition");
 	apply_type(0x150524c, "RTTIContainer");
 
-	// Array<Ref<LevelListResource>>
+	// Array_Ref_LevelListResource
 	set_name(0x14ef934, "RTTI_Array_Ref_LevelListResource");
 	apply_type(0x14ef934, "RTTIContainer");
 
-	// Array<Ref<LevelSection>>
+	// Array_Ref_LevelSection
 	set_name(0x14e0ae4, "RTTI_Array_Ref_LevelSection");
 	apply_type(0x14e0ae4, "RTTIContainer");
 
-	// Array<Ref<LightResource>>
+	// Array_Ref_LightResource
 	set_name(0x14c8b90, "RTTI_Array_Ref_LightResource");
 	apply_type(0x14c8b90, "RTTIContainer");
 
-	// Array<Ref<LinearBoneSpeedTrackerResource>>
+	// Array_Ref_LinearBoneSpeedTrackerResource
 	set_name(0x1541b24, "RTTI_Array_Ref_LinearBoneSpeedTrackerResource");
 	apply_type(0x1541b24, "RTTIContainer");
 
-	// Array<Ref<LocatorResource>>
+	// Array_Ref_LocatorResource
 	set_name(0x15204ec, "RTTI_Array_Ref_LocatorResource");
 	apply_type(0x15204ec, "RTTIContainer");
 
-	// Array<Ref<MeshResourceBase>>
+	// Array_Ref_MeshResourceBase
 	set_name(0x14bec88, "RTTI_Array_Ref_MeshResourceBase");
 	apply_type(0x14bec88, "RTTIContainer");
 
-	// Array<Ref<MissionResource>>
+	// Array_Ref_MissionResource
 	set_name(0x1528cfc, "RTTI_Array_Ref_MissionResource");
 	apply_type(0x1528cfc, "RTTIContainer");
 
-	// Array<Ref<ModelPartMeshReplacementResource>>
+	// Array_Ref_ModelPartMeshReplacementResource
 	set_name(0x14e7d04, "RTTI_Array_Ref_ModelPartMeshReplacementResource");
 	apply_type(0x14e7d04, "RTTIContainer");
 
-	// Array<Ref<ModelPartResource>>
+	// Array_Ref_ModelPartResource
 	set_name(0x14e7c90, "RTTI_Array_Ref_ModelPartResource");
 	apply_type(0x14e7c90, "RTTIContainer");
 
-	// Array<Ref<MovementIKResource>>
+	// Array_Ref_MovementIKResource
 	set_name(0x15429a0, "RTTI_Array_Ref_MovementIKResource");
 	apply_type(0x15429a0, "RTTIContainer");
 
-	// Array<Ref<MovieResource>>
+	// Array_Ref_MovieResource
 	set_name(0x14efc10, "RTTI_Array_Ref_MovieResource");
 	apply_type(0x14efc10, "RTTIContainer");
 
-	// Array<Ref<OSDEventParserResource>>
+	// Array_Ref_OSDEventParserResource
 	set_name(0x1501558, "RTTI_Array_Ref_OSDEventParserResource");
 	apply_type(0x1501558, "RTTIContainer");
 
-	// Array<Ref<ObjectAttributeAnimatorInstance>>
+	// Array_Ref_ObjectAttributeAnimatorInstance
 	set_name(0x14bae10, "RTTI_Array_Ref_ObjectAttributeAnimatorInstance");
 	apply_type(0x14bae10, "RTTIContainer");
 
-	// Array<Ref<ObjectAttributeAnimatorResource>>
+	// Array_Ref_ObjectAttributeAnimatorResource
 	set_name(0x14bae84, "RTTI_Array_Ref_ObjectAttributeAnimatorResource");
 	apply_type(0x14bae84, "RTTIContainer");
 
-	// Array<Ref<ParTimeLevelInfo>>
+	// Array_Ref_ParTimeLevelInfo
 	set_name(0x152b178, "RTTI_Array_Ref_ParTimeLevelInfo");
 	apply_type(0x152b178, "RTTIContainer");
 
-	// Array<Ref<ParticleEmitter>>
+	// Array_Ref_ParticleEmitter
 	set_name(0x14c4460, "RTTI_Array_Ref_ParticleEmitter");
 	apply_type(0x14c4460, "RTTIContainer");
 
-	// Array<Ref<ParticleSystemResource>>
+	// Array_Ref_ParticleSystemResource
 	set_name(0x14c4734, "RTTI_Array_Ref_ParticleSystemResource");
 	apply_type(0x14c4734, "RTTIContainer");
 
-	// Array<Ref<PhonemeBoneChannel>>
+	// Array_Ref_PhonemeBoneChannel
 	set_name(0x153aba4, "RTTI_Array_Ref_PhonemeBoneChannel");
 	apply_type(0x153aba4, "RTTIContainer");
 
-	// Array<Ref<PhonemeChannel>>
+	// Array_Ref_PhonemeChannel
 	set_name(0x14e36dc, "RTTI_Array_Ref_PhonemeChannel");
 	apply_type(0x14e36dc, "RTTIContainer");
 
-	// Array<Ref<PortableTurretResource>>
+	// Array_Ref_PortableTurretResource
 	set_name(0x15172d8, "RTTI_Array_Ref_PortableTurretResource");
 	apply_type(0x15172d8, "RTTIContainer");
 
-	// Array<Ref<PostProcessEffectorResource>>
+	// Array_Ref_PostProcessEffectorResource
 	set_name(0x14cbf64, "RTTI_Array_Ref_PostProcessEffectorResource");
 	apply_type(0x14cbf64, "RTTIContainer");
 
-	// Array<Ref<PrimitiveResource>>
+	// Array_Ref_PrimitiveResource
 	set_name(0x14c8f28, "RTTI_Array_Ref_PrimitiveResource");
 	apply_type(0x14c8f28, "RTTIContainer");
 
-	// Array<Ref<RenderEffectResource>>
+	// Array_Ref_RenderEffectResource
 	set_name(0x14c90cc, "RTTI_Array_Ref_RenderEffectResource");
 	apply_type(0x14c90cc, "RTTIContainer");
 
-	// Array<Ref<RenderingPrimitiveResource>>
+	// Array_Ref_RenderingPrimitiveResource
 	set_name(0x14c8fa0, "RTTI_Array_Ref_RenderingPrimitiveResource");
 	apply_type(0x14c8fa0, "RTTIContainer");
 
-	// Array<Ref<SMGGesture>>
+	// Array_Ref_SMGGesture
 	set_name(0x1541ebc, "RTTI_Array_Ref_SMGGesture");
 	apply_type(0x1541ebc, "RTTIContainer");
 
-	// Array<Ref<ShaderAnimatorResourceBase>>
+	// Array_Ref_ShaderAnimatorResourceBase
 	set_name(0x14babf8, "RTTI_Array_Ref_ShaderAnimatorResourceBase");
 	apply_type(0x14babf8, "RTTIContainer");
 
-	// Array<Ref<ShakeResource>>
+	// Array_Ref_ShakeResource
 	set_name(0x14e1178, "RTTI_Array_Ref_ShakeResource");
 	apply_type(0x14e1178, "RTTIContainer");
 
-	// Array<Ref<SimpleSoundResource>>
+	// Array_Ref_SimpleSoundResource
 	set_name(0x14dd8ac, "RTTI_Array_Ref_SimpleSoundResource");
 	apply_type(0x14dd8ac, "RTTIContainer");
 
-	// Array<Ref<SkeletonAnimationResource>>
+	// Array_Ref_SkeletonAnimationResource
 	set_name(0x14da4d8, "RTTI_Array_Ref_SkeletonAnimationResource");
 	apply_type(0x14da4d8, "RTTIContainer");
 
-	// Array<Ref<SkeletonBaseAnimationResource>>
+	// Array_Ref_SkeletonBaseAnimationResource
 	set_name(0x14da464, "RTTI_Array_Ref_SkeletonBaseAnimationResource");
 	apply_type(0x14da464, "RTTIContainer");
 
-	// Array<Ref<SoundResource>>
+	// Array_Ref_SoundResource
 	set_name(0x14dd6c0, "RTTI_Array_Ref_SoundResource");
 	apply_type(0x14dd6c0, "RTTIContainer");
 
-	// Array<Ref<StaticMeshResource>>
+	// Array_Ref_StaticMeshResource
 	set_name(0x14befcc, "RTTI_Array_Ref_StaticMeshResource");
 	apply_type(0x14befcc, "RTTIContainer");
 
-	// Array<Ref<TypefaceStyle>>
+	// Array_Ref_TypefaceStyle
 	set_name(0x14c9630, "RTTI_Array_Ref_TypefaceStyle");
 	apply_type(0x14c9630, "RTTIContainer");
 
-	// Array<Ref<UnlockableFeatureResource>>
+	// Array_Ref_UnlockableFeatureResource
 	set_name(0x152ae64, "RTTI_Array_Ref_UnlockableFeatureResource");
 	apply_type(0x152ae64, "RTTIContainer");
 
-	// Array<Ref<UseLocationResource>>
+	// Array_Ref_UseLocationResource
 	set_name(0x14e2104, "RTTI_Array_Ref_UseLocationResource");
 	apply_type(0x14e2104, "RTTIContainer");
 
-	// Array<Ref<UseLocationResourceGame>>
+	// Array_Ref_UseLocationResourceGame
 	set_name(0x14effc0, "RTTI_Array_Ref_UseLocationResourceGame");
 	apply_type(0x14effc0, "RTTIContainer");
 
-	// Array<Ref<WeaponRackItem>>
+	// Array_Ref_WeaponRackItem
 	set_name(0x15286a4, "RTTI_Array_Ref_WeaponRackItem");
 	apply_type(0x15286a4, "RTTIContainer");
 
-	// Array<Ref<WipeCompletionRegion>>
+	// Array_Ref_WipeCompletionRegion
 	set_name(0x154af3c, "RTTI_Array_Ref_WipeCompletionRegion");
 	apply_type(0x154af3c, "RTTIContainer");
 
-	// Array<Ref<Zone>>
+	// Array_Ref_Zone
 	set_name(0x14ce014, "RTTI_Array_Ref_Zone");
 	apply_type(0x14ce014, "RTTIContainer");
 
-	// Array<Ref<ZoomSetting>>
+	// Array_Ref_ZoomSetting
 	set_name(0x1528878, "RTTI_Array_Ref_ZoomSetting");
 	apply_type(0x1528878, "RTTIContainer");
 
-	// Array<RegionAssetFilter>
+	// Array_RegionAssetFilter
 	set_name(0x14ef750, "RTTI_Array_RegionAssetFilter");
 	apply_type(0x14ef750, "RTTIContainer");
 
-	// Array<RenderEffectShaderOverrides>
+	// Array_RenderEffectShaderOverrides
 	set_name(0x14cb3bc, "RTTI_Array_RenderEffectShaderOverrides");
 	apply_type(0x14cb3bc, "RTTIContainer");
 
-	// Array<RenderTechnique>
+	// Array_RenderTechnique
 	set_name(0x14c94a0, "RTTI_Array_RenderTechnique");
 	apply_type(0x14c94a0, "RTTIContainer");
 
-	// Array<ReviveAmmoSettings>
+	// Array_ReviveAmmoSettings
 	set_name(0x1513c18, "RTTI_Array_ReviveAmmoSettings");
 	apply_type(0x1513c18, "RTTIContainer");
 
-	// Array<RollBone>
+	// Array_RollBone
 	set_name(0x14e3a50, "RTTI_Array_RollBone");
 	apply_type(0x14e3a50, "RTTIContainer");
 
-	// Array<SKDTreeNode>
+	// Array_SKDTreeNode
 	set_name(0x14add88, "RTTI_Array_SKDTreeNode");
 	apply_type(0x14add88, "RTTIContainer");
 
-	// Array<ScoreStatRequirement>
+	// Array_ScoreStatRequirement
 	set_name(0x14f0260, "RTTI_Array_ScoreStatRequirement");
 	apply_type(0x14f0260, "RTTIContainer");
 
-	// Array<SectionAssetInfo>
+	// Array_SectionAssetInfo
 	set_name(0x14ef998, "RTTI_Array_SectionAssetInfo");
 	apply_type(0x14ef998, "RTTIContainer");
 
-	// Array<SelectByVariableInfo>
+	// Array_SelectByVariableInfo
 	set_name(0x14d9abc, "RTTI_Array_SelectByVariableInfo");
 	apply_type(0x14d9abc, "RTTIContainer");
 
-	// Array<SentryBotSetting>
+	// Array_SentryBotSetting
 	set_name(0x15176e8, "RTTI_Array_SentryBotSetting");
 	apply_type(0x15176e8, "RTTIContainer");
 
-	// Array<SequentialAnimationInfo>
+	// Array_SequentialAnimationInfo
 	set_name(0x14d9a58, "RTTI_Array_SequentialAnimationInfo");
 	apply_type(0x14d9a58, "RTTIContainer");
 
-	// Array<SkeletonAnimChannel>
+	// Array_SkeletonAnimChannel
 	set_name(0x14da2f4, "RTTI_Array_SkeletonAnimChannel");
 	apply_type(0x14da2f4, "RTTIContainer");
 
-	// Array<SkeletonTargetLink>
+	// Array_SkeletonTargetLink
 	set_name(0x14da638, "RTTI_Array_SkeletonTargetLink");
 	apply_type(0x14da638, "RTTIContainer");
 
-	// Array<SkinnedModelLOD>
+	// Array_SkinnedModelLOD
 	set_name(0x14e7a48, "RTTI_Array_SkinnedModelLOD");
 	apply_type(0x14e7a48, "RTTIContainer");
 
-	// Array<SkinnedPoint>
+	// Array_SkinnedPoint
 	set_name(0x14daa00, "RTTI_Array_SkinnedPoint");
 	apply_type(0x14daa00, "RTTIContainer");
 
-	// Array<SoundStateMachineEventSettings>
+	// Array_SoundStateMachineEventSettings
 	set_name(0x14fb444, "RTTI_Array_SoundStateMachineEventSettings");
 	apply_type(0x14fb444, "RTTIContainer");
 
-	// Array<SoundStateMachineStateSettings>
+	// Array_SoundStateMachineStateSettings
 	set_name(0x14fb3e0, "RTTI_Array_SoundStateMachineStateSettings");
 	apply_type(0x14fb3e0, "RTTIContainer");
 
-	// Array<SpawnEffectAnimatedShader>
+	// Array_SpawnEffectAnimatedShader
 	set_name(0x150fe28, "RTTI_Array_SpawnEffectAnimatedShader");
 	apply_type(0x150fe28, "RTTIContainer");
 
-	// Array<SpawnEffectTimedMeshSwitch>
+	// Array_SpawnEffectTimedMeshSwitch
 	set_name(0x150fdc4, "RTTI_Array_SpawnEffectTimedMeshSwitch");
 	apply_type(0x150fdc4, "RTTIContainer");
 
-	// Array<Stat>
+	// Array_Stat
 	set_name(0x14f08b4, "RTTI_Array_Stat");
 	apply_type(0x14f08b4, "RTTIContainer");
 
-	// Array<StatResource>
+	// Array_StatResource
 	set_name(0x153e98c, "RTTI_Array_StatResource");
 	apply_type(0x153e98c, "RTTIContainer");
 
-	// Array<StateSwitch>
+	// Array_StateSwitch
 	set_name(0x14b9964, "RTTI_Array_StateSwitch");
 	apply_type(0x14b9964, "RTTIContainer");
 
-	// Array<String>
+	// Array_String
 	set_name(0x14b94f0, "RTTI_Array_String");
 	apply_type(0x14b94f0, "RTTIContainer");
 
-	// Array<Subtitle>
+	// Array_Subtitle
 	set_name(0x14efb38, "RTTI_Array_Subtitle");
 	apply_type(0x14efb38, "RTTIContainer");
 
-	// Array<SuspensionUnit>
+	// Array_SuspensionUnit
 	set_name(0x150bc1c, "RTTI_Array_SuspensionUnit");
 	apply_type(0x150bc1c, "RTTIContainer");
 
-	// Array<SwitchMeshResourcePart>
+	// Array_SwitchMeshResourcePart
 	set_name(0x14beda4, "RTTI_Array_SwitchMeshResourcePart");
 	apply_type(0x14beda4, "RTTIContainer");
 
-	// Array<TargetBoneSetFlags>
+	// Array_TargetBoneSetFlags
 	set_name(0x14da700, "RTTI_Array_TargetBoneSetFlags");
 	apply_type(0x14da700, "RTTIContainer");
 
-	// Array<TextureBindingWithHandle>
+	// Array_TextureBindingWithHandle
 	set_name(0x14cb6ac, "RTTI_Array_TextureBindingWithHandle");
 	apply_type(0x14cb6ac, "RTTIContainer");
 
-	// Array<TextureLUTEntry>
+	// Array_TextureLUTEntry
 	set_name(0x14cb0a0, "RTTI_Array_TextureLUTEntry");
 	apply_type(0x14cb0a0, "RTTIContainer");
 
-	// Array<TextureWidgetElement>
+	// Array_TextureWidgetElement
 	set_name(0x14c176c, "RTTI_Array_TextureWidgetElement");
 	apply_type(0x14c176c, "RTTIContainer");
 
-	// Array<TimeMappingInfo>
+	// Array_TimeMappingInfo
 	set_name(0x14d9830, "RTTI_Array_TimeMappingInfo");
 	apply_type(0x14d9830, "RTTIContainer");
 
-	// Array<TimeWarpFactor>
+	// Array_TimeWarpFactor
 	set_name(0x151a118, "RTTI_Array_TimeWarpFactor");
 	apply_type(0x151a118, "RTTIContainer");
 
-	// Array<TimeWarpTag>
+	// Array_TimeWarpTag
 	set_name(0x14d96c0, "RTTI_Array_TimeWarpTag");
 	apply_type(0x14d96c0, "RTTIContainer");
 
-	// Array<TrackAnimatorUserExitOptions>
+	// Array_TrackAnimatorUserExitOptions
 	set_name(0x15059d4, "RTTI_Array_TrackAnimatorUserExitOptions");
 	apply_type(0x15059d4, "RTTIContainer");
 
-	// Array<TriStateIcon>
+	// Array_TriStateIcon
 	set_name(0x15350dc, "RTTI_Array_TriStateIcon");
 	apply_type(0x15350dc, "RTTIContainer");
 
-	// Array<Trophy>
+	// Array_Trophy
 	set_name(0x14f06a4, "RTTI_Array_Trophy");
 	apply_type(0x14f06a4, "RTTIContainer");
 
-	// Array<TwoBoneIkControl>
+	// Array_TwoBoneIkControl
 	set_name(0x14da290, "RTTI_Array_TwoBoneIkControl");
 	apply_type(0x14da290, "RTTIContainer");
 
-	// Array<TwoJointIkBendConfig>
+	// Array_TwoJointIkBendConfig
 	set_name(0x14e34b4, "RTTI_Array_TwoJointIkBendConfig");
 	apply_type(0x14e34b4, "RTTIContainer");
 
-	// Array<UseLocationInfo>
+	// Array_UseLocationInfo
 	set_name(0x1504d78, "RTTI_Array_UseLocationInfo");
 	apply_type(0x1504d78, "RTTIContainer");
 
-	// Array<UsedEntityScoreSettings>
+	// Array_UsedEntityScoreSettings
 	set_name(0x14f0588, "RTTI_Array_UsedEntityScoreSettings");
 	apply_type(0x14f0588, "RTTIContainer");
 
-	// Array<UserDamageModifier>
+	// Array_UserDamageModifier
 	set_name(0x1505358, "RTTI_Array_UserDamageModifier");
 	apply_type(0x1505358, "RTTIContainer");
 
-	// Array<UserModeInfo>
+	// Array_UserModeInfo
 	set_name(0x1504d04, "RTTI_Array_UserModeInfo");
 	apply_type(0x1504d04, "RTTIContainer");
 
-	// Array<VariableBindingNGWithHandle>
+	// Array_VariableBindingNGWithHandle
 	set_name(0x14cb7c8, "RTTI_Array_VariableBindingNGWithHandle");
 	apply_type(0x14cb7c8, "RTTIContainer");
 
-	// Array<VertexDeltaDeformation>
+	// Array_VertexDeltaDeformation
 	set_name(0x14d9f2c, "RTTI_Array_VertexDeltaDeformation");
 	apply_type(0x14d9f2c, "RTTIContainer");
 
-	// Array<VertexSkin>
+	// Array_VertexSkin
 	set_name(0x14da938, "RTTI_Array_VertexSkin");
 	apply_type(0x14da938, "RTTIContainer");
 
-	// Array<VertexSkinNBT>
+	// Array_VertexSkinNBT
 	set_name(0x14da99c, "RTTI_Array_VertexSkinNBT");
 	apply_type(0x14da99c, "RTTIContainer");
 
-	// Array<ViewportSetup>
+	// Array_ViewportSetup
 	set_name(0x152e394, "RTTI_Array_ViewportSetup");
 	apply_type(0x152e394, "RTTIContainer");
 
-	// Array<WString>
+	// Array_WString
 	set_name(0x14b95ac, "RTTI_Array_WString");
 	apply_type(0x14b95ac, "RTTIContainer");
 
-	// Array<WeaponScoreMultipliers>
+	// Array_WeaponScoreMultipliers
 	set_name(0x14f05ec, "RTTI_Array_WeaponScoreMultipliers");
 	apply_type(0x14f05ec, "RTTIContainer");
 
-	// Array<WheelInfo>
+	// Array_WheelInfo
 	set_name(0x150bd28, "RTTI_Array_WheelInfo");
 	apply_type(0x150bd28, "RTTIContainer");
 
-	// Array<WheelLogic>
+	// Array_WheelLogic
 	set_name(0x150bd8c, "RTTI_Array_WheelLogic");
 	apply_type(0x150bd8c, "RTTIContainer");
 
-	// Array<WheelMapping>
+	// Array_WheelMapping
 	set_name(0x150b678, "RTTI_Array_WheelMapping");
 	apply_type(0x150b678, "RTTIContainer");
 
-	// Array<WidgetAnimationSettings>
+	// Array_WidgetAnimationSettings
 	set_name(0x14c15fc, "RTTI_Array_WidgetAnimationSettings");
 	apply_type(0x14c15fc, "RTTIContainer");
 
-	// Array<cptr<AIFaction>>
+	// Array_cptr_AIFaction
 	set_name(0x14cf078, "RTTI_Array_cptr_AIFaction");
 	apply_type(0x14cf078, "RTTIContainer");
 
-	// Array<cptr<AILinkTypeInfo>>
+	// Array_cptr_AILinkTypeInfo
 	set_name(0x14d6890, "RTTI_Array_cptr_AILinkTypeInfo");
 	apply_type(0x14d6890, "RTTIContainer");
 
-	// Array<cptr<AnimationState>>
+	// Array_cptr_AnimationState
 	set_name(0x14b9a3c, "RTTI_Array_cptr_AnimationState");
 	apply_type(0x14b9a3c, "RTTIContainer");
 
-	// Array<cptr<CoreObject>>
+	// Array_cptr_CoreObject
 	set_name(0x14bc6b4, "RTTI_Array_cptr_CoreObject");
 	apply_type(0x14bc6b4, "RTTIContainer");
 
-	// Array<cptr<DestructionLogicAction>>
+	// Array_cptr_DestructionLogicAction
 	set_name(0x14e2df4, "RTTI_Array_cptr_DestructionLogicAction");
 	apply_type(0x14e2df4, "RTTIContainer");
 
-	// Array<cptr<GestureAction>>
+	// Array_cptr_GestureAction
 	set_name(0x14eb15c, "RTTI_Array_cptr_GestureAction");
 	apply_type(0x14eb15c, "RTTIContainer");
 
-	// Array<cptr<GestureResource>>
+	// Array_cptr_GestureResource
 	set_name(0x14eb084, "RTTI_Array_cptr_GestureResource");
 	apply_type(0x14eb084, "RTTIContainer");
 
-	// Array<cptr<LeanAndPeekAction>>
+	// Array_cptr_LeanAndPeekAction
 	set_name(0x15051a8, "RTTI_Array_cptr_LeanAndPeekAction");
 	apply_type(0x15051a8, "RTTIContainer");
 
-	// Array<cptr<Zone>>
+	// Array_cptr_Zone
 	set_name(0x14cdff4, "RTTI_Array_cptr_Zone");
 	apply_type(0x14cdff4, "RTTIContainer");
 
-	// Array<float>
+	// Array_float
 	set_name(0x14b9478, "RTTI_Array_float");
 	apply_type(0x14b9478, "RTTIContainer");
 
-	// Array<int16>
-	set_name(0x14b92b8, "RTTI_Array_int16");
-	apply_type(0x14b92b8, "RTTIContainer");
-
-	// Array<int>
+	// Array_int
 	set_name(0x14b91c8, "RTTI_Array_int");
 	apply_type(0x14b91c8, "RTTIContainer");
 
-	// Array<uint16>
+	// Array_int16
+	set_name(0x14b92b8, "RTTI_Array_int16");
+	apply_type(0x14b92b8, "RTTIContainer");
+
+	// Array_uint16
 	set_name(0x14b92fc, "RTTI_Array_uint16");
 	apply_type(0x14b92fc, "RTTIContainer");
 
-	// Array<uint8>
+	// Array_uint8
 	set_name(0x14b9274, "RTTI_Array_uint8");
 	apply_type(0x14b9274, "RTTIContainer");
 
-	// TinyArray<ShaderVariable>
+	// TinyArray_ShaderVariable
 	set_name(0x14cb710, "RTTI_TinyArray_ShaderVariable");
 	apply_type(0x14cb710, "RTTIContainer");
 
-	// TinyArray<TextureBinding>
+	// TinyArray_TextureBinding
 	set_name(0x14cb648, "RTTI_TinyArray_TextureBinding");
 	apply_type(0x14cb648, "RTTIContainer");
 }
