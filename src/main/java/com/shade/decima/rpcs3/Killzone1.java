@@ -1,7 +1,7 @@
 package com.shade.decima.rpcs3;
 
+import com.shade.decima.rpcs3.util.Pine;
 import com.shade.decima.rpcs3.util.Pointer;
-import com.shade.decima.rpcs3.util.Process;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -11,11 +11,14 @@ import java.util.stream.Stream;
 
 public class Killzone1 {
     static void main() throws Throwable {
-        try (Process process = Process.open("rpcs3.exe").orElseThrow(() -> new IllegalStateException("No RPCS3 process found"))) {
-            var base = process.memory(0x300000000L); // RPCS3's g_base_addr
+        try (var pine = Pine.connect("localhost", 28012)) {
+            System.out.println("Title:   " + pine.getTitle());
+            System.out.println("ID:      " + pine.getID());
+            System.out.println("UUID:    " + pine.getUUID());
+            System.out.println("Version: " + pine.getGameVersion());
 
             if (true) {
-                var addr = base.add(0x130fa78);
+                var addr = pine.memory().add(0x130fa78);
                 var rtti = new RTTI2(addr);
                 printType(addr, rtti);
                 return;
@@ -23,7 +26,7 @@ public class Killzone1 {
 
             Set<Pointer> vtables = new TreeSet<>(Comparator.comparingLong(Pointer::address));
 
-            var factory = base.add(0x7E3384).deref32();
+            var factory = pine.memory().add(0x7E3384).deref32();
             var types = HashMap.read(factory, STRING_TYPE, RTTI1.TYPE_PTR);
 
             System.out.println("Types:");

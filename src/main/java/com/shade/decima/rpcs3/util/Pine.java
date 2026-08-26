@@ -1,20 +1,20 @@
-package com.shade.decima.rpcs3.pine;
+package com.shade.decima.rpcs3.util;
 
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.lang.foreign.MemorySegment;
+import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.channels.AsynchronousSocketChannel;
-import java.nio.channels.CompletionHandler;
+import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
-public final class Pine implements Closeable {
+public final class Pine implements Memory, Closeable {
     /** Read 8 bit value to memory. */
     private static final byte MsgRead8 = 0;
     /** Read 16 bit value to memory. */
@@ -48,31 +48,32 @@ public final class Pine implements Closeable {
     /** Returns the emulator status. */
     private static final byte MsgStatus = 0xF;
 
+    private final SocketChannel channel;
 
-    private final AsynchronousSocketChannel channel;
-
-    public static CompletableFuture<Pine> connect(SocketAddress address) throws IOException {
-        var channel = AsynchronousSocketChannel.open();
-        var future = new CompletableFuture<Pine>();
-        channel.connect(address, channel, new CompletionHandler<>() {
-            @Override
-            public void completed(Void result, AsynchronousSocketChannel attachment) {
-                future.complete(new Pine(attachment));
-            }
-
-            @Override
-            public void failed(Throwable exc, AsynchronousSocketChannel attachment) {
-                future.completeExceptionally(exc);
-            }
-        });
-        return future;
+    public static Pine connect(SocketAddress address) throws IOException {
+        var channel = SocketChannel.open();
+        channel.configureBlocking(true);
+        channel.connect(address);
+        return new Pine(channel);
     }
 
-    private Pine(AsynchronousSocketChannel channel) {
+    public static Pine connect(String host, int port) throws IOException {
+        return connect(new InetSocketAddress(host, port));
+    }
+
+    private Pine(SocketChannel channel) {
         this.channel = channel;
     }
 
-    public CompletableFuture<Byte> read8(int address) {
+    public Pointer memory() {
+        return new Pointer(this, 0);
+    }
+
+    public Pointer memory(long base) {
+        return new Pointer(rebase(base), 0);
+    }
+
+    public byte read8(int address) throws IOException {
         var payload = ByteBuffer.allocate(4)
             .order(ByteOrder.LITTLE_ENDIAN)
             .putInt(address)
@@ -80,7 +81,7 @@ public final class Pine implements Closeable {
         return sendMessage(new IpcRequest(MsgRead8, payload), IpcResponse::get);
     }
 
-    public CompletableFuture<Short> read16(int address) {
+    public short read16(int address) throws IOException {
         var payload = ByteBuffer.allocate(4)
             .order(ByteOrder.LITTLE_ENDIAN)
             .putInt(address)
@@ -88,7 +89,7 @@ public final class Pine implements Closeable {
         return sendMessage(new IpcRequest(MsgRead16, payload), IpcResponse::getShort);
     }
 
-    public CompletableFuture<Integer> read32(int address) {
+    public int read32(int address) throws IOException {
         var payload = ByteBuffer.allocate(4)
             .order(ByteOrder.LITTLE_ENDIAN)
             .putInt(address)
@@ -96,7 +97,7 @@ public final class Pine implements Closeable {
         return sendMessage(new IpcRequest(MsgRead32, payload), IpcResponse::getInt);
     }
 
-    public CompletableFuture<Long> read64(int address) {
+    public long read64(int address) throws IOException {
         var payload = ByteBuffer.allocate(4)
             .order(ByteOrder.LITTLE_ENDIAN)
             .putInt(address)
@@ -104,20 +105,51 @@ public final class Pine implements Closeable {
         return sendMessage(new IpcRequest(MsgRead64, payload), IpcResponse::getLong);
     }
 
-    public CompletableFuture<String> getTitle() {
+    public void read(int address, ByteBuffer dst) throws IOException {
+        while (dst.hasRemaining()) {
+            if (dst.remaining() >= 8) {
+                dst.putLong(read64(address));
+                address += 8;
+            }
+            if (dst.remaining() >= 4) {
+                dst.putInt(read32(address));
+                address += 4;
+            }
+            if (dst.remaining() >= 2) {
+                dst.putShort(read16(address));
+                address += 2;
+            }
+            if (dst.remaining() >= 1) {
+                dst.put(read8(address));
+                address += 1;
+            }
+        }
+    }
+
+    public String getTitle() throws IOException {
         return sendMessage(new IpcRequest(MsgTitle), IpcResponse::getString);
     }
 
-    public CompletableFuture<String> getID() {
+    public String getID() throws IOException {
         return sendMessage(new IpcRequest(MsgID), IpcResponse::getString);
     }
 
-    public CompletableFuture<String> getUUID() {
+    public String getUUID() throws IOException {
         return sendMessage(new IpcRequest(MsgUUID), IpcResponse::getString);
     }
 
-    public CompletableFuture<String> getGameVersion() {
+    public String getGameVersion() throws IOException {
         return sendMessage(new IpcRequest(MsgGameVersion), IpcResponse::getString);
+    }
+
+    @Override
+    public void read(long address, MemorySegment buffer, int size) {
+        var dst = buffer.asByteBuffer().limit(size);
+        try {
+            read(Math.toIntExact(address), dst);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 
     @Override
@@ -125,19 +157,16 @@ public final class Pine implements Closeable {
         channel.close();
     }
 
-    private <T> CompletableFuture<T> sendMessage(IpcRequest request, Function<IpcResponse, T> fn) {
-        return sendRequest(request)
-            .thenCompose(_ -> readResponse())
-            .thenApply(response -> {
-                if (response.result() != IpcResponse.RESULT_OK) {
-                    throw new IllegalStateException("Failed to send message: %02X".formatted(response.result()));
-                }
-                return fn.apply(response);
-            });
+    private <T> T sendMessage(IpcRequest request, Function<IpcResponse, T> fn) throws IOException {
+        sendRequest(request);
+        var response = readResponse();
+        if (response.result() != IpcResponse.RESULT_OK) {
+            throw new IllegalStateException("Failed to send message: %02X".formatted(response.result()));
+        }
+        return fn.apply(response);
     }
 
-    private CompletableFuture<Void> sendRequest(IpcRequest request) {
-        var future = new CompletableFuture<Void>();
+    private void sendRequest(IpcRequest request) throws IOException {
         var buffer = ByteBuffer.allocate(request.size())
             .order(ByteOrder.LITTLE_ENDIAN)
             .putInt(request.size())
@@ -145,67 +174,33 @@ public final class Pine implements Closeable {
             .put(request.payload())
             .flip();
 
-        channel.write(buffer, null, new CompletionHandler<>() {
-            @Override
-            public void completed(Integer result, Object attachment) {
-                if (result != buffer.capacity()) {
-                    future.completeExceptionally(new EOFException());
-                }
-                future.complete(null);
-            }
-
-            @Override
-            public void failed(Throwable exc, Object attachment) {
-                future.completeExceptionally(exc);
-            }
-        });
-
-        return future;
+        while (buffer.hasRemaining()) {
+            channel.write(buffer);
+        }
     }
 
-    private CompletableFuture<IpcResponse> readResponse() {
-        var future = new CompletableFuture<IpcResponse>();
-        var buffer = ByteBuffer.allocate(5)
+    private IpcResponse readResponse() throws IOException {
+        var buffer = ByteBuffer
+            .allocate(5)
             .order(ByteOrder.LITTLE_ENDIAN);
 
-        channel.read(buffer, null, new CompletionHandler<>() {
-            @Override
-            public void completed(Integer result, Object attachment) {
-                if (result != buffer.capacity()) {
-                    future.completeExceptionally(new EOFException());
-                }
+        if (channel.read(buffer) != buffer.capacity()) {
+            throw new EOFException();
+        }
 
-                buffer.flip();
+        buffer.flip();
 
-                var length = buffer.getInt();
-                var status = buffer.get();
-                var payload = ByteBuffer.allocate(length - 5).order(ByteOrder.LITTLE_ENDIAN);
+        var length = buffer.getInt();
+        var status = buffer.get();
+        var payload = ByteBuffer
+            .allocate(length - 5)
+            .order(ByteOrder.LITTLE_ENDIAN);
 
-                int read;
-                try {
-                    read = channel.read(payload).get();
-                } catch (InterruptedException e) {
-                    future.completeExceptionally(e);
-                    return;
-                } catch (ExecutionException e) {
-                    future.completeExceptionally(e.getCause());
-                    return;
-                }
+        if (channel.read(payload) != payload.capacity()) {
+            throw new EOFException();
+        }
 
-                if (read != payload.capacity()) {
-                    future.completeExceptionally(new EOFException());
-                }
-
-                future.complete(new IpcResponse(status, payload.flip()));
-            }
-
-            @Override
-            public void failed(Throwable exc, Object attachment) {
-                future.completeExceptionally(exc);
-            }
-        });
-
-        return future;
+        return new IpcResponse(status, payload.flip());
     }
 
     private record IpcRequest(byte opcode, ByteBuffer payload) {
