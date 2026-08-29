@@ -1,9 +1,11 @@
 package com.shade.decima.rpcs3;
 
-import com.shade.decima.rpcs3.util.Pine;
 import com.shade.decima.rpcs3.util.Pointer;
+import com.shade.decima.rpcs3.util.Process;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -11,47 +13,49 @@ import java.util.stream.Stream;
 
 public class Killzone1 {
     static void main() throws Throwable {
-        try (var pine = Pine.connect("localhost", 28012)) {
-            System.out.println("Title:   " + pine.getTitle());
-            System.out.println("ID:      " + pine.getID());
-            System.out.println("UUID:    " + pine.getUUID());
-            System.out.println("Version: " + pine.getGameVersion());
+        try (var process = Process.open("rpcs3.exe").orElseThrow(() -> new IllegalStateException("No RPCS3 process found"))) {
+            var base = process.memory(0x300000000L); // RPCS3's g_base_addr
 
-            if (true) {
-                var addr = pine.memory().add(0x130fa78);
-                var rtti = new RTTI2(addr);
+            if (false) {
+                var addr = base.add(0x130fa78);
+                var rtti = rttiOf(addr);
                 printType(addr, rtti);
                 return;
             }
 
-            Set<Pointer> vtables = new TreeSet<>(Comparator.comparingLong(Pointer::address));
+            var factory = base.add(0x7E3384).deref32();
+            var factory_types = HashMap.read(factory, STRING_TYPE, RTTI0.TYPE_PTR);
+            var types = new TreeSet<>(Comparator.comparing(Pointer::address));
 
-            var factory = pine.memory().add(0x7E3384).deref32();
-            var types = HashMap.read(factory, STRING_TYPE, RTTI1.TYPE_PTR);
+            var attrs = new TreeSet<>(Comparator.comparingLong(Pointer::address));
 
-            System.out.println("Types:");
-
-            types.forEach((name, type) -> {
+            System.out.println("Scanning types ...");
+            factory_types.forEach((_, type) -> {
                 var addr = type.ptr().deref32();
-                var rtti = type.deref();
+                var rtti = rttiOf(addr);
 
-                System.out.printf(" - %s %s%n", addr, name);
-
-                if (rtti.name.equals("RuntimeTypeInfoObject")) {
-                    return;
+                for (var ptr = addr; ptr.address() != 0; ptr = new RTTI0(ptr).parent) {
+                    types.add(ptr);
                 }
 
-                for (TypedPointer<RTTIAttr> pAttr : rtti.attrs) {
-                    var attr = pAttr.deref();
-                    vtables.add(attr.vtable);
+                if (rtti instanceof RTTI1 rtti1) {
+                    for (var attr : rtti1.attrs) {
+                        attrs.add(attr.deref().vtbl());
+                    }
                 }
-
-                // printType(addr, rtti);
-                // System.out.println();
             });
 
-            System.out.println("\nVtables:");
-            for (var vtable : vtables) {
+            System.out.println("Types:");
+            for (Pointer addr : types) {
+                var rtti = rttiOf(addr);
+                printType(addr, rtti);
+                System.out.println();
+                System.out.println();
+            }
+            ;
+
+            System.out.println("\nAttribute Vtables:");
+            for (var vtable : attrs) {
                 var func = vtable.add(0x34).deref32().deref32();
                 var code = func.read(8);
                 assert code[0] == 0x3C;
@@ -67,12 +71,69 @@ public class Killzone1 {
                     new String(new byte[]{code[2], code[3], code[6], code[7]}, StandardCharsets.UTF_8)
                 );
             }
+
+            try (var writer = Files.newBufferedWriter(Path.of("output/killzone1.idc"))) {
+                writer.write("""
+                    #include <idc.idc>
+                    
+                    static main() {
+                        auto NAME_FLAGS = SN_FORCE | SN_DELTAIL | SN_NOWARN;
+                    """);
+
+                writer.write("\n\t// Compounds");
+                for (Pointer addr : types) {
+                    var rtti = rttiOf(addr);
+                    writer.write("\n\tset_name(%#x, \"RTTI_%s\", NAME_FLAGS);".formatted(addr.address(), rtti.name));
+                    writer.write("\n\tapply_type(%#x, \"RTTI_2\");".formatted(addr.address()));
+                    var meta = rtti.meta.pointer;
+                    writer.write("\n\tset_name(%#x, \"RTTIMeta_%s\", NAME_FLAGS);".formatted(meta.address(), rtti.name));
+                    writer.write("\n\tapply_type(%#x, \"RTTITypeMeta\");".formatted(meta.address()));
+                    writer.write("\n");
+                }
+
+                var functionsSeen = new HashSet<Pointer>();
+
+                writer.write("\n\t// Functions");
+                for (Pointer addr : types) {
+                    depthFirstTraverse(rttiOf(addr), rtti -> {
+                        if (!(rtti instanceof RTTI2 rtti2)) {
+                            return;
+                        }
+                        for (var pFunction : rtti2.functions) {
+                            if (functionsSeen.add(pFunction.ptr().deref32())) {
+                                var function = pFunction.deref();
+                                var entry = function.handler().entry().address();
+                                if ((entry & 1) == 0) {
+                                    writer.write("\n\tset_name(%#x, \"%s::%s\", NAME_FLAGS);".formatted(base.add(entry).deref32().address(), rtti2.name, function.name()));
+                                    writer.write("\n\tset_name(%#x, \"%s::%s_0\", NAME_FLAGS);".formatted(entry, rtti2.name, function.name()));
+                                    writer.write("\n\tapply_type(%#x, \"ppu_func_pointer\");".formatted(entry));
+                                    writer.write("\n");
+                                }
+                            }
+                        }
+                    });
+                }
+
+                writer.write("}\n");
+            }
         }
+    }
+
+    private static <E extends Exception> void depthFirstTraverse(RTTI0 rtti, ThrowableConsumer<RTTI0, E> consumer) throws E {
+        if (rtti.parent.address() != 0L) {
+            depthFirstTraverse(rttiOf(rtti.parent), consumer);
+        }
+        consumer.accept(rtti);
+    }
+
+    @FunctionalInterface
+    private interface ThrowableConsumer<T, E extends Exception> {
+        void accept(T t) throws E;
     }
 
     private static void printType(Pointer addr, RTTI0 rtti) {
         var hierarchy = Stream
-            .iterate(addr, ptr -> ptr.address() != 0, ptr -> new RTTI1(ptr).parent)
+            .iterate(addr, ptr -> ptr.address() != 0, ptr -> new RTTI0(ptr).parent)
             .toList();
 
         for (int i = 0; i < hierarchy.size(); i++) {
@@ -102,6 +163,21 @@ public class Killzone1 {
         var buffer = pointer.deref32();
         var length = buffer.add(8).readInt();
         return buffer.add(16).readString(StandardCharsets.US_ASCII, length);
+    }
+
+    private static int alignUp(int value, int alignment) {
+        return (value + alignment - 1) & -alignment;
+    }
+
+    private static RTTI0 rttiOf(Pointer pointer) {
+        var rtti0 = new RTTI0(pointer);
+        if (rtti0.isKindOf("CoreObject")) {
+            return new RTTI2(pointer);
+        }
+        if (rtti0.isKindOf("SerializableObject")) {
+            return new RTTI1(pointer);
+        }
+        return rtti0;
     }
 
     private record HashMap<K, V>(
@@ -146,42 +222,67 @@ public class Killzone1 {
         }
     }
 
+    private record RTTIBase(int offset, TypedPointer<RTTI0.Meta> meta) {
+        static final Typed<RTTIBase> TYPE = Typed.of(RTTIBase::read, 8);
+
+        static RTTIBase read(Pointer pointer) {
+            var offset = pointer.add(0).readInt();
+            var meta = RTTI0.Meta.TYPE_PTR.read(pointer.add(4));
+            return new RTTIBase(offset, meta);
+        }
+    }
+
     private static class RTTI0 {
         public static final Typed<RTTI0> TYPE = Typed.of(RTTI0::new, 0x1C);
         public static final Typed<TypedPointer<RTTI0>> TYPE_PTR = TYPE.indirect();
 
         protected static class Meta {
+            static final Typed<Meta> TYPE = Typed.of(Meta::new, 0x14);
+            static final Typed<TypedPointer<Meta>> TYPE_PTR = TYPE.indirect();
+
+            private final Pointer pointer;
             private final String name;
             private final int size;
             private final int unk08;
             private final int unk0C;
-            private final RawArray unk10;
+            private final TypedArray<RTTIBase> bases;
 
             public Meta(Pointer pointer) {
+                this.pointer = pointer;
                 this.name = pointer.add(0).deref32().readCString();
                 this.size = pointer.add(4).readInt();
                 this.unk08 = pointer.add(8).readInt();
                 this.unk0C = pointer.add(12).readInt();
-                this.unk10 = RawArray.read(pointer.add(16));
+                this.bases = TypedArray.read(pointer.add(16), RTTIBase.TYPE);
             }
         }
 
         protected final Meta meta;
-        protected final Pointer unk04;
-        protected final Pointer unk08;
+        protected final Pointer initializer; // unsure
+        protected final Pointer factory;
         protected final String name;
-        protected final Pointer parent;
-        protected final int crc;
+        protected final Pointer parent; // RTTI0*
+        protected final int nameCrc;
         protected final int size;
 
         public RTTI0(Pointer pointer) {
             this.meta = new Meta(pointer.add(0).deref32());
-            this.unk04 = pointer.add(4).deref32();
-            this.unk08 = pointer.add(8).deref32();
+            this.initializer = pointer.add(4).deref32();
+            this.factory = pointer.add(8).deref32();
             this.name = readString(pointer.add(12));
             this.parent = pointer.add(16).deref32();
-            this.crc = pointer.add(20).readInt();
+            this.nameCrc = pointer.add(20).readInt();
             this.size = pointer.add(24).readInt();
+        }
+
+        boolean isKindOf(String type) {
+            if (name.equals(type)) {
+                return true;
+            }
+            if (parent.address() != 0L) {
+                return new RTTI0(parent).isKindOf(type);
+            }
+            return false;
         }
     }
 
@@ -205,10 +306,8 @@ public class Killzone1 {
         public static final Typed<RTTI2> TYPE = Typed.of(RTTI2::new, 0);
         public static final Typed<TypedPointer<RTTI2>> TYPE_PTR = TYPE.indirect();
 
-        protected final Pointer unk30;
-        protected final Pointer unk34;
-        protected final RawArray unk38;
-        protected final Pointer unk40;
+        protected final FunctionPtr unk30;
+        protected final RawArray mMessages;
         protected final Pointer unk44;
         protected final Pointer unk48;
         protected final Pointer unk4C;
@@ -216,10 +315,8 @@ public class Killzone1 {
 
         public RTTI2(Pointer pointer) {
             super(pointer);
-            this.unk30 = pointer.add(48).deref32();
-            this.unk34 = pointer.add(52).deref32();
-            this.unk38 = RawArray.read(pointer.add(56));
-            this.unk40 = pointer.add(64).deref32();
+            this.unk30 = FunctionPtr.read(pointer.add(48));
+            this.mMessages = RawArray.read(pointer.add(56));
             this.unk44 = pointer.add(68).deref32();
             this.unk48 = pointer.add(72).deref32();
             this.unk4C = pointer.add(76).deref32();
@@ -250,39 +347,64 @@ public class Killzone1 {
     }
 
     private record RTTIAttr(
-        Pointer vtable,
+        Pointer vtbl,
         String group,
         String name,
-        Pointer unk0C,
+        boolean property,
+        int refCount,
         int offset,
-        Pointer unk14,
+        byte[] value,
         FunctionPtr getter,
         FunctionPtr setter
     ) {
-        public static final Typed<RTTIAttr> TYPE = Typed.of(RTTIAttr::read, 0x28);
+        public static final Typed<RTTIAttr> TYPE = Typed.of(RTTIAttr::read, 0);
         public static final Typed<TypedPointer<RTTIAttr>> TYPE_PTR = TYPE.indirect();
 
         public static RTTIAttr read(Pointer pointer) {
-            var vtable = pointer.add(0).deref32();
+            var vtbl = pointer.add(0).deref32();
             var group = pointer.add(4).deref32().address() == 0 ? null : pointer.add(4).deref32().readCString();
             var name = pointer.add(8).deref32().readCString();
-            var unk0C = pointer.add(12).deref32();
+            var propertyAndRefCount = pointer.add(12).readInt();
+            var property = (propertyAndRefCount & 1) == 1;
+            var refCount = propertyAndRefCount >>> 1;
             var offset = pointer.add(16).readInt();
-            var unk14 = pointer.add(20).deref32();
-            var getter = FunctionPtr.read(pointer.add(24));
-            var setter = FunctionPtr.read(pointer.add(32));
-            return new RTTIAttr(vtable, group, name, unk0C, offset, unk14, getter, setter);
+
+            int size = alignUp(computeValueSizeBytes(vtbl), 4); // align to FunctionPtr
+            var value = pointer.add(20).readBytes(size);
+            var getter = FunctionPtr.read(pointer.add(20 + size));
+            var setter = FunctionPtr.read(pointer.add(28 + size));
+            return new RTTIAttr(vtbl, group, name, property, refCount, offset, value, getter, setter);
+        }
+
+        private static int computeValueSizeBytes(Pointer vtbl) {
+            // vtbl -> li r3, 4
+            var instruction = vtbl.add(13 * 8).deref32().deref32().readInt();
+            if (instruction >>> 26 != 14) {
+                throw new IllegalStateException("Unexpected instruction for getSize: " + Integer.toHexString(instruction));
+            }
+            int size = (short) instruction; // TODO compute
+            return size;
+        }
+
+        @Override
+        public String toString() {
+            return "RTTIAttr[vtbl=" + vtbl
+                + ", group=\"" + group + "\""
+                + ", name=\"" + name + "\""
+                + ", property=" + property
+                + ", refCount=" + refCount
+                + ", offset=" + offset
+                + ", value=" + Arrays.toString(value)
+                + ", getter=" + getter
+                + ", setter=" + setter + "]";
         }
     }
 
-    private record FunctionPtr(Pointer ptr1, Pointer ptr2) {
+    private record FunctionPtr(Pointer entry, Pointer toc) {
         public static FunctionPtr read(Pointer pointer) {
-            var ptr1 = pointer.add(0).deref32();
-            var ptr2 = pointer.add(4).deref32();
-            if (ptr1.address() != 0 && ptr2.address() != 0) {
-                // throw new IllegalStateException("Invalid function pointer");
-            }
-            return new FunctionPtr(ptr1, ptr2);
+            var entry = pointer.add(0).deref32();
+            var toc = pointer.add(4).deref32();
+            return new FunctionPtr(entry, toc);
         }
     }
 
@@ -295,7 +417,7 @@ public class Killzone1 {
         }
     }
 
-    static record TypedArray<R>(int length, int capacity, Pointer entries, Typed<R> typed) implements Iterable<R> {
+    record TypedArray<R>(int length, int capacity, Pointer entries, Typed<R> typed) implements Iterable<R> {
         static <R> TypedArray<R> read(Pointer ptr, Typed<R> typed) {
             var length = ptr.add(0).readInt();
             var capacity = ptr.add(4).readInt();

@@ -77,6 +77,14 @@ public record Pointer(Memory memory, long address) {
         }
     }
 
+    public byte[] readBytes(int length) {
+        try (Arena arena = Arena.ofConfined()) {
+            var buffer = arena.allocate(length);
+            read(buffer, length);
+            return buffer.toArray(ValueLayout.JAVA_BYTE);
+        }
+    }
+
     private void read(MemorySegment buffer, int size) {
         read(address, buffer, size);
     }
@@ -87,10 +95,6 @@ public record Pointer(Memory memory, long address) {
 
     public Pointer deref32() {
         return new Pointer(memory, Integer.toUnsignedLong(readInt()));
-    }
-
-    public Pointer deref64() {
-        return new Pointer(memory, readLong());
     }
 
     public Pointer add(long displacement) {
