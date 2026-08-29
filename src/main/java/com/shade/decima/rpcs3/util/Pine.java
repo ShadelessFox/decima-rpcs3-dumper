@@ -112,16 +112,13 @@ public final class Pine implements Memory, Closeable {
             if (dst.remaining() >= 8) {
                 dst.putLong(read64(address));
                 address += 8;
-            }
-            if (dst.remaining() >= 4) {
+            } else if (dst.remaining() >= 4) {
                 dst.putInt(read32(address));
                 address += 4;
-            }
-            if (dst.remaining() >= 2) {
+            } else if (dst.remaining() >= 2) {
                 dst.putShort(read16(address));
                 address += 2;
-            }
-            if (dst.remaining() >= 1) {
+            } else {
                 dst.put(read8(address));
                 address += 1;
             }
