@@ -1,8 +1,12 @@
 package com.shade.decima.rpcs3;
 
+import com.shade.decima.rpcs3.util.Pine;
+import com.shade.decima.rpcs3.util.Platform;
 import com.shade.decima.rpcs3.util.Pointer;
-import com.shade.decima.rpcs3.util.Process;
 
+import java.io.IOException;
+import java.net.StandardProtocolFamily;
+import java.net.UnixDomainSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,8 +17,13 @@ import java.util.stream.Stream;
 
 public class Killzone1 {
     static void main() throws Throwable {
-        try (var process = Process.open("rpcs3.exe").orElseThrow(() -> new IllegalStateException("No RPCS3 process found"))) {
-            var base = process.memory(0x300000000L); // RPCS3's g_base_addr
+        try (var pine = connect()) {
+            System.out.println("Title:   " + pine.getTitle());
+            System.out.println("ID:      " + pine.getID());
+            System.out.println("UUID:    " + pine.getUUID());
+            System.out.println("Version: " + pine.getGameVersion());
+
+            var base = pine.memory(); // RPCS3's g_base_addr
 
             if (false) {
                 var addr = base.add(0x130fa78);
@@ -27,7 +36,7 @@ public class Killzone1 {
             var factory_types = HashMap.read(factory, STRING_TYPE, RTTI0.TYPE_PTR);
             var types = new TreeSet<>(Comparator.comparing(Pointer::address));
 
-            var attrs = new TreeSet<>(Comparator.comparingLong(Pointer::address));
+            var attrs = new TreeSet<>(Comparator.comparing(RTTIAttr::vtbl));
 
             System.out.println("Scanning types ...");
             factory_types.forEach((_, type) -> {
@@ -40,7 +49,7 @@ public class Killzone1 {
 
                 if (rtti instanceof RTTI1 rtti1) {
                     for (var attr : rtti1.attrs) {
-                        attrs.add(attr.deref().vtbl());
+                        attrs.add(attr.deref());
                     }
                 }
             });
@@ -52,24 +61,15 @@ public class Killzone1 {
                 System.out.println();
                 System.out.println();
             }
-            ;
 
             System.out.println("\nAttribute Vtables:");
-            for (var vtable : attrs) {
-                var func = vtable.add(0x34).deref32().deref32();
-                var code = func.read(8);
-                assert code[0] == 0x3C;
-                assert code[1] == 0x60;
-                assert code[4] == 0x60;
-                assert code[5] == 0x63;
-
+            for (var attr : attrs) {
                 System.out.printf(
-                    "- %s -> %s (%#10x, %s)%n",
-                    vtable,
-                    func,
-                    (code[2] & 0xff) << 24 | (code[3] & 0xff) << 16 | (code[6] & 0xff) << 8 | (code[7] & 0xff),
-                    new String(new byte[]{code[2], code[3], code[6], code[7]}, StandardCharsets.UTF_8)
-                );
+                    "- vtbl=%#x, type_and_flags=%08x, type=%s, flags=%s)%n",
+                    attr.vtbl().address(),
+                    attr.getTypeAndFlags(),
+                    attr.getTypeName(),
+                    attr.getTypeFlags());
             }
 
             try (var writer = Files.newBufferedWriter(Path.of("output/killzone1.idc"))) {
@@ -117,6 +117,18 @@ public class Killzone1 {
                 writer.write("}\n");
             }
         }
+    }
+
+    private static Pine connect() throws IOException {
+        return switch (Platform.current()) {
+            case WINDOWS -> Pine.connect(
+                "localhost",
+                28012);
+            case LINUX -> Pine.connect(
+                StandardProtocolFamily.UNIX,
+                UnixDomainSocketAddress.of("/run/user/1000/rpcs3.sock"));
+            default -> throw new UnsupportedOperationException("Unsupported platform: " + Platform.current());
+        };
     }
 
     private static <E extends Exception> void depthFirstTraverse(RTTI0 rtti, ThrowableConsumer<RTTI0, E> consumer) throws E {
@@ -178,6 +190,10 @@ public class Killzone1 {
             return new RTTI1(pointer);
         }
         return rtti0;
+    }
+
+    private static int gMemBlockSize(Pointer pointer) {
+        return (pointer.subtract(4).readInt() & 0x7FFFFFFE) - 4;
     }
 
     private record HashMap<K, V>(
@@ -360,6 +376,13 @@ public class Killzone1 {
         public static final Typed<RTTIAttr> TYPE = Typed.of(RTTIAttr::read, 0);
         public static final Typed<TypedPointer<RTTIAttr>> TYPE_PTR = TYPE.indirect();
 
+        enum Flag {
+            COLLECTION,
+            REF_0,
+            REF_1,
+            NESTED
+        }
+
         public static RTTIAttr read(Pointer pointer) {
             var vtbl = pointer.add(0).deref32();
             var group = pointer.add(4).deref32().address() == 0 ? null : pointer.add(4).deref32().readCString();
@@ -370,10 +393,45 @@ public class Killzone1 {
             var offset = pointer.add(16).readInt();
 
             int size = alignUp(computeValueSizeBytes(vtbl), 4); // align to FunctionPtr
-            var value = pointer.add(20).readBytes(size);
+            var value = pointer.add(20).read(size);
             var getter = FunctionPtr.read(pointer.add(20 + size));
             var setter = FunctionPtr.read(pointer.add(28 + size));
             return new RTTIAttr(vtbl, group, name, property, refCount, offset, value, getter, setter);
+        }
+
+        int getTypeAndFlags() {
+            var func = vtbl.add(13 * 4).deref32().deref32();
+            var code = func.read(8);
+            assert code[0] == 0x3C;
+            assert code[1] == 0x60;
+            assert code[4] == 0x60;
+            assert code[5] == 0x63;
+            return (code[2] & 0xff) << 24 | (code[3] & 0xff) << 16 | (code[6] & 0xff) << 8 | (code[7] & 0xff);
+        }
+
+        String getTypeName() {
+            int masked = getTypeAndFlags() & 0x7f7f7f7f;
+            return new String(
+                new byte[]{(byte) (masked >>> 24), (byte) (masked >>> 16), (byte) (masked >>> 8), (byte) masked},
+                StandardCharsets.ISO_8859_1);
+        }
+
+        Set<Flag> getTypeFlags() {
+            int masked = getTypeAndFlags() & 0x80808080;
+            var flags = EnumSet.noneOf(Flag.class);
+            if ((masked & 0x80000000) != 0) {
+                flags.add(Flag.COLLECTION);
+            }
+            if ((masked & 0x00800000) != 0) {
+                flags.add(Flag.REF_0);
+            }
+            if ((masked & 0x00008000) != 0) {
+                flags.add(Flag.REF_1);
+            }
+            if ((masked & 0x00000080) != 0) {
+                flags.add(Flag.NESTED);
+            }
+            return flags;
         }
 
         private static int computeValueSizeBytes(Pointer vtbl) {
@@ -382,8 +440,7 @@ public class Killzone1 {
             if (instruction >>> 26 != 14) {
                 throw new IllegalStateException("Unexpected instruction for getSize: " + Integer.toHexString(instruction));
             }
-            int size = (short) instruction; // TODO compute
-            return size;
+            return (short) instruction;
         }
 
         @Override

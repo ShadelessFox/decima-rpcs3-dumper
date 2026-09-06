@@ -7,7 +7,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-public record Pointer(Memory memory, long address) {
+public record Pointer(Memory memory, long address) implements Comparable<Pointer> {
     public byte[] read(int size) {
         try (Arena arena = Arena.ofConfined()) {
             var buffer = arena.allocate(size);
@@ -77,14 +77,6 @@ public record Pointer(Memory memory, long address) {
         }
     }
 
-    public byte[] readBytes(int length) {
-        try (Arena arena = Arena.ofConfined()) {
-            var buffer = arena.allocate(length);
-            read(buffer, length);
-            return buffer.toArray(ValueLayout.JAVA_BYTE);
-        }
-    }
-
     private void read(MemorySegment buffer, int size) {
         read(address, buffer, size);
     }
@@ -95,6 +87,14 @@ public record Pointer(Memory memory, long address) {
 
     public Pointer deref32() {
         return new Pointer(memory, Integer.toUnsignedLong(readInt()));
+    }
+
+    public Pointer subtract(long displacement) {
+        if (displacement == 0) {
+            return this;
+        }
+        Objects.checkIndex(displacement, Long.MAX_VALUE);
+        return new Pointer(memory, address - displacement);
     }
 
     public Pointer add(long displacement) {
@@ -108,5 +108,10 @@ public record Pointer(Memory memory, long address) {
     @Override
     public String toString() {
         return "%#08x".formatted(address);
+    }
+
+    @Override
+    public int compareTo(Pointer o) {
+        return Long.compareUnsigned(address, o.address);
     }
 }

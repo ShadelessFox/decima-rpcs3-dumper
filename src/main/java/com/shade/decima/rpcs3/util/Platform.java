@@ -1,12 +1,12 @@
 package com.shade.decima.rpcs3.util;
 
-enum Platform {
+public enum Platform {
     WINDOWS,
     LINUX,
     MACOS,
     UNSUPPORTED;
 
-    static Platform current() {
+    public static Platform current() {
         var name = System.getProperty("os.name").toLowerCase();
         if (name.startsWith("win")) {
             return WINDOWS;
