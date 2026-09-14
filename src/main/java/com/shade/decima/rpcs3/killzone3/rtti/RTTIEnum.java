@@ -1,0 +1,36 @@
+package com.shade.decima.rpcs3.killzone3.rtti;
+
+import com.shade.decima.rpcs3.memory.Pointer;
+import com.shade.decima.rpcs3.memory.Slice;
+
+public final class RTTIEnum extends RTTI {
+    private final byte size;
+    private final short numValues;
+    private final String typeName;
+    private final Slice<RTTIValue> values;
+
+    public RTTIEnum(Pointer pointer) {
+        super(pointer);
+        this.size = pointer.add(5).readByte();
+        this.numValues = pointer.add(6).readShort();
+        this.typeName = pointer.add(8).deref32().readCString();
+        this.values = RTTIValue.TYPE.slice(pointer.add(12).deref32(), numValues);
+    }
+
+    public byte getSize() {
+        return size;
+    }
+
+    public short getNumValues() {
+        return numValues;
+    }
+
+    public Slice<RTTIValue> getValues() {
+        return values;
+    }
+
+    @Override
+    public TypeName getName() {
+        return TypeName.of(typeName);
+    }
+}
