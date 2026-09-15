@@ -19,7 +19,7 @@ public record RTTIAttr(
     MemberFunctionPointer getter,
     MemberFunctionPointer setter
 ) {
-    public static final Type<RTTIAttr> TYPE = Type.of(RTTIAttr::read, 0);
+    public static final Type<RTTIAttr> TYPE = Type.of(RTTIAttr::read, "RTTIAttr");
 
     public enum Flag implements Value.OfEnumSet<Flag> {
         NESTED,

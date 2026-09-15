@@ -4,7 +4,7 @@ import com.shade.decima.rpcs3.memory.Pointer;
 import com.shade.decima.rpcs3.memory.Type;
 
 public record RTTIValue(int value, String name) {
-    public static final Type<RTTIValue> TYPE = Type.of(RTTIValue::read, 8, "RTTIValue");
+    public static final Type.Sized<RTTIValue> TYPE = Type.of(RTTIValue::read, 8, "RTTIValue");
 
     public static RTTIValue read(Pointer pointer) {
         var value = pointer.readInt();

@@ -12,7 +12,7 @@ public record RTTIAttr(
     Pointer getter,
     Pointer setter
 ) {
-    public static final Type<RTTIAttr> TYPE = Type.of(RTTIAttr::read, 28, "RTTIAttr");
+    public static final Type.Sized<RTTIAttr> TYPE = Type.of(RTTIAttr::read, 28, "RTTIAttr");
 
     public static RTTIAttr read(Pointer pointer) {
         var type = RTTI.TYPE.at(pointer.deref32());

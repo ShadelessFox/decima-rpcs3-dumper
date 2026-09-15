@@ -7,7 +7,7 @@ import com.shade.decima.rpcs3.memory.Type;
 import java.nio.charset.StandardCharsets;
 
 public record KzString(Ref<Buffer> buffer) {
-    public static Type<KzString> TYPE = Type.of(KzString::read, 4);
+    public static Type.Sized<KzString> TYPE = Type.of(KzString::read, 4);
 
     public record Buffer(int refCount, int cachedHash, int length, int capacity, String data) {
         public static Type<Buffer> TYPE = Type.of(Buffer::read, 16);

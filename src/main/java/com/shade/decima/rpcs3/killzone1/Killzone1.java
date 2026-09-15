@@ -64,13 +64,6 @@ public class Killzone1 {
             System.out.println(" - " + base.meta().read().name() + " (offset=" + base.offset() + ")");
         }
 
-        if (rtti instanceof RTTI2 rtti2) {
-            System.out.println("Messages:");
-            for (RTTIMessageHandler message : rtti2.mMessages) {
-                System.out.printf(" - RTTIMessageHandler[nameCrc=%#10x, handler=%s]%n", message.nameCrc(), message.handler());
-            }
-        }
-
         if (rtti instanceof RTTI1 rtti1) {
             System.out.println("Attributes:");
             for (Ref<RTTIAttr> attr : rtti1.attrs) {
@@ -82,6 +75,11 @@ public class Killzone1 {
             System.out.println("Functions:");
             for (Ref<RTTIFunction> func : rtti2.functions) {
                 System.out.println(" - " + func.read());
+            }
+
+            System.out.println("Messages:");
+            for (RTTIMessageHandler message : rtti2.mMessages) {
+                System.out.printf(" - RTTIMessageHandler[nameCrc=%#10x, handler=%s]%n", message.nameCrc(), message.handler());
             }
         }
     }

@@ -11,7 +11,7 @@ public record RTTIFunction(
     String arguments,
     Pointer unk14
 ) {
-    public static final Type<RTTIFunction> TYPE = Type.of(RTTIFunction::read, 24, "RTTIFunction");
+    public static final Type.Sized<RTTIFunction> TYPE = Type.of(RTTIFunction::read, 24, "RTTIFunction");
 
     public static RTTIFunction read(Pointer pointer) {
         var function = pointer.deref32();

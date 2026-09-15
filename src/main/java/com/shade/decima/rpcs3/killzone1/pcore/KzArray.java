@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public record KzArray<T>(int length, int capacity, Slice<T> items) implements Iterable<T> {
-    public static <T> KzArray<T> read(Pointer pointer, Type<T> type) {
+    public static <T> KzArray<T> read(Pointer pointer, Type.Sized<T> type) {
         var length = pointer.add(0).readInt();
         var capacity = pointer.add(4).readInt();
         var entries = type.slice(pointer.add(8).deref32(), capacity);

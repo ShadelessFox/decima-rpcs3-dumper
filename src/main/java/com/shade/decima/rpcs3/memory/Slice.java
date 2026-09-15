@@ -4,16 +4,16 @@ import java.util.Iterator;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public record Slice<T>(Type<T> type, Pointer pointer, int length) implements Iterable<T> {
+public record Slice<T>(Type.Sized<T> type, Pointer pointer, int length) implements Iterable<T> {
     public T read(int index) {
         if (index < 0 || index >= length) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Length: " + length);
         }
-        return type.read(pointer.add(index * type.size().orElseThrow()));
+        return type.read(pointer.add(index * type.size()));
     }
 
     public long size() {
-        return length * type.size().orElseThrow();
+        return length * type.size();
     }
 
     public Stream<T> stream() {

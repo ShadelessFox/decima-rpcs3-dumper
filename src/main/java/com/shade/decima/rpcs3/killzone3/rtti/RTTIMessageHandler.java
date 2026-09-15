@@ -5,7 +5,7 @@ import com.shade.decima.rpcs3.memory.Ref;
 import com.shade.decima.rpcs3.memory.Type;
 
 public record RTTIMessageHandler(Ref<RTTI> message, Pointer handler, Pointer displacement) {
-    public static final Type<RTTIMessageHandler> TYPE = Type.of(RTTIMessageHandler::read, 12, "RTTIMessageHandler");
+    public static final Type.Sized<RTTIMessageHandler> TYPE = Type.of(RTTIMessageHandler::read, 12, "RTTIMessageHandler");
 
     public static RTTIMessageHandler read(Pointer pointer) {
         var message = RTTI.TYPE.at(pointer.deref32());
