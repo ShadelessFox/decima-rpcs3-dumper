@@ -22,18 +22,18 @@ public record RTTIAttr(
     public static final Type<RTTIAttr> TYPE = Type.of(RTTIAttr::read, "RTTIAttr");
 
     public enum Flag implements Value.OfEnumSet<Flag> {
-        NESTED,
-        REF_1,
-        REF_0,
-        COLLECTION;
+        STRUCT,
+        REF, // reference-counted
+        CPTR, // non-owning;
+        ARRAY;
 
         @Override
         public int value() {
             return switch (this) {
-                case NESTED -> 0x80000000;
-                case REF_1 -> 0x00800000;
-                case REF_0 -> 0x00008000;
-                case COLLECTION -> 0x00000080;
+                case STRUCT -> 0x00000080;
+                case REF -> 0x00008000;
+                case CPTR -> 0x00800000;
+                case ARRAY -> 0x80000000;
             };
         }
     }

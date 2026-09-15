@@ -1,13 +1,10 @@
 package com.shade.decima.rpcs3.util;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
-public sealed interface Value<T extends Enum<T>>
+public sealed interface Value<T extends Enum<T>> extends Comparable<T>
     permits Value.OfEnum, Value.OfEnumSet {
 
     non-sealed interface OfEnum<T extends Enum<T>> extends Value<T> {
@@ -38,7 +35,7 @@ public sealed interface Value<T extends Enum<T>>
     }
 
     static <T extends Enum<T> & OfEnumSet<T>> OfEnumSet<T> setOf(Class<T> enumClass, int value) {
-        var values = new HashSet<Value<T>>();
+        var values = new TreeSet<Value<T>>();
         for (T constant : enumClass.getEnumConstants()) {
             if ((constant.value() & value) != 0) {
                 value &= ~constant.value();
@@ -48,7 +45,7 @@ public sealed interface Value<T extends Enum<T>>
         if (value != 0) {
             values.add(new OfConst<>(value));
         }
-        return new OfSet<>(Set.copyOf(values));
+        return new OfSet<>(Collections.unmodifiableSortedSet(values));
     }
 
     int value();
@@ -62,6 +59,11 @@ public sealed interface Value<T extends Enum<T>>
         @Override
         public Optional<T> tryUnwrap() {
             return Optional.empty();
+        }
+
+        @Override
+        public int compareTo(T o) {
+            return Integer.compare(value, o.value());
         }
 
         @Override
@@ -81,6 +83,11 @@ public sealed interface Value<T extends Enum<T>>
             return values.stream()
                 .mapToInt(Value::value)
                 .reduce(0, (a, b) -> a | b);
+        }
+
+        @Override
+        public int compareTo(T o) {
+            return Integer.compare(value(), o.value());
         }
 
         @Override
