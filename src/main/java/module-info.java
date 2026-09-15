@@ -1,6 +1,6 @@
 module decima.rpcs3.dumper {
     requires java.base;
-    requires org.jetbrains.annotations;
+    requires static org.jetbrains.annotations;
 
     exports com.shade.decima.rpcs3.killzone3.exporter;
     exports com.shade.decima.rpcs3.killzone1.core;
