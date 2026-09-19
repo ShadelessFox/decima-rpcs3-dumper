@@ -1,5 +1,6 @@
 package com.shade.decima.rpcs3.killzone1;
 
+import com.shade.decima.rpcs3.gdb.Gdb;
 import com.shade.decima.rpcs3.killzone1.core.*;
 import com.shade.decima.rpcs3.memory.Memory;
 import com.shade.decima.rpcs3.memory.Pointer;
@@ -7,12 +8,34 @@ import com.shade.decima.rpcs3.memory.Process;
 import com.shade.decima.rpcs3.memory.Ref;
 import com.shade.decima.rpcs3.util.Platform;
 
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.TreeSet;
 
 public class Killzone1 {
-    static void main() {
+    static void main() throws Exception {
         try (var memory = connect()) {
+            var metas = new ArrayList<Ref<RTTIMeta>>();
+
+            try (var gdb = Gdb.connect(new InetSocketAddress(2345))) {
+                gdb.setBreakpoint(0x604F0);
+
+                for (int i = 0; i < 688; i++) {
+                    System.out.println(gdb.contAndWait());
+
+                    var registers = gdb.readRegisters();
+                    metas.add(RTTIMeta.TYPE.at(memory.pointer(registers.gpr()[3])));
+                }
+
+                System.out.println("Finished reading " + metas.size() + " metas");
+                gdb.removeBreakpoint(0x604F0);
+                gdb.cont();
+            }
+
+            System.out.println("Waiting 10 seconds for RPCS3 to finish loading...");
+            Thread.sleep(10_000);
+
             var factory = RTTIFactory.read(memory.pointer(0x7E3384).deref32());
             var types = new TreeSet<Ref<RTTI0>>(Comparator.comparing(Ref::pointer));
             var attrs = new TreeSet<>(Comparator.comparing(RTTIAttr::vtbl));
@@ -30,6 +53,16 @@ public class Killzone1 {
             for (var type : types) {
                 printType(type.pointer(), type.read());
                 System.out.println();
+            }
+
+            System.out.println("Metas:");
+            for (Ref<RTTIMeta> metaRef : metas) {
+                var meta = metaRef.read();
+                System.out.printf(
+                    "- %s (size=%d, addr=%#x)%n",
+                    meta.name(),
+                    meta.size(),
+                    metaRef.pointer().address());
             }
 
             System.out.println("\nAttributes:");
