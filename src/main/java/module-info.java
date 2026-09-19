@@ -11,6 +11,7 @@ module decima.rpcs3.dumper {
     exports com.shade.decima.rpcs3.killzone3;
     exports com.shade.decima.rpcs3.memory;
     exports com.shade.decima.rpcs3.util;
+    exports com.shade.decima.rpcs3.gdb;
 
     uses com.shade.decima.rpcs3.killzone3.exporter.Exporter.Provider;
 
